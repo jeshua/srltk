@@ -46,9 +46,6 @@ object Resolvers {
 object Dependencies {
   val junit = "junit" % "junit" % "4.8" % "test"
   val scalatest = "org.scalatest" % "scalatest_2.9.1" % "1.6.1"
-  val liftframework = "net.liftweb" % "lift-framework_2.9.1" % "2.4-M4"
-  val liftjson = "net.liftweb" % "lift-json_2.9.1" % "2.4-M4"
-  val liftjsonext = "net.liftweb" % "lift-json-ext_2.9.1" % "2.4-M4"
   val scalaio = "com.github.scala-incubator.io" % "scala-io-core_2.9.1" % "0.2.0"
   val proguard = "org.scala-tools.sbt" % "sbt-proguard-plugin" % "0.0.5"
 }
@@ -62,18 +59,12 @@ object srltkBuild extends Build {
 
   // Sub-project specific dependencies
   val commonDeps = Seq (
-    junit,scalatest,liftframework,liftjson,liftjsonext,scalaio
-  )
-
-  lazy val common = Project (
-    "common",
-    file ("srltk-common"),
-    settings = buildSettings ++ Seq (libraryDependencies ++= commonDeps)
+    junit,scalatest,scalaio
   )
 
   lazy val srltk = Project (
     "srltk",
     file ("."),
-    settings = buildSettings
+    settings = buildSettings ++ Seq (libraryDependencies ++= commonDeps)
   ) aggregate (common)
 }
