@@ -1,0 +1,5 @@
+target/**/*
+project/target/**/*
+project/boot/**/*
+project/plugins/target/**/*
+project/plugins/project/**/*
