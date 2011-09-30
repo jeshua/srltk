@@ -1,0 +1,398 @@
+
+tt/scala/srltltk/projects/tdnets/NodeTests.scala,217
+@RunWith(classOf[JUnitRunner])Of17,494
+class NodeTests extends FeatureSpec with MustMatchers {NodeTests18,525
+  class FakePredictor(inDim: Int, outDim: Int) extends Predictor(inDim, outDim) {FakePredictor31,947
+
+tt/scala/srltltk/projects/tdnets/MultiFeatureTransformTests.scala,133
+@RunWith(classOf[JUnitRunner])Of14,394
+class MultiFeatureTransformTests extends FeatureSpec {   MultiFeatureTransformTests15,425
+
+tt/scala/srltltk/projects/tdnets/NodePrototypeTests.scala,130
+@RunWith(classOf[JUnitRunner])Of12,319
+class InternalNodePrototypeTests extends FeatureSpec {InternalNodePrototypeTests13,350
+
+tt/scala/srltltk/projects/tdnets/TDnetTests.scala,123
+@RunWith(classOf[JUnitRunner])Of21,633
+class TDnetTests extends FunSuite with ShouldMatchersForJUnit {TDnetTests22,664
+
+tt/scala/srltltk/projects/psrs/DiscretePSRDiscoverTest.scala,149
+@RunWith(classOf[JUnitRunner])Of31,948
+class DiscretePSRDiscoverTest extends FunSuite with ShouldMatchersForJUnit {DiscretePSRDiscoverTest32,979
+
+tt/scala/srltltk/projects/psrs/DiscreteSampleDatabaseTest.scala,114
+@RunWith(classOf[JUnitRunner])Of12,317
+class SampleDatabaseTest extends FeatureSpec {SampleDatabaseTest13,348
+
+tt/scala/srltltk/projects/psrs/DiscreteTPSRTess.scala,110
+@RunWith(classOf[JUnitRunner])Of15,391
+class DiscreteTPSRTest extends FeatureSpec {DiscreteTPSRTest16,422
+
+mn/scala/srltltk/projects/tdnets/PredictionError.scala,106
+trait ErrorFunction {ErrorFunction23,922
+object SimpleError extends ErrorFunction {SimpleError27,1000
+
+mn/scala/srltltk/projects/tdnets/NodePrototype.scala,160
+trait NodePrototype{NodePrototype34,1211
+class InternalNodePrototype(_name: String = "unnamed", _getSize: (Int) => Int = null) InternalNodePrototype63,2424
+
+mn/scala/srltltk/projects/tdnets/LeafNodes.scala,306
+abstract class LeafNode extends Node with NodePrototype{LeafNode4,67
+abstract class LeafNode extends Node with NodePrototype{LeafNode4,67
+class _ObservationNode extends LeafNode {_ObservationNode9,221
+class _RewardNode extends LeafNode {_RewardNode15,495
+package object LeafNodes{LeafNodes22,746
+
+mn/scala/srltltk/projects/tdnets/MultiFeatureTransform.scala,501
+abstract class MultiFeatureTransform()  {MultiFeatureTransform6,153
+abstract class MultiFeatureTransform()  {MultiFeatureTransform6,153
+class MultiFeatureTransformWrapper(f : (Array[Feats]) => Feats) extends MultiFeatureTransform  {MultiFeatureTransformWrapper10,240
+class StackTransform extends MultiFeatureTransform  {StackTransform14,393
+object StackTransform{StackTransform23,630
+class MultiTransform(extractor : FeatureTransform) extends MultiFeatureTransform  {MultiTransform43,1256
+
+mn/scala/srltltk/projects/tdnets/Predictor.scala,363
+abstract class Predictor(val iDim: Int, val oDim: Int, bias : Boolean = false) {Predictor26,1010
+abstract class Predictor(val iDim: Int, val oDim: Int, bias : Boolean = false) {Predictor26,1010
+class IdentityPredictor extends Predictor(0, 0) {IdentityPredictor49,1677
+object IdentityPredictor { def apply = new IdentityPredictor }IdentityPredictor53,1809
+
+mn/scala/srltltk/projects/tdnets/TDNet.scala,215
+class TDNet(nodeList : List[InternalNodePrototype], observationDimension : Int, numActions : Int = 1){TDNet23,557
+object TDNet{TDNet215,7498
+class TDNetLearner(root: InternalNodePrototype)TDNetLearner243,8459
+
+mn/scala/srltltk/projects/tdnets/Defs.scala,39
+package object tdnets {tdnets26,1087
+
+mn/scala/srltltk/projects/tdnets/experiments/SimpleTDNets2.scala,43
+object SimpleTDNets2 {SimpleTDNets28,193
+
+mn/scala/srltltk/projects/tdnets/experiments/SimpleTDNets.scala,41
+object SimpleTDNets {SimpleTDNets7,153
+
+mn/scala/srltltk/projects/tdnets/experiments/TDNetPE.scala,95
+class TDNetPE(val gamma : Double, ex : CMAC,TDNetPE39,1467
+object TDNetPE {TDNetPE104,3648
+
+mn/scala/srltltk/projects/tdnets/experiments/BouncingBall.scala,384
+class BouncingBall() extends Domain(BouncingBall16,393
+object BouncingBall {BouncingBall22,490
+class BouncingBallAction(index: Int) extends DiscreteAction(index, 1) {BouncingBallAction53,1487
+object BouncingBallState {BouncingBallState59,1735
+class BouncingBallState(BouncingBallState64,1858
+object BouncingBallRenderer extends StateRenderer {BouncingBallRenderer102,3165
+
+mn/scala/srltltk/projects/tdnets/Node.scala,102
+class NodeState(NodeState39,1380
+trait Node {Node56,1705
+class InternalNode(InternalNode72,2124
+
+mn/scala/srltltk/projects/tdnets/test/TestMultivariateTD.scala,88
+class TestMVTD(TestMVTD39,1415
+object TestMultivariateTD {TestMultivariateTD77,2273
+
+mn/scala/srltltk/projects/tdnets/test/TDNetExamples.scala,44
+object TDNetExamples {TDNetExamples24,924
+
+mn/scala/srltltk/projects/tdnets/test/TestTDChain.scala,42
+object TestTDChain {	TestTDChain41,1488
+
+mn/scala/srltltk/projects/tdnets/TDChain.scala,93
+class TDChain(root: InternalNodePrototype) TDChain29,1111
+object TDChain {TDChain70,2265
+
+mn/scala/srltltk/projects/tdnets/MultivariateTs.scala,45
+class MultivariateTD(MultivariateTD33,1023
+
+mn/scala/srltltk/projects/psrs/DiscretePSRDiscover.scala,132
+object DiscretePSRUtils{  DiscretePSRUtils8,203
+class DiscretePSRDiscover(val sim : POMDPSimulator) {DiscretePSRDiscover66,1757
+
+mn/scala/srltltk/projects/psrs/DiscreteResetSimulator.scala,59
+trait DiscreteResetSimulator {DiscreteResetSimulator3,29
+
+mn/scala/srltltk/projects/psrs/DiscreteResetPSs.scala,83
+class DiscreteResetPSR(simulator: DiscreteResetSimulator) {DiscreteResetPSR7,193
+
+mn/scala/srltltk/projects/psrs/pomdps/Tiger.scala,76
+object Tiger{Tiger7,215
+class Tiger extends POMDPSimulator {Tiger17,436
+
+mn/scala/srltltk/projects/psrs/pomdps/FloatReset.scala,96
+object FloatReset{FloatReset7,215
+class FloatReset extends POMDPSimulator {FloatReset17,542
+
+mn/scala/srltltk/projects/psrs/pomdps/POMDPSimulator.scala,62
+trait POMDPSimulator extends POMDPSpec {POMDPSimulator8,233
+
+mn/scala/srltltk/projects/psrs/pomdps/POMDPSpes.scala,34
+trait POMDPSpec {POMDPSpec7,122
+
+mn/scala/srltltk/projects/psrs/DiscreteTPSR.scala,68
+class DiscreteTPSR(val db: SampleDatabaseMutEx, DiscreteTPSR6,142
+
+mn/scala/srltltk/projects/psrs/EvaluateDiscreteTPSR.scala,56
+object EvaluateDiscreteTPSR {EvaluateDiscreteTPSR4,65
+
+mn/scala/srltltk/projects/psrs/DiscreteTestGenerator.scala,98
+class DiscreteTestGenerator(numObservations : Int, numActions : Int) {DiscreteTestGenerator3,29
+
+mn/scala/srltltk/projects/psrs/DiscreteSampleDatabaseMutEx.scala,99
+class SampleDatabaseMutEx(val numActions: Int, val numObservations: Int,SampleDatabaseMutEx8,262
+
+mn/scala/srltltk/projects/psrs/TimeMatrix.scala,38
+object TimeMatrix {TimeMatrix10,267
+
+mn/scala/srltltk/projects/psrs/DiscreteSampleDatabase.scala,109
+class SampleDatabase[A <: Int, O <: Int](val numActions: Int, val numObservations: Int,SampleDatabase7,232
+
+mn/scala/srltltk/tools/learners/TabularTD.scala,118
+class TabularTD(val alpha: Double, val lambda: Double, val gamma: Double, initialValue: Double = 0)TabularTD39,1306
+
+mn/scala/srltltk/tools/learners/RLSTD.scala,45
+class RLSTD(val gamma: Double)RLSTD37,1237
+
+mn/scala/srltltk/tools/learners/Sarsa.scala,46
+class Sarsa(val alpha0: Double,Sarsa32,1029
+
+mn/scala/srltltk/tools/learners/QLearning.scala,142
+class QLearning(val alpha: Double, val lambda: Double, val gamma: Double, initialValue: Double = 0, rng: scala.util.Random)QLearning38,1262
+
+mn/scala/srltltk/tools/learners/TD.scala,122
+class TD(val alpha: Double, val lambda: Double, val gamma: Double, initialValue: Double = 0, beta: Double = 0)TD38,1262
+
+mn/scala/srltltk/tools/learners/LearnerV.scala,118
+abstract class LearnerV extends CanLearn {LearnerV25,948
+abstract class LearnerV extends CanLearn {LearnerV25,948
+
+mn/scala/srltltk/tools/learners/LearnerQ.scala,232
+abstract class LearnerQ(val rng: Random) extends CanLearnDA with HasQFunction with ImprintableDA {LearnerQ27,1012
+abstract class LearnerQ(val rng: Random) extends CanLearnDA with HasQFunction with ImprintableDA {LearnerQ27,1012
+
+mn/scala/srltltk/tools/utils/LibFunctions.scala,127
+package object LibFunctions {LibFunctions22,883
+    val field = classOf[ClassLoader].getDeclaredField("usr_paths")Of24,952
+
+mn/scala/srltltk/tools/utils/Bounds2D.scala,105
+class Bounds2D(val xMin: Double, val xMax: Double, val yMin: Double, val yMax: Double) {Bounds2D22,883
+
+mn/scala/srltltk/tools/utils/Timer.scala,36
+package object Timer {Timer24,972
+
+mn/scala/srltltk/tools/utils/ColorUtils.scala,38
+object ColorUtils {ColorUtils23,905
+
+mn/scala/srltltk/tools/actors/EpsilonGreedy.scala,43
+class EpsilonGreedy(EpsilonGreedy34,1215
+
+mn/scala/srltltk/tools/agent/EGreedyQLearning.scala,49
+class EGreedyQLearning(EGreedyQLearning32,1228
+
+mn/scala/srltltk/tools/agent/EGreedyAgent.scala,41
+class EGreedyAgent(EGreedyAgent32,1245
+
+mn/scala/srltltk/tools/agent/EGreedySarsa.scala,41
+class EGreedySarsa(EGreedySarsa32,1191
+
+mn/scala/srltltk/tools/features/CMAC.scala,25
+class CMAC(CMAC34,1291
+
+mn/scala/srltltk/vis/ValueFunctionVisualizer2D.scala,133
+trait ValueFunctionVisualizer {  ValueFunctionVisualizer33,1179
+class ValueFunctionVisualizer2D(ValueFunctionVisualizer2D42,1343
+
+mn/scala/srltltk/vis/DockingVis.scala,35
+class DockingVis {DockingVis3,19
+
+mn/scala/srltltk/vis/spacesconnect/SpacesWorldInterfacs.scala,311
+class DummyObservation extends spaces.framework.perception.Observation {}DummyObservation42,1613
+class DummyAgent(val w: SpacesWorldInterface) extends spaces.framework.agent.Agent {DummyAgent44,1688
+class SpacesWorldInterface(var state: State, val stateRenderer: StateRenderer,SpacesWorldInterface55,2127
+
+mn/scala/srltltk/vis/spacesconnect/SpacesActionInterface.scala,117
+class SpacesActionInterface(val index: Int, val numActions: Int, val a: DiscreteAction)SpacesActionInterface26,918
+
+mn/scala/srltltk/vis/ValueFunctionVisualizer3D.scala,88
+class ValueFunctionVisualizer3D(val bounds: Bounds2D,ValueFunctionVisualizer3D72,2880
+
+mn/scala/srltltk/vis/Visualizer2D.scala,242
+class Visualizer2D(width: Int, height: Int, f: (Graphics, Dimension) => Unit) extends JFrame {Visualizer2D31,1112
+class Visualizer2DPanel(width: Int, height: Int, f: (Graphics, Dimension) => Unit) extends JPanel {Visualizer2DPanel44,1475
+
+mn/scala/srltltk/vis/StateViewer.scala,216
+class StateViewer(width: Int, height: Int, renderer: StateRenderer) extends JFrame {StateViewer27,968
+class StateViewerPanel(dimension: Dimension, renderer: StateRenderer) extends JPanel {StateViewerPanel39,1328
+
+mn/scala/srltltk/vis/play3d.scala,180
+class Play3D(width: Int, height: Int) extends JFrame {Play3D26,747
+object CameraView {CameraView178,5446
+class CameraView {CameraView182,5542
+object Play3D {Play3D209,6357
+
+mn/scala/srltltk/vis/MaxAVisualizer2D.scala,49
+class MaxAVisualizer2D(MaxAVisualizer2D33,1179
+
+mn/scala/srltltk/vis/Visualizer3D.scala,114
+class Visualizer3D(width: Int, height: Int, draw: (TransformGroup) => Unit) extends JFrame {Visualizer3D57,2076
+
+mn/scala/srltltk/api/agent/History.scala,51
+class History(val maxLength: Int) {History28,993
+
+mn/scala/srltltk/api/agent/HasQFunctios.scala,41
+trait HasQFunction {HasQFunction23,907
+
+mn/scala/srltltk/api/agent/Agent.scala,198
+abstract class Agent(val extractor: FeatureTransform) extends CanLearn with CanAct {Agent62,2867
+abstract class Agent(val extractor: FeatureTransform) extends CanLearn with CanAct {Agent62,2867
+
+mn/scala/srltltk/api/agent/FeatureTransform.scala,240
+trait FeatureTransform {FeatureTransform24,949
+class IdentityTransform(outDim : Int) extends FeatureTransform {IdentityTransform31,1152
+object IdentityTransform { def apply(d: Int) = new IdentityTransform(d) }IdentityTransform35,1308
+
+mn/scala/srltltk/api/agent/CanLearn.scala,52
+trait CanLearn extends Imprintable{CanLearn29,976
+
+mn/scala/srltltk/api/agent/ImprintableDA.scala,63
+trait ImprintableDA extends Imprintable {ImprintableDA25,987
+
+mn/scala/srltltk/api/agent/CanLearnDA.scala,166
+abstract class CanLearnDA extends CanLearn with ImprintableDA {CanLearnDA33,1099
+abstract class CanLearnDA extends CanLearn with ImprintableDA {CanLearnDA33,1099
+
+mn/scala/srltltk/api/agent/HasActor.scala,33
+trait HasActor {HasActor22,881
+
+mn/scala/srltltk/api/agent/Imprintable.scala,40
+trait Imprintable {Imprintable28,1044
+
+mn/scala/srltltk/api/agent/CanAct.scala,28
+trait CanAct{CanAct29,974
+
+mn/scala/srltltk/api/driver/SimpleDriver.scala,70
+class SimpleDriver(var d: Domain, val a: Agent) {SimpleDriver24,933
+
+mn/scala/srltltk/api/domain/Action.scala,78
+abstract class Action {}Action25,884
+abstract class Action {}Action25,884
+
+mn/scala/srltltk/api/domain/Observatios.scala,38
+class Observation(Observation28,933
+
+mn/scala/srltltk/api/domain/Domain.scala,45
+class Domain(var state: State,Domain25,884
+
+mn/scala/srltltk/api/domain/StateRenderer.scala,44
+trait StateRenderer {StateRenderer29,1011
+
+mn/scala/srltltk/api/domain/TabularState.scala,128
+abstract class TabularState extends State {TabularState22,882
+abstract class TabularState extends State {TabularState22,882
+
+mn/scala/srltltk/api/domain/DiscreteAction.scala,97
+class DiscreteAction(val index: Int, val numActions: Int) extends Action {DiscreteAction25,884
+
+mn/scala/srltltk/api/domain/State.scala,72
+abstract class State {State25,884
+abstract class State {State25,884
+
+mn/scala/srltltk/test/policyevaluation/TestMountainCarPE.scala,160
+class TestMountainCarPE(visualize: Boolean = true) extends Test2DPE(visualize) {TestMountainCarPE37,1315
+object TestMountainCarPE {TestMountainCarPE61,2040
+
+mn/scala/srltltk/test/policyevaluation/TestGridWorldPE.scala,152
+class TestGridWorldPE(visualize: Boolean = true) extends Test2DPE(visualize) {TestGridWorldPE36,1275
+object TestGridWorldPE {TestGridWorldPE52,1815
+
+mn/scala/srltltk/test/policyevaluation/TestPuddleWorldPE.scala,160
+class TestPuddleWorldPE(visualize: Boolean = true) extends Test2DPE(visualize) {TestPuddleWorldPE36,1281
+object TestPuddleWorldPE {TestPuddleWorldPE60,1929
+
+mn/scala/srltltk/test/policyevaluation/Test2DPs.scala,276
+class AgentWrapper(learner: CanLearn, policy: TestPolicy, ex: FeatureTransform = null) extends Agent(ex) {AgentWrapper38,1278
+abstract class Test2DPE(val visualize: Boolean = true) {Test2DPE49,1862
+abstract class Test2DPE(val visualize: Boolean = true) {Test2DPE49,1862
+
+mn/scala/srltltk/test/control/TestSarsaBallBounceWorld.scala,67
+object TestSarsaBallBounceWorld {TestSarsaBallBounceWorld44,1569
+
+mn/scala/srltltk/test/control/TestSarsaPuddleWorld.scala,59
+object TestSarsaPuddleWorld {TestSarsaPuddleWorld44,1569
+
+mn/scala/srltltk/test/control/TestRunDomains.scala,167
+object TestRunMountainCarTestRunMountainCar44,1593
+object TestRunPuddleWorldTestRunPuddleWorld62,2051
+object TestRunBallBounceWorldTestRunBallBounceWorld82,2544
+
+mn/scala/srltltk/test/control/TestRun.scala,33
+object TestRun {TestRun41,1530
+
+mn/scala/srltltk/test/control/TestSarsaMountainCar.scala,59
+object TestSarsaMountainCar {TestSarsaMountainCar37,1370
+
+mn/scala/srltltk/test/control/TestSarsaGridWorld.scala,55
+object TestSarsaGridWorld {TestSarsaGridWorld60,2090
+
+mn/scala/srltltk/test/features/CMACVisualizer3s.scala,51
+object CMACVisualizer3D {CMACVisualizer3D56,2103
+
+mn/scala/srltltk/test/features/CMACVisualizer2s.scala,51
+object CMACVisualizer2D {CMACVisualizer2D33,1209
+
+mn/scala/srltltk/test/domains/GridWorls.scala,398
+class GridWorld() extends Domain(GridWorld33,1122
+object GridWorld {GridWorld39,1234
+class GridWorldAction(index: Int) extends DiscreteAction(index, 4) {GridWorldAction71,2136
+object GridWorldAction {GridWorldAction82,2420
+class GridWorldState(val x: Int, val y: Int) extends TabularState {GridWorldState93,2709
+object GridWorldRenderer extends StateRenderer {GridWorldRenderer129,3843
+
+mn/scala/srltltk/test/domains/PuddleWorld.scala,424
+class PuddleWorld() extends Domain(PuddleWorld35,1186
+object PuddleWorld {PuddleWorld44,1439
+class PuddleWorldAction(index: Int) extends DiscreteAction(index, 4) {PuddleWorldAction103,3382
+object PuddleWorldAction {PuddleWorldAction114,3670
+class PuddleWorldState(val x: Double, val y: Double) extends State {PuddleWorldState125,3965
+object PuddleWorldRenderer extends StateRenderer {PuddleWorldRenderer163,5176
+
+mn/scala/srltltk/test/domains/MountainCar.scala,427
+class MountainCar(rng: Random) extends Domain(MountainCar.getInitial(rng),MountainCar36,1236
+object MountainCar {MountainCar50,1717
+class MountainCarAction(index: Int) extends DiscreteAction(index, 3) {MountainCarAction85,2897
+class MountainCarState(val x: Double, val xDot: Double, val rng: Random) extends State {MountainCarState97,3235
+object MountainCarRenderer extends StateRenderer {MountainCarRenderer138,4540
+
+mn/scala/srltltk/test/domains/PuddleWorldTests.scala,119
+object PuddleWorldTests {PuddleWorldTests27,1047
+  class Policy1(gamma: Double) extends TestPolicy {Policy130,1108
+
+mn/scala/srltltk/test/domains/GridWorldTests.scala,93
+object GridWorldTests {GridWorldTests24,929
+  class Policy1(gamma: Double)Policy127,1017
+
+mn/scala/srltltk/test/domains/TestPolicy.scala,120
+abstract class TestPolicy extends Agent {TestPolicy25,997
+abstract class TestPolicy extends Agent {TestPolicy25,997
+
+mn/scala/srltltk/test/domains/VisGridWorldValus.scala,53
+object VisGridWorldValue {VisGridWorldValue26,1038
+
+mn/scala/srltltk/test/domains/Domain2D.scala,33
+trait Domain2D {Domain2D24,948
+
+mn/scala/srltltk/test/domains/MountainCarTests.scala,125
+object MountainCarTests {MountainCarTests27,1047
+  class Policy1(gamma: Double = .99) extends TestPolicy {Policy130,1108
+
+mn/scala/srltltk/test/domains/BallBounceWorld.scala,422
+class BallBounceWorld() extends Domain(BallBounceWorld35,1186
+object BallBounceWorld {BallBounceWorld41,1292
+class BallBounceWorldAction(index: Int) extends DiscreteAction(index, 4) {BallBounceWorldAction78,2532
+object BallBounceWorldState {BallBounceWorldState90,2901
+class BallBounceWorldState(BallBounceWorldState95,3025
+object BallBounceWorldRenderer extends StateRenderer {BallBounceWorldRenderer159,5234
+
+mn/scala/srltltk/test/domains/BallBounceWorldTests.scala,132
+object BallBounceWorldTests {BallBounceWorldTests27,1047
+  class Policy1(gamma: Double = .9) extends TestPolicy {Policy130,1112

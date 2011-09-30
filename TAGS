@@ -1,0 +1,1203 @@
+
+src/test/scala/srltk/projects/psrs/DiscreteSampleDatabaseTest.scala,130
+@RunWith(classOf[JUnitRunner])Of16,440
+class DiscreteSampleDatabaseTest extends FeatureSpec {DiscreteSampleDatabaseTest17,471
+
+src/test/scala/srltk/projects/psrs/ACAutomatonTest.scala,108
+@RunWith(classOf[JUnitRunner])Of16,440
+class ACAutomatonTest extends FeatureSpec {ACAutomatonTest17,471
+
+src/test/scala/srltk/projects/psrs/POMDPSimulatorTest.scala,165
+@RunWith(classOf[JUnitRunner])Of19,456
+class POMDPSimulatorTest extends FeatureSpec {POMDPSimulatorTest20,487
+  def test(pomdp : POMDPSimulator) = {test31,732
+
+src/test/scala/srltk/projects/psrs/FixedHistoryArrayTest.scala,120
+@RunWith(classOf[JUnitRunner])Of16,440
+class FixedHistoryArrayTest extends FeatureSpec {FixedHistoryArrayTest17,471
+
+src/test/scala/srltk/projects/psrs/DiscretePSRDiscoverTest.scala,150
+@RunWith(classOf[JUnitRunner])Of31,994
+class DiscretePSRDiscoverTest extends FunSuite with ShouldMatchersForJUnit {DiscretePSRDiscoverTest32,1025
+
+src/test/scala/srltk/projects/psrs/DiscreteTPSRTest.scala,312
+@RunWith(classOf[JUnitRunner])Of18,453
+class DiscreteTPSRTest extends FeatureSpec {DiscreteTPSRTest19,484
+  def rep(v: DenseVectorCol[Double], n: Int): DenseMatrix[Double] = {rep23,606
+  def test(pomdp: POMDPSimulator) = {test39,1016
+  def testCoreTests(pomdp: POMDPSimulator) = {testCoreTests169,5172
+
+src/test/scala/srltk/projects/psrs/LimitedHistoryArrayTest.scala,125
+@RunWith(classOf[JUnitRunner])Of13,332
+class LimitedHistoryArrayTest extends  FeatureSpec {LimitedHistoryArrayTest14,363
+
+src/test/scala/srltk/projects/tdnets/MultiFeatureTransformTests.scala,133
+@RunWith(classOf[JUnitRunner])Of14,417
+class MultiFeatureTransformTests extends FeatureSpec {   MultiFeatureTransformTests15,448
+
+src/test/scala/srltk/projects/tdnets/TDnetTests.scala,327
+@RunWith(classOf[JUnitRunner])Of21,656
+class TDnetTests extends FunSuite with ShouldMatchersForJUnit {TDnetTests22,687
+    def td = (inDim: Int, outDim: Int) => new MultivariateTD(alpha, 0, inDim, outDim,true)td25,813
+    def td = (inDim: Int, outDim: Int) => new MultivariateTD(alpha, 0, inDim, outDim,true)td103,3603
+
+src/test/scala/srltk/projects/tdnets/NodePrototypeTests.scala,307
+@RunWith(classOf[JUnitRunner])Of12,342
+class InternalNodePrototypeTests extends FeatureSpec {InternalNodePrototypeTests13,373
+      def func(f : Array[Feats]) : Feats = {f(0)(List(0,1,2)).asCol}func76,2582
+    def td = (inDim: Int, outDim: Int) => new MultivariateTD(.1, 0, inDim, outDim)td124,4262
+
+src/test/scala/srltk/projects/tdnets/NodeTests.scala,483
+@RunWith(classOf[JUnitRunner])Of17,517
+class NodeTests extends FeatureSpec with MustMatchers {NodeTests18,548
+  class FakePredictor(inDim: Int, outDim: Int) extends Predictor(inDim, outDim) {FakePredictor31,970
+    def predict(input: Feats) =predict32,1052
+    def learn(input: Feats, error: Feats) = 0learn38,1240
+  def td = (inDim: Int, outDim: Int) => new FakePredictor(inDim, outDim)td41,1291
+  def getNodeByName(name: String): Option[Node] = {getNodeByName50,1558
+
+src/test/scala/srltk/tools/linearalgebra/LinearAlgebraTest.scala,207
+@RunWith(classOf[JUnitRunner])Of20,681
+class LinearAlgebraTest extends FeatureSpec {LinearAlgebraTest21,712
+  def kahanMatrix(size : Int, rng : util.Random) : DenseMatrix[Double] = {kahanMatrix86,2511
+
+src/main/scala/srltk/test/features/CMACVisualizer2D.scala,167
+object CMACVisualizer2D {CMACVisualizer2D33,1209
+  def main(args: Array[String]): Unit = {main35,1236
+  def f(g: Graphics, dimension: Dimension): Unit =f40,1352
+
+src/main/scala/srltk/test/features/CMACVisualizer3D.scala,163
+object CMACVisualizer3D {CMACVisualizer3D56,2103
+  def main(args: Array[String]): Unit = {main58,2130
+  def draw(trans: TransformGroup): Unit = {draw63,2289
+
+src/main/scala/srltk/test/control/TestSarsaBallBounceWorld.scala,122
+object TestSarsaBallBounceWorld {TestSarsaBallBounceWorld44,1569
+  def main(args: Array[String]): Unit = {main47,1638
+
+src/main/scala/srltk/test/control/TestSarsaPuddleWorld.scala,114
+object TestSarsaPuddleWorld {TestSarsaPuddleWorld44,1569
+  def main(args: Array[String]): Unit = {main46,1622
+
+src/main/scala/srltk/test/control/TestRunDomains.scala,495
+object TestRunMountainCarTestRunMountainCar44,1593
+  def apply(agent : Agent,episodes : Int,  visuals :Boolean = true)apply55,1917
+object TestRunPuddleWorldTestRunPuddleWorld62,2051
+  def apply(agent : Agent,episodes : Int,  visuals :Boolean = true)apply71,2279
+  def run2(agent : Agent, timesteps: Int,  visuals :Boolean = true)run275,2409
+object TestRunBallBounceWorldTestRunBallBounceWorld82,2544
+  def apply(agent : Agent, timesteps : Int, visuals :Boolean = true)apply95,2839
+
+src/main/scala/srltk/test/control/TestSarsaGridWorld.scala,110
+object TestSarsaGridWorld {TestSarsaGridWorld60,2090
+  def main(args: Array[String]): Unit = {main63,2140
+
+src/main/scala/srltk/test/control/TestRun.scala,264
+object TestRun {TestRun41,1530
+      def V2D(x: Double, y: Double) = {V2D72,2462
+      def MaxA2D(x: Double, y: Double): Int = {MaxA2D78,2762
+    def runEpisodes(maxEps: Int) {runEpisodes99,3492
+    def runTimesteps(timesteps: Int) {runTimesteps130,4307
+
+src/main/scala/srltk/test/control/TestSarsaMountainCar.scala,114
+object TestSarsaMountainCar {TestSarsaMountainCar37,1370
+  def main(args: Array[String]): Unit = {main39,1430
+
+src/main/scala/srltk/test/policyevaluation/TestGridWorldPE.scala,521
+class TestGridWorldPE(visualize: Boolean = true) extends Test2DPE(visualize) {TestGridWorldPE36,1275
+  def getState(x: Double, y: Double) = new GridWorldState(x.toInt, y.toInt)getState41,1482
+  def run(lf: (Double) => LearnerV = null, name: String = ""): Double = {run43,1559
+object TestGridWorldPE {TestGridWorldPE52,1815
+  def main(args: Array[String]): Unit = {main53,1840
+    def lf(gamma: Double) = new TD(.01, 0, gamma, 0, 0)lf55,1943
+    def lf2(gamma: Double) = new TD(.5, 0, gamma, 0, 0)lf259,2123
+
+src/main/scala/srltk/test/policyevaluation/TestMountainCarPE.scala,484
+class TestMountainCarPE(visualize: Boolean = true) extends Test2DPE(visualize) {TestMountainCarPE37,1315
+  def getState(x: Double, y: Double) = new MountainCarState(x, y, rng)getState44,1515
+  def run(lf: (Double) => LearnerV = null, steps: Int = 100000, useEx: Boolean = true): Double = {run51,1743
+object TestMountainCarPE {TestMountainCarPE61,2040
+  def main(args: Array[String]): Unit = {main62,2067
+    def lf(gamma: Double) = new TD(.1, 0, gamma, -20, .01)lf64,2151
+
+src/main/scala/srltk/test/policyevaluation/Test2DPE.scala,1434
+class AgentWrapper(learner: CanLearn, policy: TestPolicy, ex: FeatureTransform = null) extends Agent(ex) {AgentWrapper38,1278
+  override def learn(o1: Observation): Unit =learn39,1385
+  override def learn(o1: Observation, a1: Action, o2: Observation): Unit =learn41,1454
+  override def learn(otm2: Observation, atm2: Action, otm1: Observation, atm1: Action, ot: Observation): Unit =learn43,1560
+  override def act(o: Observation): Action = policy.getAction(o.state)act45,1719
+  override def onImprint() = learner.imprint(imprintedO, imprintedA)onImprint46,1790
+abstract class Test2DPE(val visualize: Boolean = true) {Test2DPE49,1862
+abstract class Test2DPE(val visualize: Boolean = true) {Test2DPE49,1862
+  def getState(x: Double, y: Double): StategetState59,2147
+  def learnerV2D(learner: LearnerV)(x: Double, y: Double) = {learnerV2D67,2348
+  def realV2D(policy: TestPolicy)(x: Double, y: Double) = {realV2D75,2580
+  def RMSE(realV2D: (Double, Double) => Double, learnerV2D: (Double, Double) => Double)() = {RMSE80,2744
+  def createValueVis(valFunction: (Double, Double) => Double): ValueFunctionVisualizer =createValueVis94,3351
+  def setupVis(policy: TestPolicy, learner: LearnerV) {setupVis106,3774
+  def setUpdateVisFunction(f: (Int, () => Double, ActivePlot) => Unit) {setUpdateVisFunction131,4560
+  def updateVis(timestep: Int) {updateVis135,4669
+  def runTest(domain: Domain,runTest165,5342
+
+src/main/scala/srltk/test/policyevaluation/TestPuddleWorldPE.scala,476
+class TestPuddleWorldPE(visualize: Boolean = true) extends Test2DPE(visualize) {TestPuddleWorldPE36,1281
+  def getState(x: Double, y: Double) = new PuddleWorldState(x, y)getState43,1481
+  def run(lf: (Double) => LearnerV = null, steps: Int = 100000, useEx: Boolean = true): Double = {run50,1635
+object TestPuddleWorldPE {TestPuddleWorldPE60,1929
+  def main(args: Array[String]): Unit = {main61,1956
+    def lf(gamma: Double) = new TD(.01, 0, gamma, 0, 0)lf62,1998
+
+src/main/scala/srltk/test/domains/PuddleWorld.scala,1978
+class PuddleWorld() extends Domain(PuddleWorld35,1186
+  def createState(d1 : Double, d2 : Double) = new PuddleWorldState(d1,d2)createState40,1322
+object PuddleWorld {PuddleWorld44,1439
+  def inPuddle(puddle: (Double, Double, Double, Double), x: Double, y: Double) = {inPuddle62,1933
+  def distToEdge(puddle: (Double, Double, Double, Double), x: Double, y: Double) = {distToEdge66,2171
+    def dists = List(dists68,2257
+  def distToEdge(x: Double, y: Double): Double = {distToEdge76,2522
+  def getReward(x: Double, y: Double) = {getReward81,2754
+  def atGoal(x: Double, y: Double) = x > goalX && y < goalYatGoal85,2870
+  def rewardFunction(s1: State, a: Action, s2: State): Double = {rewardFunction87,2931
+  def getInitial = new PuddleWorldState(rng.nextDouble, rng.nextDouble)getInitial92,3088
+  def main(args: Array[String]): Unit = {main94,3161
+class PuddleWorldAction(index: Int) extends DiscreteAction(index, 4) {PuddleWorldAction103,3382
+  override def manufacture(newInd: Int) = new PuddleWorldAction(newInd)manufacture104,3453
+  override def name() =name105,3525
+object PuddleWorldAction {PuddleWorldAction114,3670
+  def get(name: String): PuddleWorldAction = {get115,3697
+class PuddleWorldState(val x: Double, val y: Double) extends State {PuddleWorldState125,3965
+  def this() = this(0, 0)this126,4034
+  def getInitial = PuddleWorld.getInitialgetInitial129,4084
+  def exampleAction = new PuddleWorldAction(0)exampleAction130,4126
+  def exampleObservation = observationexampleObservation131,4173
+  def absorbing = atGoal(x, y)absorbing133,4213
+  def successor(action: Action): PuddleWorldState =successor135,4245
+  def observation(): Observation = {observation155,4944
+object PuddleWorldRenderer extends StateRenderer {PuddleWorldRenderer163,5176
+  def render(state: State, g2d: Graphics2D, dimension: Dimension) = {render166,5251
+    def drawPuddle(puddle: (Double, Double, Double, Double)) = {drawPuddle172,5466
+
+src/main/scala/srltk/test/domains/BallBounceWorld.scala,1941
+class BallBounceWorld() extends Domain(BallBounceWorld35,1186
+object BallBounceWorld {BallBounceWorld41,1292
+  private def distance(x1: Double, y1: Double, x2: Double, y2: Double) =distance52,1541
+  def withinBall(state: BallBounceWorldState): Boolean =withinBall55,1697
+  def withinAura(state: BallBounceWorldState): Boolean =withinAura57,1850
+  def withinLOS(state: BallBounceWorldState): Boolean =withinLOS60,2008
+  def getReward(state: BallBounceWorldState): Double = {getReward63,2168
+  def main(args: Array[String]): Unit = {main69,2307
+class BallBounceWorldAction(index: Int) extends DiscreteAction(index, 4) {BallBounceWorldAction78,2532
+  override def manufacture(newInd: Int) = new BallBounceWorldAction(newInd)manufacture79,2607
+  override def name() =name80,2683
+object BallBounceWorldState {BallBounceWorldState90,2901
+  def apply() = new BallBounceWorldState(0d, 0d, 0.5, 0.5, 0.1)apply92,2958
+class BallBounceWorldState(BallBounceWorldState95,3025
+  def getInitial = BallBounceWorldState()getInitial103,3208
+  def exampleAction = new BallBounceWorldAction(0)exampleAction105,3284
+  def exampleObservation = observationexampleObservation106,3335
+  def absorbing = falseabsorbing107,3374
+  def boundTheta(theta: Double): Double =boundTheta109,3399
+  def boundCoord(coord: Double) = scala.math.max(0, scala.math.min(1, coord))boundCoord113,3591
+  def successor(action: Action): BallBounceWorldState =successor115,3670
+  def observation(): Observation = {observation145,4810
+object BallBounceWorldRenderer extends StateRenderer {BallBounceWorldRenderer159,5234
+  def render(state: State, g2d: Graphics2D, dimension: Dimension) = {render162,5317
+    def drawFilled(x: Double, y: Double, radius: Double) {drawFilled167,5499
+    def drawOutline(x: Double, y: Double, radius: Double) {drawOutline173,5704
+    def drawTheta(x: Double, y: Double, theta : Double) {drawTheta179,5910
+
+src/main/scala/srltk/test/domains/BallBounceWorldTests.scala,385
+object BallBounceWorldTests {BallBounceWorldTests27,1047
+  class Policy1(gamma: Double = .9) extends TestPolicy {Policy130,1112
+    def getEpVal(s: BallBounceWorldState): Double = {getEpVal34,1263
+    override def getValue(s: State) = {getValue42,1445
+    def getInitialState() = BallBounceWorldState()getInitialState46,1500
+    def getAction(s: State) = {getAction48,1552
+
+src/main/scala/srltk/test/domains/Domain2D.scala,104
+trait Domain2D {Domain2D24,948
+  def createState(d1 : Double, d2 : Double) : StatecreateState25,965
+
+src/main/scala/srltk/test/domains/GridWorldTests.scala,341
+object GridWorldTests {GridWorldTests24,929
+  class Policy1(gamma: Double)Policy127,1017
+    def V2D(x: Int, y: Int) = getValue(new GridWorldState(x, y))V2D30,1074
+    def getValue(s: State) = {getValue32,1140
+    def getInitialState() = GridWorld.getInitialgetInitialState41,1511
+    def getAction(s: State) = {getAction43,1561
+
+src/main/scala/srltk/test/domains/MountainCarTests.scala,533
+object MountainCarTests {MountainCarTests27,1047
+  class Policy1(gamma: Double = .99) extends TestPolicy {Policy130,1108
+    def V2D(x: Double, y: Double) = getValue(new MountainCarState(x, y, rng))V2D31,1166
+    def getEpVal(s: MountainCarState): Double = {getEpVal35,1338
+    override def getValue(s: State) : Double = {getValue43,1516
+    def getInitialState() = MountainCar.getInitial(rng)getInitialState64,2029
+    def getAction(s: State) = {getAction66,2086
+  def main(args: Array[String]): Unit = {main83,2521
+
+src/main/scala/srltk/test/domains/TestPolicy.scala,481
+abstract class TestPolicy extends Agent {TestPolicy25,997
+abstract class TestPolicy extends Agent {TestPolicy25,997
+  def getValue(s: State): DoublegetValue26,1039
+  def getInitialState(): StategetInitialState27,1072
+  def getAction(s: State): ActiongetAction28,1103
+  def learn(otm1: Observation, atm1: Action, ot: Observation): Unit = ()learn31,1158
+  def act(o: Observation): Action = getAction(o.state)act33,1274
+  override def onImprint() = ()onImprint35,1422
+
+src/main/scala/srltk/test/domains/PuddleWorldTests.scala,508
+object PuddleWorldTests {PuddleWorldTests27,1047
+  class Policy1(gamma: Double) extends TestPolicy {Policy130,1108
+    def V2D(x: Double, y: Double) = getValue(new PuddleWorldState(x, y))V2D33,1197
+    def getEpVal(s: PuddleWorldState): Double = {getEpVal37,1419
+    override def getValue(s: State) = {getValue41,1589
+    def getInitialState() = PuddleWorld.getInitialgetInitialState54,1973
+    def getAction(s: State) = {getAction56,2025
+  def main(args: Array[String]): Unit = {main74,2599
+
+src/main/scala/srltk/test/domains/GridWorld.scala,1556
+class GridWorld() extends Domain(GridWorld33,1122
+object GridWorld {GridWorld39,1234
+  def stateToInt(s: GridWorldState) = {stateToInt45,1355
+  def atGoal(x: Int, y: Int) = x == goalX && y == goalYatGoal53,1603
+  def rewardFunction(s1: State, a: Action, s2: State): Double = {rewardFunction55,1660
+  def getInitial = new GridWorldState(rng.nextInt(width), rng.nextInt(height))getInitial60,1837
+  def main(args: Array[String]): Unit = {main62,1917
+class GridWorldAction(index: Int) extends DiscreteAction(index, 4) {GridWorldAction71,2136
+  override def manufacture(newInd: Int) = new GridWorldAction(newInd)manufacture72,2205
+  override def name() =name73,2275
+object GridWorldAction {GridWorldAction82,2420
+  def get(name: String): GridWorldAction = {get83,2445
+class GridWorldState(val x: Int, val y: Int) extends TabularState {GridWorldState93,2709
+  def this() = this(0, 0)this94,2777
+  def numStates() = GridWorld.numStatesnumStates98,2847
+  def index() = stateToInt(this)index99,2887
+  def getInitial = GridWorld.getInitialgetInitial101,2921
+  def exampleAction = new GridWorldAction(0)exampleAction102,2961
+  def exampleObservation = observationexampleObservation103,3006
+  def absorbing = atGoal(x, y)absorbing105,3046
+  def successor(action: Action): GridWorldState =successor107,3078
+  def observation(): Observation = {observation119,3541
+object GridWorldRenderer extends StateRenderer {GridWorldRenderer129,3843
+  def render(state: State, g2d: Graphics2D, dimension: Dimension) = {render132,3914
+
+src/main/scala/srltk/test/domains/MountainCar.scala,1885
+class MountainCar(rng: Random) extends Domain(MountainCar.getInitial(rng),MountainCar36,1236
+  def this() = this(new Random())this39,1380
+  def createState(d1 : Double, d2 : Double) = new MountainCarState(d1,d2,rng)createState41,1417
+object MountainCar {MountainCar50,1717
+  def altitude(x: Double) = -scala.math.sin(frequency * x)altitude57,1958
+  def slope(x: Double) = scala.math.cos(frequency * x)slope58,2017
+  def randomX(rng: Random) = (rng.nextDouble() * (xMax - xMin)) + xMinrandomX67,2261
+  def randomXDot(rng: Random) = (rng.nextDouble() * (xDotMax - xDotMin)) + xDotMinrandomXDot68,2332
+  def getInitial(rng: Random) = new MountainCarState(randomX(rng), randomXDot(rng), rng)getInitial69,2415
+  def rewardFunction(s1: State, a: Action, s2: State): Double = {rewardFunction71,2505
+  def main(args: Array[String]): Unit = {main76,2676
+class MountainCarAction(index: Int) extends DiscreteAction(index, 3) {MountainCarAction85,2897
+  override def manufacture(newInd: Int) = new MountainCarAction(newInd)manufacture86,2968
+  override def name() =name87,3040
+class MountainCarState(val x: Double, val xDot: Double, val rng: Random) extends State {MountainCarState97,3235
+  def exampleAction() = new MountainCarAction(0)exampleAction100,3348
+  def exampleObservation() = observationexampleObservation102,3398
+  def getInitial = MountainCar.getInitial(rng)getInitial104,3440
+  def absorbing = x >= xMaxabsorbing106,3488
+  def successor(action: Action): MountainCarState =successor108,3517
+  def observation(): Observation = {observation130,4304
+object MountainCarRenderer extends StateRenderer {MountainCarRenderer138,4540
+  def xToYs(x: Double, size: Int, box_size: Int): Int =xToYs142,4616
+  def xToXs(x: Double, size: Int, box_size: Int): Int =xToXs145,4765
+  def render(s: State, g2d: Graphics2D, d: Dimension) =render148,4881
+
+src/main/scala/srltk/test/domains/VisGridWorldValue.scala,176
+object VisGridWorldValue {VisGridWorldValue26,1038
+  def main(args: Array[String]): Unit = {main28,1066
+    def v(x: Double, y: Double) = p.V2D(x.toInt, y.toInt)v30,1135
+
+src/main/scala/srltk/projects/MultiFeatureTransform.scala,805
+abstract class MultiFeatureTransform()  {MultiFeatureTransform6,146
+abstract class MultiFeatureTransform()  {MultiFeatureTransform6,146
+  def apply(feats : Array[Feats]) : Featsapply7,188
+class MultiFeatureTransformWrapper(f : (Array[Feats]) => Feats) extends MultiFeatureTransform  {MultiFeatureTransformWrapper10,233
+  def apply(feats : Array[Feats]) : Feats = f(feats)apply11,330
+class StackTransform extends MultiFeatureTransform  {StackTransform14,386
+  def apply(f : Array[Feats]) : Feats = {apply15,440
+object StackTransform{StackTransform23,618
+  def stack(f : Array[Feats], sparse : Boolean) : Feats = {stack24,641
+class MultiTransform(extractor : FeatureTransform) extends MultiFeatureTransform  {MultiTransform43,1244
+  def apply(f : Array[Feats]) : Feats = {apply44,1328
+
+src/main/scala/srltk/projects/psrs/DiscreteSampleDatabase.scala,1789
+object DiscreteSampleDatabase {DiscreteSampleDatabase10,266
+  def Vec0Int(len : Int) = DenseVector.zeros[Int](len)Vec0Int13,343
+  def Mat0Int(len1 : Int, len2 : Int) = DenseMatrix.zeros[Int](len1,len2)Mat0Int14,398
+  def getTestActionsSingle(test : Test) = for(i <- test) yield i._1getTestActionsSingle20,590
+  def getTestActions(tests: Array[Array[(Int, Int)]]) = {getTestActions22,702
+abstract class DiscreteSampleDatabase(DiscreteSampleDatabase45,1278
+abstract class DiscreteSampleDatabase(DiscreteSampleDatabase45,1278
+  def getAttemptCount(test : Int) =getAttemptCount69,1941
+  def numSamples( t : Int, h : Int) : Int = {numSamples73,2050
+  def append(samples: Iterable[Sample], update : Boolean = true) = {append77,2170
+  def computePaT(a : Int) : DenseVector[Double]computePaT83,2311
+  def computePHaoT(a : Int, o : Int) : DenseMatrix[Double]computePHaoT84,2359
+  def computePaoTgivenH(a : Int, o : Int) : DenseMatrix[Double] = {null}computePaoTgivenH85,2418
+class DiscreteSampleDatabaseAC(DiscreteSampleDatabaseAC93,2591
+  def computePaT(a : Int) : DenseVector[Double] = {computePaT103,2852
+  def computePHaoT(a : Int, o : Int) : DenseMatrix[Double]= { computePHaoT122,3473
+  override def computePaoTgivenH(a : Int, o : Int) : DenseMatrix[Double]= { computePaoTgivenH146,4286
+  def updateCounts() = {   updateCounts169,5100
+class ACMatcher(na : Int, no : Int, samples : ArrayBuffer[(Int,Int)]) {ACMatcher185,5390
+  def sampleToInt(s : (Int,Int)) = (s._1 * no + s._2)sampleToInt191,5600
+  def seqToIntArray(seq : Array[(Int,Int)]) : Array[Int] = {seqToIntArray193,5655
+  def seqsToIntArrays(seqs : Array[Array[(Int,Int)]]) : Array[Array[Int]] = {seqsToIntArrays197,5760
+  def getCounts(tests : Array[Array[(Int,Int)]],getCounts207,6057
+
+src/main/scala/srltk/projects/psrs/DiscreteResetPSR.scala,578
+class DiscreteResetPSR(simulator: DiscreteResetSimulator) {DiscreteResetPSR7,193
+  def sigmaCutoff = 0.0001 //TODO actually calculate this! sigmaCutoff12,345
+  private final def rankFromSigma(S : DenseVector[Double], n : Int = 0) : Int = {rankFromSigma14,416
+  def extendTest(t : Long, a : Int, o : Int) : Long ={ //extend test with action a and observation oextendTest22,585
+  def pTGivenH(t : Long, h : Long) : Double = { //tests and histories are represented index in total orderingpTGivenH25,695
+  private final def discover(n: Int, oldRank: Int, discover31,834
+
+src/main/scala/srltk/projects/psrs/ACAutomaton.scala,703
+object ACAutomaton {ACAutomaton19,464
+  def main(args : Array[String]) = {main21,486
+    def sampleToInt(s : (Int,Int)) = (s._1 * no + s._2)sampleToInt30,850
+    def seqToIntArray(seq : Array[(Int,Int)]) : Array[Int] = {seqToIntArray31,906
+    def seqsToIntArrays(seqs : Array[Array[(Int,Int)]]) : Array[Array[Int]] = {seqsToIntArrays34,1016
+class ACAutomaton(ACAutomaton51,1502
+  def offset = HEAD+1offset58,1618
+  def goto(state : Int, a : Int) : Int = {goto81,2346
+  def reset() = currentState = HEADreset116,3233
+  def step(input : Int) : Array[Int] = {step118,3272
+  def display() =display128,3588
+  def showDot(graph : String,outputFile : String = null) = {showDot157,4538
+
+src/main/scala/srltk/projects/psrs/test/GeneratePOMDPData.scala,89
+object TestEvaluate{  TestEvaluate12,358
+  def main(args : Array[String]){main13,381
+
+src/main/scala/srltk/projects/psrs/test/TestRanksTPSR.scala,90
+object TestRanksTPSR {TestRanksTPSR10,242
+  def main(args : Array[String]){main12,266
+
+src/main/scala/srltk/projects/psrs/test/CompareTPSR.scala,87
+object CompareTPSR{  CompareTPSR14,386
+  def main(args : Array[String]){main19,420
+
+src/main/scala/srltk/projects/psrs/LimitedHistoryArray.scala,556
+class LimitedHistoryArray[A : Manifest](maxLength : Int, defaultVal : A) {LimitedHistoryArray3,29
+class LimitedHistoryArray[A : Manifest](maxLength : Int, defaultVal : A) {aultVal3,29
+  def checkBounds(ind : Int) : Unit = {checkBounds10,282
+  private def boundPointer(pointer : Int) = {boundPointer18,603
+  private def indexToPointer(ind : Int) : Int = {indexToPointer24,729
+  private def pointerToIndex(pointer : Int) : Int = {pointerToIndex27,821
+  def update(ind : Int, e : A) = {update39,1037
+  def apply(ind : Int) : A = {apply54,1378
+
+src/main/scala/srltk/projects/psrs/DiscreteSampleDatabaseNaive.scala,939
+class DiscreteSampleDatabaseNaive(DiscreteSampleDatabaseNaive7,172
+  def computePaT(a : Int) : DenseVector[Double] = {computePaT23,729
+  def computePHaoT(a : Int, o : Int) : DenseMatrix[Double] = { computePHaoT35,1108
+  private def updateHCount() = {updateHCount71,2153
+  private def updateTCount() = {updateTCount82,2379
+  private def updateHTCount() = {updateHTCount92,2596
+  private def updateAttemptCount() = {updateAttemptCount102,2846
+  private def updateSampleLocs() = {updateSampleLocs116,3254
+  def updateCounts() = {   updateCounts123,3478
+  def histAtLocation(t : Array[(Int,Int)], loc : Int) = seqAtLocation(t,loc,false)histAtLocation145,4347
+  def testAtLocation(t : Array[(Int,Int)], loc : Int) = seqAtLocation(t,loc,true)testAtLocation146,4430
+  def seqAtLocation(seq: Array[(Int,Int)],seqAtLocation147,4512
+  def actionSeqAtLocation(seq: Array[Int],i: Int): Boolean = {actionSeqAtLocation168,5148
+
+src/main/scala/srltk/projects/psrs/DiscreteTPSR.scala,942
+class DiscreteTPSR(val db: DiscreteSampleDatabase, DiscreteTPSR5,98
+  def reset() = {reset25,662
+  def observe(action: Int, observation: Int) = {observe29,703
+  def predict(a: Int, o: Int): Double = {predict38,947
+  def predict(test: Array[(Int, Int)]): Double = {predict50,1315
+    def sampleToIndex(sample: (Int, Int)) = sample._1 * numObservations + sample._2sampleToIndex51,1366
+  def computePH(normalize: Boolean = true): DenseVectorCol[Double] = {computePH65,1764
+  def computePT(): DenseVectorCol[Double] = {computePT79,2128
+  def computePTH(): DenseMatrix[Double] = {computePTH91,2467
+  def computePTgivenH(): DenseMatrix[Double] = {computePTgivenH105,2902
+  def jointPTHSum() : Double = {jointPTHSum245,7298
+  def computePaT(): Array[DenseVector[Double]] = {computePaT257,7565
+  def computePTaoH(): Array[DenseMatrix[Double]] = {computePTaoH265,7759
+  def jointPTaoHSum(): Double = {jointPTaoHSum276,8156
+
+src/main/scala/srltk/projects/psrs/Discovery.scala,123
+object Discover{Discover12,309
+  def apply(maxSeqLen : Int, apply15,363
+  def main(args : Array[String]){main55,1708
+
+src/main/scala/srltk/projects/psrs/GaussianKDE.scala,511
+class GaussianKDE(X: DenseMatrix[Double]) {GaussianKDE22,542
+  def whiten(x: DenseVectorCol[Double]): DenseVectorCol[Double] = T * (x - means)whiten42,1012
+  def f(x: DenseVectorCol[Double], h : Double, shouldWhiten : Boolean = true) : Double = {f50,1289
+object GaussianKDE {GaussianKDE70,1868
+  def main(args : Array[String]) = {main71,1889
+    def f(x : Double,y : Double) : Double = {f85,2270
+    def createScatter(mat : DenseMatrix[Double], width : Int = 3) : Scatter = {createScatter100,2687
+
+src/main/scala/srltk/projects/psrs/DiscretePSRDiscover.scala,81
+class DiscretePSRDiscover(val sim : POMDPSimulator) {DiscretePSRDiscover11,233
+
+src/main/scala/srltk/projects/psrs/TimeDiscreteTPSR.scala,366
+object TimeDiscreteTPSR {TimeDiscreteTPSR9,208
+  def main(args : Array[String]){main11,235
+      def time1 = {time144,1306
+        def f1() = db.append(samples)f149,1560
+        def f2() =  m.learn()       f255,1747
+      def time2(tpsr : Boolean) = {time263,1977
+        def f1() = db.append(samples)f172,2334
+        def f2() =  m.learn()f278,2534
+
+src/main/scala/srltk/projects/psrs/pomdps/Tiger.scala,438
+object Tiger{Tiger7,215
+  def main(args : Array[String]) = {main8,229
+class Tiger extends POMDPSimulator {Tiger17,436
+  def startStateProb(state : Int) = 1d/numStatesstartStateProb31,808
+  def T(state1: Int, action: Int, state2: Int) : Double = {T34,901
+  def O(state1 : Int, action: Int, state2: Int, obs : Int)  : Double ={O53,1354
+  def R(state1 : Int, action : Int, state2 : Int, observation : Int) : Double = {R71,1841
+
+src/main/scala/srltk/projects/psrs/pomdps/POMDPSpec.scala,547
+trait POMDPSpec {POMDPSpec7,122
+  def startStateProb(state : Int) : DoublestartStateProb19,353
+  def T(state1 : Int, action : Int, state2 : Int) : DoubleT20,396
+  def O(state1 : Int, action : Int, state2 : Int, obs : Int) : DoubleO21,455
+  def expectedO(state : Int, action : Int, obs : Int) : Double = {expectedO22,525
+  def R(state1 : Int, action : Int, state2 : Int, obs : Int) : DoubleR25,703
+  def getOMat(a : Int, o : Int) : DenseMatrix[Double] = {getOMat28,775
+  def getTMat(a : Int) : DenseMatrix[Double] = {getTMat37,1047
+
+src/main/scala/srltk/projects/psrs/pomdps/Paint.scala,470
+object Paint{Paint8,216
+  def main(args : Array[String]) = {main9,230
+class Paint extends POMDPSimulator {Paint18,437
+  def startStateProb(state : Int) = if(state==0) .5 else if(state==3) 0.5 else 0startStateProb30,812
+  def T(state1: Int, action: Int, state2: Int) : Double = {T33,937
+  def O(state1 : Int, action: Int, state2: Int, obs : Int)  : Double ={O60,1849
+  def R(state1 : Int, action : Int, state2 : Int, observation : Int) : Double = {R83,2591
+
+src/main/scala/srltk/projects/psrs/pomdps/POMDPSimulator.scala,1276
+trait POMDPSimulator extends POMDPSpec {POMDPSimulator10,290
+  def beliefStartState() : DenseVectorCol[Double]= {beliefStartState18,516
+  def uniformPolicy() : DenseMatrix[Double] = {uniformPolicy25,695
+  def generateSamples(n : Int, rng : scala.util.Random) = {generateSamples31,875
+  def uniformSteadyState() = beliefSteadyState(uniformPolicy())uniformSteadyState42,1116
+  def beliefSteadyState(policy : DenseMatrix[Double]) : DenseVectorCol[Double] = {beliefSteadyState44,1237
+  def beliefO(action : Int, obs : Int) : Double = {beliefO66,2010
+  def beliefO(b : DenseVectorCol[Double], action : Int, obs : Int) : Double = {beliefO69,2092
+  def beliefPredict(b : DenseVectorCol[Double], sequence : Array[(Int,Int)]) : Double = {    beliefPredict73,2245
+  def beliefUpdate(b : DenseVectorCol[Double], action : Int, obs : Int) : DenseVectorCol[Double] = {beliefUpdate108,3366
+  def reset() = {reset118,3608
+  def sample(prob: (Int) => Double, n: Int): Int = {sample124,3751
+  def act(action: Int): Int = {act140,4150
+    def t(s: Int) = T(currentState, action, s)t142,4215
+    def o(i: Int) = O(lastState, action, currentState, i)o144,4304
+  def outputSamples(numSamples : Int, file : String, numTrajectories : Int = 1) = {outputSamples151,4458
+
+src/main/scala/srltk/projects/psrs/pomdps/Chain.scala,461
+object Chain{Chain7,215
+  def main(args : Array[String]) = {main8,229
+class Chain(val numStates : Int) extends POMDPSimulator {Chain16,424
+  def startStateProb(state : Int) = 1d / numStatesstartStateProb26,674
+  def T(state1: Int, action: Int, state2: Int) : Double = {T29,767
+  def O(state1 : Int, action: Int, state2: Int, obs : Int)  : Double ={O46,1258
+  def R(state1 : Int, action : Int, state2 : Int, observation : Int) : Double = {R55,1472
+
+src/main/scala/srltk/projects/psrs/pomdps/TinyLine.scala,450
+object TinyLine{TinyLine8,216
+  def main(args : Array[String]) = {main9,233
+class TinyLine extends POMDPSimulator {TinyLine25,571
+  def startStateProb(state : Int) = 1d/numStatesstartStateProb39,827
+  def T(state1: Int, action: Int, state2: Int) : Double = {T42,920
+  def O(state1 : Int, action: Int, state2: Int, obs : Int)  : Double ={O63,1618
+  def R(state1 : Int, action : Int, state2 : Int, observation : Int) : Double = {R75,2043
+
+src/main/scala/srltk/projects/psrs/pomdps/TwoStateMDP.scala,375
+class TwoStateMDP extends POMDPSimulator {TwoStateMDP7,215
+  def startStateProb(state : Int) = 1d/numStatesstartStateProb20,592
+  def T(state1: Int, action: Int, state2: Int) : Double = {T23,685
+  def O(state1 : Int, action: Int, state2: Int, obs : Int)  : Double ={O42,1142
+  def R(state1 : Int, action : Int, state2 : Int, observation : Int) : Double = {R46,1284
+
+src/main/scala/srltk/projects/psrs/pomdps/Shuttle.scala,475
+object Shuttle{Shuttle7,215
+  def main(args : Array[String]) = {main8,231
+class Shuttle extends POMDPSimulator {Shuttle17,539
+  def startStateProb(state : Int) = if(state==7) 1d else 0d //start dockedstartStateProb40,1191
+  def T(state1: Int, action: Int, state2: Int) : Double = {T42,1267
+  def O(state1 : Int, action: Int, state2: Int, obs : Int)  : Double ={O92,3695
+  def R(state1 : Int, action : Int, state2 : Int, observation : Int) : Double = {R105,4386
+
+src/main/scala/srltk/projects/psrs/pomdps/FloatReset.scala,486
+object FloatReset{FloatReset7,215
+  def main(args : Array[String]) = {main8,234
+class FloatReset(val numStates : Int = 5) extends POMDPSimulator {FloatReset24,690
+  def startStateProb(state : Int) = 1d / numStatesstartStateProb36,952
+  def T(state1: Int, action: Int, state2: Int) : Double = {T45,1206
+  def O(state1 : Int, action: Int, state2: Int, obs : Int)  : Double ={O63,1690
+  def R(state1 : Int, action : Int, state2 : Int, observation : Int) : Double = {R78,2090
+
+src/main/scala/srltk/projects/psrs/pomdps/TwoStateHMM.scala,374
+class TwoStateHMM extends POMDPSimulator {TwoStateHMM7,215
+  def startStateProb(state : Int) = 1d/numStatesstartStateProb18,437
+  def T(state1: Int, action: Int, state2: Int) : Double = {T20,544
+  def O(state1 : Int, action: Int, state2: Int, obs : Int)  : Double ={O31,934
+  def R(state1 : Int, action : Int, state2 : Int, observation : Int) : Double = {R41,1286
+
+src/main/scala/srltk/projects/psrs/pomdps/Cheese.scala,456
+object Cheese{Cheese7,215
+  def main(args : Array[String]) = {main8,230
+class Cheese extends POMDPSimulator {Cheese17,538
+  def startStateProb(state : Int) = if(state!=10) .1d else 0dstartStateProb29,789
+  def T(state1: Int, action: Int, state2: Int) : Double = {T30,851
+  def O(state1 : Int, action: Int, state2: Int, obs : Int)  : Double ={O93,3209
+  def R(state1 : Int, action : Int, state2 : Int, observation : Int) : Double = {R107,3727
+
+src/main/scala/srltk/projects/psrs/DataSequences.scala,864
+package object DataSequences {DataSequences9,260
+  def groupSequences(longSeq: DataSequence, groupSize: Int): IndexedSeq[DataSequence] = {groupSequences13,398
+  def chooseRandomSeqs(data: DataSequence, len: Int, num: Int, rng: util.Random): IndexedSeq[DataSequence] = {chooseRandomSeqs25,816
+  def chooseRandomSeqObs(data: DataSequence, len: Int, num: Int, rng: util.Random): DenseMatrix[Double] = {chooseRandomSeqObs37,1339
+  trait SequenceFeatureExtractor {SequenceFeatureExtractor55,2168
+    def extract(sequence: DataSequence): Featsextract57,2252
+    def extract(sequences: Iterable[DataSequence]): Iterable[Feats] = {extract59,2339
+  class SequenceIdentityExtractor(numActions: Int, sparse: Boolean = false) extends SequenceFeatureExtractor {SequenceIdentityExtractor64,2565
+    def extract(sequence: DataSequence): Feats = {extract66,2677
+
+src/main/scala/srltk/projects/psrs/DiscretePSRUtils.scala,492
+object DiscretePSRUtils{  DiscretePSRUtils11,233
+  def histsOfLength(n : Int, na : Int, no : Int) : Array[Array[(Int,Int)]] = {histsOfLength13,261
+  def expandHistories(hists : Array[Array[(Int,Int)]], na : Int, no : Int) : Array[Array[(Int,Int)]] = {expandHistories33,786
+  def extendTests(tests : Array[Array[(Int,Int)]], na : Int, no : Int) : Array[Array[(Int,Int)]] = {extendTests46,1208
+  def generateTrajectory(length : Int, sim : POMDPSimulator) = {generateTrajectory60,1626
+
+src/main/scala/srltk/projects/psrs/TimeMatrix.scala,83
+object TimeMatrix {TimeMatrix10,267
+	def main(args : Array[String]){main11,287
+
+src/main/scala/srltk/projects/psrs/ContinuousTPSR.scala,42
+class ContinuousTPSR(ContinuousTPSR4,96
+
+src/main/scala/srltk/projects/psrs/EvaluateDiscreteTPSR.scala,263
+class EvaluateDiscreteTPSR(tpsr : DiscreteTPSR, EvaluateDiscreteTPSR10,232
+object EvaluateDiscreteTPSR{EvaluateDiscreteTPSR84,2402
+  def main(args : Array[String]){main86,2432
+        def f() = db.append(samples)f132,4091
+        def f2() = {f2139,4261
+
+src/main/scala/srltk/projects/psrs/DiscreteTestGenerator.scala,98
+class DiscreteTestGenerator(numObservations : Int, numActions : Int) {DiscreteTestGenerator3,29
+
+src/main/scala/srltk/projects/psrs/DiscreteResetSimulator.scala,281
+trait DiscreteResetSimulator {DiscreteResetSimulator3,29
+	def numActions : IntnumActions4,60
+	def numObservations : IntnumObservations5,82
+	def reset() : Unitreset6,109
+	def currentObservation() : IntcurrentObservation7,129
+	def takeAction(action : Int)takeAction8,161
+
+src/main/scala/srltk/projects/tdnets/LeafNodes.scala,982
+abstract class LeafNode extends Node with NodePrototype{LeafNode4,90
+abstract class LeafNode extends Node with NodePrototype{LeafNode4,90
+	def getYTilde(obs : Observation) = getY(obs)getYTilde5,147
+	def generate(obsDim : Int, numA : Int) : Node generate6,193
+class _ObservationNode extends LeafNode {_ObservationNode9,244
+	def name = "ObservationNode"name10,286
+  def getY(obs : Observation) = obs.featuresgetY11,316
+  override def getSize = (observationDimension : Int) => observationDimensiongetSize12,361
+  def generate(obsDim : Int, numA : Int) : Node  = LeafNodes.ObservationNodegenerate13,439
+class _RewardNode extends LeafNode {_RewardNode15,518
+  def name = "RewardNode"name16,555
+  def getY(obs : Observation) = toFeats(obs.reward)getY17,581
+  override def getSize = (observationDimension : Int) => 1getSize18,633
+  def generate(obsDim : Int, numA : Int) : Node  = LeafNodes.RewardNode  generate19,692
+package object LeafNodes{LeafNodes22,769
+
+src/main/scala/srltk/projects/tdnets/TDChain.scala,570
+class TDChain(root: InternalNodePrototype) TDChain29,1135
+  def nodes() = net.internalNodesnodes34,1340
+  def onImprint() = {learner.imprint(imprintedO,imprintedA);net=learner.net;}onImprint35,1374
+  def learn(otm1: Observation, atm1: DiscreteAction, ot: Observation): Unit = {      learn39,1521
+	  def getErr(n : Node) : Double = getErr47,1842
+object TDChain {TDChain70,2289
+  def apply(k: Int, alpha : Double, ex: FeatureTransform): TDChain = {apply72,2326
+    def td = (inDim: Int, outDim: Int) => new MultivariateTD(alpha, 0, inDim, outDim)td74,2400
+
+src/main/scala/srltk/projects/tdnets/test/TDNetExamples.scala,385
+object TDNetExamples {TDNetExamples24,924
+  def main(args : Array[String]) : Unit= {main27,969
+    def td = (inDim: Int, outDim: Int) => new MultivariateTD(alpha, lambda, inDim, outDim)td31,1073
+    def discountedSum(r: Double, v: Double) = toFeats(r + gamma * v)discountedSum40,1473
+    def discountedFeatSum(f : Array[Feats]) = f(0) + gamma :* f(1)discountedFeatSum47,1795
+
+src/main/scala/srltk/projects/tdnets/test/TestMultivariateTD.scala,849
+class TestMVTD(TestMVTD39,1415
+  override def learn(otm1: Observation, atm1: Action, ot: Observation) {learn47,1563
+    def error(prediction1: VectorCol[Double]) = {error52,1754
+  def onImprint(): Unit = {onImprint59,1902
+  def predict(o: Observation): VectorCol[Double] = {predict67,2067
+  def lastError() = mvtd.lastErrorlastError71,2160
+object TestMultivariateTD {TestMultivariateTD77,2273
+  def main(args: Array[String]): Unit = {main79,2302
+      def createState(d1: Double, d2: Double): State = new PuddleWorldState(d1, d2)createState90,2576
+      def createState(d1: Double, d2: Double): State = new MountainCarState(d1, d2, rng)createState102,3014
+  def test(bounds: Bounds2D,test110,3251
+      def dim1(d1: Double, d2: Double): Double = {dim1120,3559
+      def dim2(d1: Double, d2: Double): Double = {dim2125,3736
+
+src/main/scala/srltk/projects/tdnets/test/TestTDChain.scala,448
+object TestTDChain {	TestTDChain41,1512
+  def main(args: Array[String]): Unit = {main43,1535
+      def createState(p: Feats): State = new PuddleWorldState(p(0), p(1))createState54,1846
+      def createState(p: Feats): State = new MountainCarState(p(0), p(1), rng)createState66,2308
+      def createState(p: Feats): State = new BallBounceWorldState(p(0), p(1), p(2), p(3), p(4))createState82,2814
+  def test(bounds: Bounds2D,test90,3074
+
+src/main/scala/srltk/projects/tdnets/PredictionError.scala,252
+trait ErrorFunction {ErrorFunction23,945
+  def apply(target: Feats)(prediction: Feats): Featsapply24,967
+object SimpleError extends ErrorFunction {SimpleError27,1023
+  override def apply(target: Feats)(prediction: Feats): Feats = {apply28,1066
+
+src/main/scala/srltk/projects/tdnets/Predictor.scala,833
+abstract class Predictor(val iDim: Int, val oDim: Int, bias : Boolean = false) {Predictor25,1032
+abstract class Predictor(val iDim: Int, val oDim: Int, bias : Boolean = false) {Predictor25,1032
+  def predict(input: Feats): Feats;predict26,1113
+  def learn(input: Feats, error: (Feats) => Feats): Double = learn(input, error(predict(input)))learn27,1149
+  def learn(input: Feats, error: Feats): Double;learn28,1246
+  def addBias(input : Feats) : Feats = {addBias30,1298
+class IdentityPredictor extends Predictor(0, 0) {IdentityPredictor48,1699
+  def predict(input: Feats) = inputpredict49,1749
+  def learn(input: Feats, error: Feats) = 0learn50,1785
+object IdentityPredictor { def apply = new IdentityPredictor }IdentityPredictor52,1831
+object IdentityPredictor { def apply = new IdentityPredictor }apply52,1831
+
+src/main/scala/srltk/projects/tdnets/Node.scala,1144
+class NodeState(NodeState39,1403
+trait Node {Node56,1728
+  def name : Stringname57,1741
+  def getY(obs : Observation) : FeatsgetY58,1761
+  def getYTilde(obs : Observation) : FeatsgetYTilde59,1799
+  def flatten() : List[Node] = flatten(new HashSet[Node])flatten60,1842
+  def flatten(directory : HashSet[Node]) : List[Node] = {flatten61,1900
+class InternalNode(InternalNode72,2147
+  def name = _namename90,2723
+  def getY(obs : Observation) = state.yTgetY108,3099
+  def getYTilde(obs : Observation) = state.yTp1getYTilde109,3140
+  def predict(): Feats = state.yTpredict122,3621
+  def predict(o : Observation, a : DiscreteAction): Feats =  {predict123,3655
+  def observe(otp1: Observation, atp1: DiscreteAction): NodeState = { observe135,3981
+  def X(obs : Observation) : Feats = {X151,4383
+  def Y(x: Feats): Feats =Y161,4773
+  def update(): Unit = {update169,4928
+  def K(obs : Observation): Feats = {K187,5522
+  def Z(k: Feats): Feats =Z194,5741
+  override def flatten() : List[Node] = flatten(new HashSet[Node])flatten203,5920
+  override def flatten(n : HashSet[Node]) : List[Node] = {flatten204,5987
+
+src/main/scala/srltk/projects/tdnets/NodePrototype.scala,2566
+trait NodePrototype{NodePrototype34,1234
+  def name : Stringname35,1255
+  def getSize : (Int)=>IntgetSize36,1275
+  def generate (obsDim : Int, numA: Int) : Node		 generate37,1302
+  def flattenPrototypes: List[NodePrototype] = List(this)flattenPrototypes38,1353
+  def flattenPrototypesRecursive(n: HashSet[NodePrototype]): List[NodePrototype] = flattenPrototypesRecursive39,1411
+class InternalNodePrototype(_name: String = "unnamed", _getSize: (Int) => Int = null) InternalNodePrototype63,2447
+  def name = _namename65,2558
+  def getSize = _getSizegetSize66,2577
+  def generate(obsDim : Int, numA : Int) = generate(obsDim,numA,null,None)generate91,3504
+  def generate(observationDimension: Int, numActions: Int, network : List[NodePrototype],generate92,3579
+  def predicts(target: NodePrototype): InternalNodePrototype = {predicts165,6308
+  def predicts(targets: List[NodePrototype]): InternalNodePrototype = {predicts172,6582
+  def predicts(targets: List[NodePrototype],predicts176,6702
+  def predicts(targets: List[NodePrototype], targetFunction : (Array[Feats]) => Feats) predicts185,6911
+    def predicts(target: NodePrototype, targetFunction: MultiFeatureTransform) :predicts192,7128
+    def predicts(target: NodePrototype, targetFunction: (Array[Feats])=>Feats) :predicts194,7276
+  def observes(input: NodePrototype) = {observes200,7497
+  def observes(input: List[NodePrototype]) = {observes204,7586
+  def observes(input: NodePrototype, targetFunction : (Array[Feats]) => Feats): InternalNodePrototype =observes208,7684
+  def observes(input: NodePrototype, ex: FeatureTransform) = {observes215,7913
+  def withAnswerPredictor(p: (Int, Int) => Predictor = null) =withAnswerPredictor224,8138
+  def withError(error: ErrorFunction) { this.error = error; this }withError226,8238
+  def withQuestionPredictor(p: (Int, Int) => Predictor = null) =withQuestionPredictor227,8305
+  override def flattenPrototypes: List[NodePrototype] = {flattenPrototypes232,8486
+  override def flattenPrototypesRecursive(n: HashSet[NodePrototype]): List[NodePrototype] = {flattenPrototypesRecursive236,8621
+  def inferOutputDimension(observationDimension: Int): Int = { resolveOutputDim(observationDimension)(this) }inferOutputDimension250,9168
+  def inferInputDimension(observationDimension: Int): Int = {inferInputDimension252,9279
+  def resolveOutputDim(observationDimension: Int): HashMap[NodePrototype, Int] = {resolveOutputDim259,9555
+          def d(np: NodePrototype): Int = (if (outDims.contains(np)) 1 else 0)d274,10406
+
+src/main/scala/srltk/projects/tdnets/experiments/TDNetPE.scala,936
+class TDNetPE(val gamma : Double, ex : CMAC,TDNetPE41,1492
+	def createNet(ex: CMAC): TDNetLearner =createNet48,1730
+      def td = (inDim: Int, outDim: Int) => new MultivariateTD(.15, 0, inDim, outDim)td51,1793
+        def discountedFeatSum(f : Array[Feats]) = f(0) + gamma :* f(1)discountedFeatSum57,2031
+      def discountedSum(f : Array[Feats]) = toFeats(f(0)(0) + gamma * f(1)(0))discountedSum81,3028
+    def value(o: Observation): Double =  {      value89,3328
+	override def learn(otm1 : Observation, atm1 : Action, ot: Observation)learn94,3440
+	def onImprint : Unit= {onImprint98,3559
+object TDNetPE {TDNetPE106,3673
+  def updatePlot(timestep : Int, error : ()=>Double, plot : ActivePlot) {updatePlot117,3945
+  def main(args: Array[String]): Unit = {main129,4251
+    def lf(gamma: Double) = new TDNetPE(gamma,tester.ex)lf140,4555
+    def lf2(gamma: Double) = new TDNetPE(gamma,tester.ex,true)lf2153,4979
+
+src/main/scala/srltk/projects/tdnets/experiments/SimpleTDNets2.scala,230
+object SimpleTDNets2 {SimpleTDNets28,193
+  def main(args: Array[String]) {main10,236
+  def learnBoth() = {learnBoth16,367
+    def td = (inDim: Int, outDim: Int) => new MultivariateTD(alpha, 0, inDim, outDim, true)td20,450
+
+src/main/scala/srltk/projects/tdnets/experiments/BouncingBall.scala,1702
+class BouncingBall() extends Domain(BouncingBall16,393
+object BouncingBall {BouncingBall22,490
+  def main(args: Array[String]): Unit = {main28,606
+    def run() : Unit = {for(i <- 0 until 100000) {run31,718
+  def boundTheta(theta: Double): Double =boundTheta44,1096
+	  def boundCoord(coord: Double) = if(coord < ballRadius) ballRadius else if(coord > 1-ballRadius) 1-ballRadius else coord  boundCoord48,1285
+class BouncingBallAction(index: Int) extends DiscreteAction(index, 1) {BouncingBallAction53,1487
+  override def manufacture(newInd: Int) = new BouncingBallAction(newInd)manufacture54,1559
+  override def name() = ""name55,1632
+object BouncingBallState {BouncingBallState59,1735
+  def apply() = new BouncingBallState(.5,.5,.1)apply61,1786
+class BouncingBallState(BouncingBallState64,1858
+  def getInitial = BouncingBallState()getInitial69,1968
+  def exampleAction = BouncingBall.exampleActionexampleAction71,2045
+  def exampleObservation = observationexampleObservation72,2094
+  def absorbing = falseabsorbing73,2133
+  def successor(action: Action): BouncingBallState =successor75,2158
+  def observation(): Observation = {observation91,2826
+object BouncingBallRenderer extends StateRenderer {BouncingBallRenderer102,3165
+  def drawFilled(gc : Graphics, x: Double, y: Double, radius: Double, w : Int, h : Int) {drawFilled105,3242
+  def drawBall(gc : Graphics, s : BouncingBallState, w : Int, h : Int)drawBall111,3463
+  def copyRegion(s : BouncingBallState)copyRegion116,3596
+  def getObservation(s : BouncingBallState) : VectorCol[Double] = {getObservation143,4691
+  def render(state: State, g2d: Graphics2D, dimension: Dimension) = {render171,5510
+
+src/main/scala/srltk/projects/tdnets/experiments/SimpleTDNets.scala,2174
+object SimpleTDNets {SimpleTDNets7,153
+  def main(args: Array[String]) {main9,176
+  def test1() = {test121,393
+    def td = (inDim: Int, outDim: Int) => new MultivariateTD(alpha, 0, inDim, outDim, true)td25,471
+  def test2() = {test241,996
+    def td = (inDim: Int, outDim: Int) => new MultivariateTD(alpha, 0, inDim, outDim, true)td45,1074
+  def test3(alternate: Boolean = false) = {test365,1756
+    def td1 = (inDim: Int, outDim: Int) => new MultivariateTD(alpha1, 0, inDim, outDim, true)td170,1883
+    def td2 = (inDim: Int, outDim: Int) => new MultivariateTD(alpha2, 0, inDim, outDim, true)td271,1977
+  def test4() = {test4126,3690
+    def td1 = (inDim: Int, outDim: Int) => new MultivariateTD(alpha1, 0, inDim, outDim, true)td1132,3814
+    def td2 = (inDim: Int, outDim: Int) => new MultivariateTD(alpha2, 0, inDim, outDim, true)td2133,3908
+    def td3 = (inDim: Int, outDim: Int) => new MultivariateTD(alpha3, 0, inDim, outDim, true)td3134,4002
+  def layered() = {layered171,5270
+    def initialize(t1: InternalNodePrototype, t2: InternalNodePrototype, t3: InternalNodePrototype) = {initialize172,5290
+    def getTurn(i: Int) = {getTurn184,5733
+  def layered2() = {layered2195,5958
+    def initialize(t1: InternalNodePrototype, t2: InternalNodePrototype, t3: InternalNodePrototype) = {initialize196,5979
+    def getTurn(i: Int) = {getTurn208,6424
+  def multipass() = {multipass221,6656
+    def initialize(t1: InternalNodePrototype, t2: InternalNodePrototype, t3: InternalNodePrototype) = {initialize222,6678
+    def getTurn(i: Int) = {getTurn234,7157
+  def runNthOrder(k : Int, steps: Int, initialize: (InternalNodePrototype, InternalNodePrototype, InternalNodePrototype) => Unit, getTurn: (Int) => Int) {runNthOrder246,7393
+    def td1 = (inDim: Int, outDim: Int) => new MultivariateTD(alpha1, 0, inDim, outDim, true)td1255,7799
+    def td2 = (inDim: Int, outDim: Int) => new MultivariateTD(alpha2, 0, inDim, outDim, true)td2259,7932
+    def td3 = (inDim: Int, outDim: Int) => new MultivariateTD(alpha3, 0, inDim, outDim, true)td3261,8057
+    def setLearn(l1: Boolean, l2: Boolean, l3: Boolean) {setLearn275,8514
+
+src/main/scala/srltk/projects/tdnets/TDNet.scala,1129
+class TDNet(nodeList : List[InternalNodePrototype], observationDimension : Int, numActions : Int = 1){TDNet23,580
+  def this(root : InternalNodePrototype, observationDimension : Int) = this(List(root),observationDimension)this24,683
+  def learn(f : Double) : Unit = learn(new Observation(toFeats(f)),null)learn33,1118
+  def learn(f : Feats) : Unit = learn(new Observation(f),null)learn34,1191
+  def learn(o : Observation) : Unit = learn(o,null)learn35,1254
+  def learn(o : Observation, a : DiscreteAction) : Unit = {learn36,1306
+  def showDot(outputFile : String = null) =showDot54,1841
+  def showMonitor(plotFreq : Int = 100) = {showMonitor121,4442
+object TDNet{TDNet215,7521
+  def getInternalNodes(prototypes : List[InternalNodePrototype], observationDimension : Int, numActions : Int) :getInternalNodes217,7538
+  def getNodes(prototypes : List[InternalNodePrototype], observationDimension : Int, numActions : Int) : getNodes230,7991
+class TDNetLearner(root: InternalNodePrototype)TDNetLearner243,8482
+  override def learn(otm1 : Observation, atm1 : DiscreteAction, ot : Observation) = {learn254,8735
+
+src/main/scala/srltk/projects/tdnets/MultivariateTD.scala,296
+class MultivariateTD(MultivariateTD33,1046
+  def sigmoid(d : Double) : Double = {sigmoid46,1454
+  def dsigmoid(d : Double) : Double = {dsigmoid49,1526
+  override def predict(input: Feats): Feats = {predict59,1695
+  override def learn(input: Feats, error: Feats): Double = {learn78,2314
+
+src/main/scala/srltk/projects/Defs.scala,103
+package object projects {projects26,1078
+  implicit def toFeats(d: Double*): Feats =toFeats28,1137
+
+src/main/scala/srltk/vis/FilledContour.scala,508
+class FilledContour(FilledContour50,1984
+  def this(b : (Double,Double,Double,Double), func : (Double,Double)=>Double) = this(new Bounds2D(b),func)this53,2071
+  def getFrame = framegetFrame56,2208
+  def setFunction(f: (Double, Double) => Double) = { this.func = f }setFunction57,2231
+    def f(x: Double, y: Double) = func(x, y)f59,2330
+  def createChart(): Chart = {createChart66,2540
+    	override def getInstance() : IAxe = {new ContourAxeBox(box)}                        getInstance83,3195
+
+src/main/scala/srltk/vis/ValueFunctionVisualizer3D.scala,423
+class ValueFunctionVisualizer3D(val bounds: Bounds2D,ValueFunctionVisualizer3D72,2880
+  def getFrame = framegetFrame75,3009
+  def setValueFunction(v: (Double, Double) => Double) = { this.V2D = v }setValueFunction83,3102
+    def f(x: Double, y: Double) = V2D(x, y)f86,3206
+    def createChart(): Chart = {createChart109,4054
+    			override def getInstance() :  IAxe = new ContourAxeBox(box);getInstance115,4169
+
+src/main/scala/srltk/vis/StateViewer.scala,394
+class StateViewer(width: Int, height: Int, renderer: StateRenderer) extends JFrame {StateViewer27,968
+  def updateDisplay = panel.updateDisplay _updateDisplay28,1053
+class StateViewerPanel(dimension: Dimension, renderer: StateRenderer) extends JPanel {StateViewerPanel39,1328
+  override def paint(g: Graphics): Unit =paint45,1510
+  def updateDisplay(s: State) = {updateDisplay53,1728
+
+src/main/scala/srltk/vis/Visualizer3D.scala,288
+class Visualizer3D(width: Int, height: Int, draw: (TransformGroup) => Unit) extends JFrame {Visualizer3D57,2076
+  def redraw(): Unit = {redraw83,2959
+    override def mousePressed(e: MouseEvent): Unit = {mousePressed94,3274
+  def createScene(): BranchGroup = {createScene106,3510
+
+src/main/scala/srltk/vis/spacesconnect/SpacesActionInterface.scala,589
+class SpacesActionInterface(val index: Int, val numActions: Int, val a: DiscreteAction)SpacesActionInterface26,918
+  def this(action: DiscreteAction) = this(action.index, action.numActions, action)this28,1062
+  def getValue(): Int = indexgetValue30,1146
+  def getValues(): Array[spaces.framework.util.action.DiscreteAction] =getValues31,1176
+  def getAction(i: Int): SpacesActionInterface = new SpacesActionInterface(i, numActions, a)getAction38,1436
+  def srltkAction() = a.manufacture(index);srltkAction39,1529
+  override def toString() = srltkAction().nametoString40,1573
+
+src/main/scala/srltk/vis/spacesconnect/SpacesWorldInterface.scala,1247
+class DummyObservation extends spaces.framework.perception.Observation {}DummyObservation42,1613
+class DummyAgent(val w: SpacesWorldInterface) extends spaces.framework.agent.Agent {DummyAgent44,1688
+  def initTrial(exampleAction: Action): Unit = ()initTrial45,1773
+  def initEpisode(initialObservation: Observation): Unit = ()initEpisode46,1823
+  def observeStep(previousAction: Action, resultingObservation: Observation): Unit = ()observeStep47,1885
+  def getNextAction(): Action = {getNextAction48,1973
+class SpacesWorldInterface(var state: State, val stateRenderer: StateRenderer,SpacesWorldInterface55,2127
+  def this(state: State, exampleAction: srltk.api.domain.DiscreteAction) =this59,2359
+  def this(domain: Domain) =this61,2472
+  def takeAction(action: spaces.framework.util.action.Action): Unit = {takeAction66,2754
+  def draw(g2d: Graphics2D, size: Dimension): Dimension = {draw72,2996
+  def generateObservation(): Observation = {generateObservation77,3145
+  def getExampleAction(): SpacesActionInterface = new SpacesActionInterface(exampleAction)getExampleAction82,3278
+  def startNewEpisode(): Unit = this.state = state.getInitialstartNewEpisode83,3369
+  def setWorld(w: World): Unit = ()setWorld84,3431
+
+src/main/scala/srltk/vis/ValueFunctionVisualizer2D.scala,760
+trait ValueFunctionVisualizer {  ValueFunctionVisualizer33,1179
+  def getFrame : JFramegetFrame34,1213
+  def update() : Unitupdate35,1237
+  def reRender() : UnitreRender36,1259
+  def setValueFunction(v : (Double,Double) => Double)setValueFunction37,1283
+class ValueFunctionVisualizer2D(ValueFunctionVisualizer2D42,1343
+  def getFrame = visgetFrame56,1675
+  def update() = vis.repaint()update57,1696
+  def reRender() = vis.repaint()reRender58,1727
+  def setValueFunction(v : (Double,Double)=>Double) = {this.V = v}setValueFunction59,1760
+  def f(g: Graphics, dimension: Dimension): Unit =f62,1851
+      def getX(percent: Float) = (xSize) * percent + xMingetX67,2011
+      def getY(percent: Float) = (ySize) * percent + yMingetY68,2069
+
+src/main/scala/srltk/vis/play3d.scala,343
+class Play3D(width: Int, height: Int) extends JFrame {Play3D26,747
+  def createScene(): BranchGroup = {createScene80,2361
+  def draw(trans: TransformGroup): Unit = {draw135,4138
+object CameraView {CameraView178,5446
+class CameraView {CameraView182,5542
+object Play3D {Play3D209,6357
+  def main(args : Array[String]){main210,6373
+
+src/main/scala/srltk/vis/DockingVis.scala,35
+class DockingVis {DockingVis3,19
+
+src/main/scala/srltk/vis/Visualizer2D.scala,434
+class Visualizer2D(width: Int, height: Int, f: (Graphics, Dimension) => Unit) extends JFrame {Visualizer2D31,1112
+  def updateDisplay = panel.repaint()updateDisplay36,1326
+class Visualizer2DPanel(width: Int, height: Int, f: (Graphics, Dimension) => Unit) extends JPanel {Visualizer2DPanel44,1475
+    override def mousePressed(e: MouseEvent): Unit = {mousePressed50,1701
+  override def paint(g: Graphics): Unit =paint59,1881
+
+src/main/scala/srltk/vis/Persp.scala,472
+class Persp(Persp74,2882
+  def this(b : (Double,Double,Double,Double), func : (Double,Double)=>Double) = this(new Bounds2D(b),func)this77,2961
+  def getFrame = framegetFrame80,3098
+  def setFunction(f: (Double, Double) => Double) = { this.func = f }setFunction81,3121
+    def f(x: Double, y: Double) = func(x, y)f83,3220
+  def createChart(): Chart = {createChart101,3846
+    			override def getInstance() :  IAxe = new ContourAxeBox(box);getInstance106,3942
+
+src/main/scala/srltk/vis/MaxAVisualizer2D.scala,266
+class MaxAVisualizer2D(MaxAVisualizer2D33,1179
+  def f(g: Graphics, dimension: Dimension): Unit =f49,1858
+      def getX(percent: Float) = (xSize) * percent + bounds.xMingetX55,2047
+      def getY(percent: Float) = (ySize) * percent + bounds.yMingetY56,2112
+
+src/main/scala/srltk/api/domain/DiscreteAction.scala,339
+class DiscreteAction(val index: Int, val numActions: Int) extends Action {DiscreteAction25,884
+  def this(other: DiscreteAction) = this(other.index, other.numActions)this26,959
+  def manufacture(newInd: Int): DiscreteAction = new DiscreteAction(newInd,numActions)manufacture28,1104
+  def name(): String = index.toStringname30,1236
+
+src/main/scala/srltk/api/domain/Domain.scala,192
+class Domain(var state: State,Domain25,884
+  def exampleAction() = state.exampleActionexampleAction28,1004
+  def exampleObservation() = state.exampleObservationexampleObservation29,1048
+
+src/main/scala/srltk/api/domain/State.scala,386
+abstract class State {State25,884
+abstract class State {State25,884
+  def getInitial(): StategetInitial26,907
+  def successor(action: Action): Statesuccessor27,933
+  def observation(): Observationobservation28,972
+  def absorbing: Booleanabsorbing29,1005
+  def exampleAction(): ActionexampleAction30,1030
+  def exampleObservation(): ObservationexampleObservation31,1060
+
+src/main/scala/srltk/api/domain/StateRenderer.scala,277
+trait StateRenderer {StateRenderer29,1011
+  def render(state: State, g2d: Graphics2D, d: Dimension): Dimensionrender30,1033
+  def addPrediction(state: State) = predictions += stateaddPrediction33,1145
+  def clearPredictions() = predictions.clearclearPredictions34,1202
+
+src/main/scala/srltk/api/domain/Action.scala,78
+abstract class Action {}Action25,884
+abstract class Action {}Action25,884
+
+src/main/scala/srltk/api/domain/TabularState.scala,196
+abstract class TabularState extends State {TabularState22,882
+abstract class TabularState extends State {TabularState22,882
+  def numStates: IntnumStates24,927
+  def index: Intindex25,948
+
+src/main/scala/srltk/api/domain/Observation.scala,289
+class Observation(Observation28,933
+  def this(features: VectorCol[Double]) =this33,1134
+  def this(features: Vector[Double], reward: Double, state: State) =this36,1212
+  def this(other: Observation) =this39,1329
+  def this(other: Observation, v: VectorCol[Double]) =this42,1433
+
+src/main/scala/srltk/api/driver/SimpleDriver.scala,150
+class SimpleDriver(var d: Domain, val a: Agent) {SimpleDriver24,933
+  def step(): (State, Observation, Action, Observation, Boolean) =step29,1068
+
+src/main/scala/srltk/api/agent/Imprintable.scala,264
+trait Imprintable {Imprintable28,1044
+  def isImprinted() = imprintedisImprinted32,1182
+  def imprintedO() =imprintedO33,1214
+  def imprintedA() =imprintedA38,1370
+  def imprint(imprintedObservation: Observation, imprintedAction: Action) {imprint44,1522
+
+src/main/scala/srltk/api/agent/CanLearnDA.scala,681
+abstract class CanLearnDA extends CanLearn with ImprintableDA {CanLearnDA33,1099
+abstract class CanLearnDA extends CanLearn with ImprintableDA {CanLearnDA33,1099
+  override def learn(ot: Observation): Unit = ()learn36,1191
+  final override def learn(otm1: Observation, atm1: Action, ot: Observation) : Unit =learn39,1278
+  def learn(otm1: Observation, atm1: DiscreteAction, ot: Observation)learn41,1420
+  final override def learn(otm2: Observation, atm2: Action, otm1: Observation, atm1: Action, ot: Observation): Unit =learn44,1528
+  def learn(otm2: Observation, atm2: DiscreteAction, otm1: Observation, atm1: DiscreteAction, ot: Observation): Unit = ()learn46,1742
+
+src/main/scala/srltk/api/agent/Agent.scala,812
+abstract class Agent(val extractor: FeatureTransform) extends CanLearn with CanAct {Agent62,2867
+abstract class Agent(val extractor: FeatureTransform) extends CanLearn with CanAct {Agent62,2867
+  def this() = this(null)this63,2952
+  final def observe(prevAction: Action, o: Observation): Unit =observe76,3253
+  final def getAction(): Action =getAction95,3855
+  final override def imprint(o: Observation, a: Action) = {imprint103,4027
+  override def learn(ot: Observation): Unit = ()learn143,5415
+  override def learn(otm1: Observation, atm1: Action, ot: Observation): Unit //only one required to overridelearn144,5464
+  override def learn(otm2: Observation, atm2: Action, otm1: Observation, atm1: Action, ot: Observation): Unit = ()learn145,5573
+  def act(ot: Observation): Actionact155,5897
+
+src/main/scala/srltk/api/agent/ImprintableDA.scala,419
+trait ImprintableDA extends Imprintable {ImprintableDA25,987
+  protected def numActions: Int = if(imprintedA==null) 0 else imprintedA().numActionsnumActions27,1073
+  override def imprintedA() =imprintedA28,1159
+  override def imprint(imprintedObservation: Observation, imprintedAction: Action) {imprint33,1320
+  implicit def intToAction(i: Int): DiscreteAction = imprintedA().manufacture(i)intToAction40,1605
+
+src/main/scala/srltk/api/agent/CanLearn.scala,339
+trait CanLearn extends Imprintable{CanLearn29,976
+  def learn(ot: Observation) : Unit =  ()learn30,1012
+  def learn(otm1 : Observation , atm1: Action, ot: Observation) : Unit //only one requiredlearn31,1054
+  def learn(otm2 : Observation, atm2 : Action, otm1 : Observation, atm1 : Action, ot : Observation) : Unit = ()learn32,1145
+
+src/main/scala/srltk/api/agent/HasQFunction.scala,160
+trait HasQFunction {HasQFunction23,907
+  def getQ(o : Observation, a : DiscreteAction) : DoublegetQ24,928
+  def getMaxA(o: Observation): IntgetMaxA25,985
+
+src/main/scala/srltk/api/agent/CanAct.scala,73
+trait CanAct{CanAct29,974
+  def act(o: Observation): Actionact30,988
+
+src/main/scala/srltk/api/agent/HasActor.scala,151
+trait HasActor {HasActor22,881
+  def disableExploration() : UnitdisableExploration24,921
+  def enableExploration() : UnitenableExploration25,955
+
+src/main/scala/srltk/api/agent/History.scala,425
+class History(val maxLength: Int) {History28,993
+  def t = observations.lengtht33,1145
+  def length(): Int = observations.lengthlength35,1228
+  def append(o: Observation): Unit = {append38,1307
+  def append(a: Action): Unit = {append48,1594
+  def clear(): Unit = { observations.clear; actions.clear(); }clear54,1764
+  def o_t(n: Int = 0): Observation = {o_t57,1838
+  def a_t(n: Int = 0): Action = {a_t62,1944
+
+src/main/scala/srltk/api/agent/FeatureTransform.scala,403
+trait FeatureTransform {FeatureTransform24,949
+  def length: Intlength27,1108
+class IdentityTransform(outDim : Int) extends FeatureTransform {IdentityTransform31,1152
+  def length: Int = outDimlength33,1279
+object IdentityTransform { def apply(d: Int) = new IdentityTransform(d) }IdentityTransform35,1308
+object IdentityTransform { def apply(d: Int) = new IdentityTransform(d) }apply35,1308
+
+src/main/scala/srltk/tools/features/CMAC.scala,608
+class CMAC(CMAC34,1291
+  private def normalize(value: Double, dim: Int) = (value - ranges(dim)._1) / binWidth(dim)normalize52,1844
+  private def getTile(value: Double, dim: Int, grid: Int): Int = {getTile56,2045
+  private def getTile(input: Vector[Double], grid: Int): Int = //Vector[Int] =getTile67,2434
+      def accumulate(i: Int = 0, mult: Int = 1): Int = {accumulate69,2519
+  def getTilingIndices(input: Vector[Double]): Vector[Int] =getTilingIndices76,2724
+  def getTiling(input: VectorCol[Double]): VectorCol[Double] =getTiling90,3203
+  override def length = numFeatureslength102,3630
+
+src/main/scala/srltk/tools/actors/EpsilonGreedy.scala,311
+class EpsilonGreedy(EpsilonGreedy34,1215
+  override def onImprint() = ()onImprint39,1358
+  def disableExploration() = {tmpEpsilon = epsilon; epsilon = 0;}disableExploration42,1418
+  def enableExploration() = epsilon = tmpEpsilonenableExploration43,1484
+  def act(o: Observation): Action = {act46,1620
+
+src/main/scala/srltk/tools/learners/LearnerQ.scala,352
+abstract class LearnerQ(val rng: Random) extends CanLearnDA with HasQFunction with ImprintableDA {LearnerQ27,1012
+abstract class LearnerQ(val rng: Random) extends CanLearnDA with HasQFunction with ImprintableDA {LearnerQ27,1012
+  def getQ(o: Observation, a: DiscreteAction): DoublegetQ29,1112
+  def getMaxA(o: Observation): Int =getMaxA31,1167
+
+src/main/scala/srltk/tools/learners/TD.scala,501
+class TD(val alpha: Double, val lambda: Double, val gamma: Double, initialValue: Double = 0, beta: Double = 0)TD38,1262
+  override def value(o: Observation): Double = {o.features dot theta}value50,1686
+  override def learn(otm2: Observation, atm2: Action, otm1: Observation, atm1: Action, ot: Observation) = learn(otm1, ot)learn63,2189
+  override def learn(o1: Observation, a1: Action, o2: Observation) = learn(o1, o2)learn64,2311
+  def learn(o1: Observation, o2: Observation) {learn65,2394
+
+src/main/scala/srltk/tools/learners/RLSTD.scala,415
+class RLSTD(val gamma: Double)RLSTD37,1237
+  def value(o : Observation) : Double = theta.t * o.featuresvalue60,1816
+  override def learn(otm2: Observation, atm2: Action, otm1: Observation, atm1: Action, ot: Observation) = learn(otm1, ot)learn63,1929
+  override def learn(o1: Observation, a1: Action, o2: Observation) = learn(o1, o2)learn64,2051
+  def learn(o1: Observation, o2: Observation) {learn65,2134
+
+src/main/scala/srltk/tools/learners/QLearning.scala,456
+class QLearning(val alpha: Double, val lambda: Double, val gamma: Double, initialValue: Double = 0, rng: scala.util.Random)QLearning38,1262
+  def value(o: Observation): Double = o.features dot thetavalue47,1594
+  private def phiSA(o: Observation, a: DiscreteAction) = {phiSA50,1672
+  def getQ(o: Observation, a: DiscreteAction) = value(phiSA(o, a))getQ65,2285
+  def learn(otm1: Observation, atm1: DiscreteAction, ot: Observation) = {learn67,2353
+
+src/main/scala/srltk/tools/learners/TabularTD.scala,516
+class TabularTD(val alpha: Double, val lambda: Double, val gamma: Double, initialValue: Double = 0)TabularTD39,1306
+  def value(o: Observation): Double = {value48,1567
+  override def onImprint() = {onImprint54,1740
+  override def learn(otm2: Observation, atm2: Action, otm1: Observation, atm1: Action, ot: Observation) = learn(otm1, ot)learn67,2141
+  override def learn(o1: Observation, a1: Action, o2: Observation) = learn(o1, o2)learn68,2263
+  def learn(o1: Observation, o2: Observation) {learn69,2346
+
+src/main/scala/srltk/tools/learners/LearnerV.scala,167
+abstract class LearnerV extends CanLearn {LearnerV25,948
+abstract class LearnerV extends CanLearn {LearnerV25,948
+  def value(o: Observation): Doublevalue26,991
+
+src/main/scala/srltk/tools/learners/Sarsa.scala,474
+class Sarsa(val alpha0: Double,Sarsa32,1029
+  private def phiSA(o: Observation, a: DiscreteAction) = {phiSA40,1256
+  def getQ(o: Observation, a: DiscreteAction) = TD.value(phiSA(o, a))getQ47,1580
+  def learn(otm1: Observation, atm1: DiscreteAction, ot: Observation) = ()learn50,1675
+  override def learn(otm2: Observation, atm2: DiscreteAction, otm1: Observation, atm1: DiscreteAction, ot: Observation) =learn51,1750
+  override def onImprint() =onImprint55,1973
+
+src/main/scala/srltk/tools/utils/ColorUtils.scala,122
+object ColorUtils {ColorUtils23,905
+  def colorProgression(i: Int) = colors(i % colors.length)colorProgression32,1381
+
+src/main/scala/srltk/tools/utils/LibFunctions.scala,255
+package object LibFunctions {LibFunctions22,883
+ def unsafeAddDir(dir: String) = try {unsafeAddDir23,913
+    val field = classOf[ClassLoader].getDeclaredField("usr_paths")Of24,952
+  def addLibs() = unsafeAddDir("./lib/libs_amd64")  addLibs41,1545
+
+src/main/scala/srltk/tools/utils/Bounds2D.scala,191
+class Bounds2D(val xMin: Double, val xMax: Double, val yMin: Double, val yMax: Double) {Bounds2D22,883
+  def this(b : (Double,Double,Double,Double)) = this(b._1,b._2,b._3,b._4)this23,972
+
+src/main/scala/srltk/tools/utils/Timer.scala,237
+package object Timer {Timer24,973
+  def time(f : () => Unit) : Double = {time27,1030
+  def timeCpu(f : () => Unit) : Double = {timeCpu34,1170
+  def userTime() : Long = {userTime40,1308
+   def cpuTime() : Long = {cpuTime44,1452
+
+src/main/scala/srltk/tools/linearalgebra/StrongRRQR.scala,720
+class StrongRRQR(A : DenseMatrix[Double], tol : Double, maxRank : Int = 500, alg : Int = 5){StrongRRQR25,659
+  def update(triangularize : Boolean = true) : Boolean =  {update51,1475
+  def calcOmega(Akinv : DenseMatrix[Double]) : DenseVector[Double] = {calcOmega88,2220
+  def calcGamma(Ck : DenseMatrix[Double]) : DenseVector[Double] =  {calcGamma94,2447
+  def calcJMax(gamma : DenseVector[Double]) : Int = {calcJMax99,2662
+  def findIJ() : (Int,Int) = {findIJ107,2809
+  def swapCols(i : Int, j : Int){swapCols118,3139
+  def detRatio(i : Int, j : Int) : Double = {detRatio129,3417
+  def goodSwap(i : Int, j : Int) : Boolean = {goodSwap134,3604
+  def goodSwapExists : Boolean = {goodSwapExists144,3890
+
+src/main/scala/srltk/tools/linearalgebra/LinearAlgebra.scala,1283
+package object LinearAlgebra {LinearAlgebra15,473
+  private def requireNonEmptyMatrix[V](mat: Matrix[V]) = {requireNonEmptyMatrix17,505
+  def toDense(d : scalala.tensor.mutable.Vector[Double])  : DenseVector[Double]  = {toDense22,652
+  def toDense(d : scalala.tensor.mutable.Matrix[Double])  : DenseMatrix[Double]  = {toDense29,816
+  def lNorm(d : Vector[Double], l : Int = 2) : Double = {lNorm35,988
+  def transpose(d : DenseMatrix[Double]) : DenseMatrix[Double] = {transpose42,1143
+  def findBasis(A : DenseMatrix[Double], rank : Int = -1, tol : Double = 0.1) findBasis54,1415
+  def estRank(A : DenseMatrix[Double], thresh : Double = 1e-10) : Int = {estRank81,2164
+  def estRankSVD(D : DenseVector[Double], thresh : Double = 1e-10) : Int = {estRankSVD93,2480
+    def r(rank : Int) : Int = {r97,2632
+  def estRankQR(R : DenseMatrix[Double], thresh : Double = 1e-10) : Int = {estRankQR112,2974
+    def r(rank : Int) : Int = {r115,3109
+  def qr(A: DenseMatrix[Double], skipQ : Boolean = false): (DenseMatrix[Double], DenseMatrix[Double]) = {qr130,3472
+  def qrp(A: DenseMatrix[Double]): (DenseMatrix[Double], DenseMatrix[Double], DenseMatrix[Int], DenseVector[Int]) = {qrp196,5767
+  def qrDecomposeR(R : DenseMatrix[Double], k : Int)qrDecomposeR267,8119
+
+src/main/scala/srltk/tools/linearalgebra/MiscStats.scala,527
+package object MiscStats {MiscStats6,114
+	def diag(n : Double, length : Int) : DenseMatrix[Double]  = {diag34,781
+	def diag(v : DenseVector[Double]) : DenseMatrix[Double] = {diag39,914
+	def colSums(X : DenseMatrix[Double]) : DenseVectorCol[Double] = {colSums49,1141
+	def colMeans(X : DenseMatrix[Double]) : DenseVectorCol[Double] = {colMeans57,1350
+	def rowSums(X : DenseMatrix[Double]) : DenseVectorCol[Double] = {rowSums62,1492
+	def rowMeans(X : DenseMatrix[Double]) : DenseVectorCol[Double] = {rowMeans71,1714
+
+src/main/scala/srltk/tools/agent/EGreedyAgent.scala,663
+class EGreedyAgent(EGreedyAgent32,1245
+  def getQ(o : Observation, a : DiscreteAction) = learner.getQ(o,a) getQ38,1433
+  def getMaxA(o : Observation) = learner.getMaxA(o)getMaxA39,1502
+  def enableExploration() = actor.enableExploration()enableExploration46,1636
+  def disableExploration() = actor.disableExploration()disableExploration47,1690
+  override def act(o: Observation) =act50,1776
+  def learn(otm1: Observation, atm1: Action, ot: Observation): Unit = ()learn53,1857
+  override def learn(otm2: Observation, atm2: Action, otm1: Observation, atm1: Action, ot: Observation): Unit =learn54,1930
+  override def onImprint() =onImprint57,2113
+
+src/main/scala/srltk/tools/agent/EGreedySarsa.scala,41
+class EGreedySarsa(EGreedySarsa32,1191
+
+src/main/scala/srltk/tools/agent/EGreedyQLearning.scala,49
+class EGreedyQLearning(EGreedyQLearning32,1228
