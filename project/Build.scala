@@ -8,7 +8,8 @@ object BuildSettings {
     scalaVersion := buildScalaVersion,
     shellPrompt  := ShellPrompt.buildShellPrompt,
     scalacOptions ++= Seq("-unchecked", "-deprecation")
-    //unmanagedJars in Compile <+= unmanagedBase in Compile map { _ ** "*.jar" } 
+
+//    unmanagedJars in Compile <<= unmanagedBase in Compile map { _ ** "*.jar" } 
 //    unmanagedJars in Compile <+= unmanagedBase{ _ / "" / "main" / "srltk"},
   )
 }
@@ -66,5 +67,5 @@ object srltkBuild extends Build {
     "srltk",
     file ("."),
     settings = buildSettings ++ Seq (libraryDependencies ++= commonDeps)
-  ) aggregate (common)
+  )
 }
