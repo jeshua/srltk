@@ -7,8 +7,8 @@ object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq (
     scalaVersion := buildScalaVersion,
     shellPrompt  := ShellPrompt.buildShellPrompt,
-    scalacOptions ++= Seq("-unchecked", "-deprecation")
-
+    scalacOptions ++= Seq("-unchecked", "-deprecation"),
+    unmanagedJars in Compile <++= baseDirectory.map(bd => (bd / "lib" / "libs_amd64" ***) get)
 //    unmanagedJars in Compile <<= unmanagedBase in Compile map { _ ** "*.jar" } 
 //    unmanagedJars in Compile <+= unmanagedBase{ _ / "" / "main" / "srltk"},
   )
