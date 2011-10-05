@@ -35,7 +35,7 @@ import srltk.tools.utils.Bounds2D
 /**
  * Wraps a learner and a fixed test policy into an agent structure.
  */
-class AgentWrapper(learner: CanLearn, policy: TestPolicy, ex: FeatureTransform = null) extends Agent(ex) {
+class AgentWrapper(learner: CanLearn, policy: TestPolicy, ex: FeatureExtractor = null) extends Agent(ex) {
   override def learn(o1: Observation): Unit =
     learner.learn(o1);
   override def learn(o1: Observation, a1: Action, o2: Observation): Unit =
@@ -55,7 +55,7 @@ abstract class Test2DPE(val visualize: Boolean = true) {
   val valueStep: Double
   val integerStates: Boolean
   var useEx: Boolean = true
-  val ex: FeatureTransform = null
+  val ex: FeatureExtractor = null
   def getState(x: Double, y: Double): State
 
   //params

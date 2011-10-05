@@ -25,7 +25,7 @@ import srltk.tools.actors.EpsilonGreedy
 import srltk.api.domain.Action
 import srltk.api.domain.Observation
 import srltk.api.domain.Action
-import srltk.api.agent.FeatureTransform
+import srltk.api.agent.FeatureExtractor
 import srltk.tools.learners.LearnerQ
 
 
@@ -36,7 +36,7 @@ class EGreedySarsa(
   gamma: Double = 0.99,
   initialValue: Double = 0,
   rng: Random = new Random(),
-  ex: FeatureTransform = null) 
+  ex: FeatureExtractor = null) 
   
   extends
   

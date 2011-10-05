@@ -59,7 +59,7 @@ import srltk.api.domain.Action
  *
  */
 
-abstract class Agent(val extractor: FeatureTransform) extends CanLearn with CanAct {
+abstract class Agent(val extractor: FeatureExtractor) extends CanLearn with CanAct {
   def this() = this(null)
 
   private val history = new History(3)

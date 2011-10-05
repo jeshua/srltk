@@ -25,7 +25,7 @@ import srltk.tools.actors.EpsilonGreedy
 import srltk.api.domain.Action
 import srltk.api.domain.Observation
 import srltk.api.domain.Action
-import srltk.api.agent.FeatureTransform
+import srltk.api.agent.FeatureExtractor
 import srltk.tools.learners.LearnerQ
 
 //simple agent gluing together a learner with e-greedy
@@ -33,7 +33,7 @@ class EGreedyAgent(
     val learner : LearnerQ,
     epsilon : Double,
     rng: Random = new Random(),
-    ex: FeatureTransform = null) extends Agent(ex) with HasActor with HasQFunction {
+    ex: FeatureExtractor = null) extends Agent(ex) with HasActor with HasQFunction {
 
   def getQ(o : Observation, a : Action) = learner.getQ(o,a) 
   def getMaxA(o : Observation) = learner.getMaxA(o)

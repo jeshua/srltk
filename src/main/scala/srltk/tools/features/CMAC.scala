@@ -16,10 +16,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- ******************************************************************************/
+ ***************************************************************************** */
 package srltk.tools.features
 
-import srltk.api.agent.FeatureTransform
+import srltk.api.agent.FeatureExtractor
 import scala.collection.mutable.ArraySeq
 import scala.util.Random
 import scalala.tensor.Vector
@@ -35,7 +35,7 @@ class CMAC(
   val ranges: List[(Double, Double)],
   val bins: List[Int],
   val numGrids: Int,
-  val rng: Random) extends FeatureTransform {
+  val rng: Random) extends FeatureExtractor {
 
   val dimensions = ranges.length
   val tilesPerGrid = bins.reduceLeft(_ * _)
@@ -98,7 +98,7 @@ class CMAC(
   
   
   //==================================================
-  override def <=(input: VectorCol[Double]): VectorCol[Double] = getTiling(input)
+  override def extract(input: VectorCol[Double]): VectorCol[Double] = getTiling(input)
   override def length = numFeatures
   override val isSparse = true
 
