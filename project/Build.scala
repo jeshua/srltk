@@ -41,6 +41,7 @@ object ShellPrompt {
 
 //----------------------------------------------------------------------
 object Resolvers {
+  val nlprepo = "ScalaNLP Maven2" at "http://repo.scalanlp.org/repo"
   val scalatoolsrepo = "Scala Tools Snapshots" at "http://scala-tools.org/repo-snapshots/"
 }
 
@@ -49,6 +50,11 @@ object Dependencies {
   val scalatest = "org.scalatest" % "scalatest_2.9.1" % "1.6.1"
   val scalaio = "com.github.scala-incubator.io" % "scala-io-core_2.9.1" % "0.2.0"
   val proguard = "org.scala-tools.sbt" % "sbt-proguard-plugin" % "0.0.5"
+  val xmlgraphics = "org.apache.xmlgraphics" % "xmlgraphics-commons" % "1.4"
+  val netlib = "netlib" % "netlib-java" % "0.9.3"
+  val arpack = "netlib" % "arpack-combo" % "0.1"
+  val jcommon = "jfree" % "jcommon" % "1.0.16"
+  val jfree = "jfree" % "jfreechart" % "1.0.13"
 }
 
 
@@ -60,12 +66,13 @@ object srltkBuild extends Build {
 
   // Sub-project specific dependencies
   val commonDeps = Seq (
-    junit,scalatest,scalaio
+    junit,scalatest,scalaio,proguard,xmlgraphics,netlib,arpack,jcommon,jfree
   )
 
   lazy val srltk = Project (
     "srltk",
     file ("."),
-    settings = buildSettings ++ Seq (libraryDependencies ++= commonDeps)
+    settings = buildSettings ++ Seq (resolvers := Seq(nlprepo,scalatoolsrepo),
+                                     libraryDependencies ++= commonDeps)
   )
 }
