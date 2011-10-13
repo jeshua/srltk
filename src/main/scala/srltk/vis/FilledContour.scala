@@ -49,7 +49,8 @@ import org.jzy3d.plot3d.primitives.Scatter
 
 class FilledContour(
   val bounds: Bounds2D,
-  var func: (Double, Double) => Double) {
+  var func: (Double, Double) => Double,
+  faceDisplayed : Boolean = true) {
   def this(b : (Double,Double,Double,Double), func : (Double,Double)=>Double) = this(new Bounds2D(b),func)
   
   val frame = new JFrame()
@@ -74,7 +75,7 @@ class FilledContour(
   
     surface.setColorMapper(colorMapper)
     surface.setWireframeDisplayed(false)
-    surface.setFaceDisplayed(false)
+    surface.setFaceDisplayed(faceDisplayed)
                 
     
     //==================================================
