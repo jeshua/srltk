@@ -24,6 +24,7 @@ package srltk.api.domain
 import java.awt.Dimension
 import java.awt.Graphics2D
 import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.ArrayBuffer
 
 class Domain(
 		var state: State,
@@ -32,6 +33,13 @@ class Domain(
   
 	def exampleAction() = state.exampleAction
 	def exampleObservation() = state.exampleObservation
+	def numActions = state.exampleAction.numActions
+	def obsDim = exampleObservation().features.length	
+	def act(a : Action) : Observation = {
+	  state = state.successor(a)
+	  state.observation()
+	}
+
 }
 
 //renders an environment state

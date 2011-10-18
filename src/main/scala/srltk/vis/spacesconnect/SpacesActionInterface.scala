@@ -24,13 +24,13 @@ package srltk.vis.spacesconnect
 import srltk.api.domain._;
 
 class SpacesActionInterface(val index: Int, val numActions: Int, val a: Action)
-  extends spaces.framework.util.action.Action {
+  extends spaces.framework.util.action.DiscreteAction {
   def this(action: Action) = this(action.index, action.numActions, action)
 
   def getValue(): Int = index
-  def getValues(): Array[spaces.framework.util.action.Action] =
+  def getValues(): Array[spaces.framework.util.action.DiscreteAction] =
     {
-      val t: IndexedSeq[spaces.framework.util.action.Action] =
+      val t: IndexedSeq[spaces.framework.util.action.DiscreteAction] =
         for (i <- 0 until numActions) yield new SpacesActionInterface(i, numActions, a)
       t.toArray
     }
