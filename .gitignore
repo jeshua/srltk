@@ -4,6 +4,8 @@ project/boot/
 project/plugins/target/
 project/plugins/project/
 target/**/*
+.target
+.target/**/*
 project/target/**/*
 project/boot/**/*
 project/plugins/target/**/*
