@@ -15,6 +15,7 @@ import scalala.tensor.dense.{ DenseVector, DenseMatrix }
 import scalala.tensor.{ DiagonalMatrix, MatrixSingularException, Matrix, Vector }
 import scalala.library.MatrixEmptyException
 import scalala.library.NotConvergedException
+import scalala.library.LinearAlgebra._
 import scalala.tensor.dense.DenseVectorCol
 
 @RunWith(classOf[JUnitRunner])
@@ -40,7 +41,7 @@ class LinearAlgebraTest extends FeatureSpec {
     A(3,0) = 0.7952;    A(3,1) = 1.5904;    A(3,2) = 0.1626
     A(4,0) = 0.1869;    A(4,1) = 0.3738;    A(4,2) = 0.1190
    
-    val ret = LinearAlgebra.qrp(A)
+    val ret = qrp(A)
     val Q = ret._1
     val R = ret._2
     val P = ret._3
@@ -69,16 +70,9 @@ class LinearAlgebraTest extends FeatureSpec {
     for(r <- 0 until A.numRows; c <- 0 until A.numCols)
       A(r,c) += rng.nextDouble()*.1
     val thresh = 0.2
-    val qr = LinearAlgebra.qrp(A)
+    val qr = qrp(A)
     val svd = scalala.library.LinearAlgebra.svd(A)
-    val qrrank = LinearAlgebra.estRankQR(qr._2,thresh)
-    val svdrank = LinearAlgebra.estRankSVD(svd._2,thresh)
-    scenario("QR rank right"){
-      assert(rank===qrrank)
-    }
-    scenario("SVD rank right"){
-      assert(rank===svdrank)
-    }
+   
   }
 
   //======================================================================

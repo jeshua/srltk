@@ -181,7 +181,7 @@ class StrongRRQR(A : DenseMatrix[Double], tol : Double, maxRank : Int = 500, alg
   def alg4(){
     val q = qrp(A)
     R = q._2
-    pvt = q._4
+    pvt = new DenseVectorCol[Int](q._4)
     k = maxRank
     var fail = !update(false)
 //    println("Does good swap exist? "+ goodSwapExists)
