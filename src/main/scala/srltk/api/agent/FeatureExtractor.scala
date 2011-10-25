@@ -28,6 +28,7 @@ trait FeatureExtractor {
   def extract(o: Observation): Observation = { new Observation(o, <=(o.features)); }
   def extract(feats: VectorCol[Double]): VectorCol[Double]
 
+  def apply(feats: VectorCol[Double]): VectorCol[Double] = extract(feats)
   def <=(o: Observation): Observation = extract(o)
   def <=(feats: VectorCol[Double]): VectorCol[Double] = extract(feats)
   
