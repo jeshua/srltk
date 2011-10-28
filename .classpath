@@ -1,25 +1,26 @@
 <classpath>
   <classpathentry output=".target/scala-2.9.1/classes" path="src/main/scala" kind="src"></classpathentry>
   <classpathentry output=".target/scala-2.9.1/test-classes" path="src/test/scala" kind="src"></classpathentry>
-  <classpathentry path="/home/jeshua/research/srltk/lib/org.jzy3d-0.8.4.jar" kind="lib"></classpathentry>
-  <classpathentry path="/home/jeshua/research/srltk/lib/jogl.jar" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/research/srltk/lib/swt-debug.jar" kind="lib"></classpathentry>
-  <classpathentry path="/home/jeshua/research/srltk/lib/scalala_2.9.1-1.0.0.RC2-SNAPSHOT.jar" kind="lib"></classpathentry>
-  <classpathentry path="/home/jeshua/research/srltk/lib/swt.jar" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/research/srltk/lib/vecmath.jar" kind="lib"></classpathentry>
-  <classpathentry path="/home/jeshua/research/srltk/lib/gluegen-rt.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/jeshua/research/srltk/lib/swt.jar" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/research/srltk/lib/org.convexhull.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/jeshua/research/srltk/lib/scalala_2.9.1-1.0.0.RC2-SNAPSHOT.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/jeshua/research/srltk/lib/j3dcore.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/jeshua/research/srltk/lib/matlabcontrol-4.0.0.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/jeshua/research/srltk/lib/opencsv-2.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/jeshua/research/srltk/lib/gluegen-rt.jar" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/research/srltk/lib/spaces-framework.jar" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/research/srltk/lib/idw-gpl.jar" kind="lib"></classpathentry>
-  <classpathentry path="/home/jeshua/research/srltk/lib/opencsv-2.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/jeshua/research/srltk/lib/org.jzy3d-0.8.4.jar" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/research/srltk/lib/j3dutils.jar" kind="lib"></classpathentry>
-  <classpathentry path="/home/jeshua/research/srltk/lib/j3dcore.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/jeshua/research/srltk/lib/jogl.jar" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/research/srltk/lib/libs_amd64" kind="lib"></classpathentry>
+  <classpathentry path="/home/jeshua/research/srltk/lib/libs_amd64/libjogl_cg.so" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/research/srltk/lib/libs_amd64/libj3dcore-ogl.so" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/research/srltk/lib/libs_amd64/libjogl_awt.so" kind="lib"></classpathentry>
-  <classpathentry path="/home/jeshua/research/srltk/lib/libs_amd64/libjogl_cg.so" kind="lib"></classpathentry>
-  <classpathentry path="/home/jeshua/research/srltk/lib/libs_amd64/libgluegen-rt.so" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/research/srltk/lib/libs_amd64/libjogl.so" kind="lib"></classpathentry>
+  <classpathentry path="/home/jeshua/research/srltk/lib/libs_amd64/libgluegen-rt.so" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/.ivy2/cache/org.scalatest/scalatest_2.9.1/jars/scalatest_2.9.1-1.6.1.jar" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/.ivy2/cache/com.github.scala-incubator.io/scala-io-core_2.9.1/jars/scala-io-core_2.9.1-0.2.0.jar" kind="lib"></classpathentry>
   <classpathentry path="/home/jeshua/.ivy2/cache/com.github.jsuereth.scala-arm/scala-arm_2.9.1/jars/scala-arm_2.9.1-0.3.jar" kind="lib"></classpathentry>
