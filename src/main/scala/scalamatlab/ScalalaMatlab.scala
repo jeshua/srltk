@@ -68,11 +68,10 @@ class ScalalaMatlab(show : Boolean = false) {
   
 }
 
-object ScalalaMatlab {
-	
+object ScalalaMatlab {	
   
 	def main(a : Array[String]) = {		
-		val ml = new ScalalaMatlab(false)
+		val ml = new ScalalaMatlab(true)
 		
 		val rng = new util.Random()
 		val m = DenseMatrix.zeros[Double](400,200)
