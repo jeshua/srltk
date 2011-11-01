@@ -37,6 +37,13 @@ package object Timer {
       val end = cpuTime()
       (end-start)/1000000d
   }
+  
+   def timeWallclock(f : () => Unit) : Double = {
+      val start = System.nanoTime()
+      f()
+      val end = System.nanoTime()
+      (end-start)/1000000d
+  }
   def userTime() : Long = {
       val bean = ManagementFactory.getThreadMXBean( );
       return bean.getCurrentThreadUserTime()          

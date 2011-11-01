@@ -30,7 +30,11 @@
 	<classpathentry kind="lib" path="/home/jeshua/.ivy2/cache/org.apache.xmlgraphics/xmlgraphics-commons/jars/xmlgraphics-commons-1.4.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/.ivy2/cache/commons-io/commons-io/jars/commons-io-1.3.1.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.0.4.jar"/>
-	<classpathentry kind="lib" path="/home/jeshua/.ivy2/cache/netlib/netlib-java/jars/netlib-java-0.9.3.jar"/>
+	<classpathentry kind="lib" path="/home/jeshua/.ivy2/cache/netlib/netlib-java/jars/netlib-java-0.9.3.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/opt/intel/composer_xe_2011_sp1.7.256/mkl/lib/intel64"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="/home/jeshua/.ivy2/cache/netlib/arpack-combo/jars/arpack-combo-0.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/home/jeshua/Dropbox/netlib-java/netlib-java/jni"/>

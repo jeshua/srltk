@@ -149,6 +149,7 @@
 /home/jeshua/research/srltk/src/main/scala/srltk/test/features/CMACVisualizer2D.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/tools/features/CMAC.scala
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/utils/Timer.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/tools/utils/Timer.scala
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/utils/Bounds2D.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/tools/utils/Bounds2D.scala
+/home/jeshua/research/srltk/src/main/scala/srltk/api/domain/TabularState.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/api/domain/Domain.scala
 /home/jeshua/research/srltk/src/main/scala/srltk/vis/ActivePlot.java -> /home/jeshua/research/srltk/src/main/scala/srltk/vis/ActivePlot.java
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/learners/LearnerQ.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/tools/learners/LearnerQ.scala
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/learners/LearnerQ.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/api/agent/CanLearn.scala
@@ -254,7 +255,9 @@
 /home/jeshua/research/srltk/src/main/scala/srltk/api/agent/FeatureExtractor.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/api/agent/FeatureExtractor.scala
 /home/jeshua/research/srltk/src/main/scala/srltk/vis/spacesconnect/SpacesActionInterface.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/vis/spacesconnect/SpacesActionInterface.scala
 /home/jeshua/research/srltk/src/main/scala/srltk/vis/spacesconnect/SpacesActionInterface.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/api/domain/Action.scala
-/home/jeshua/research/srltk/src/main/scala/srltk/api/domain/TabularState.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/api/domain/Domain.scala
+/home/jeshua/research/srltk/src/main/scala/scalamatlab/TestNetlib.scala -> /home/jeshua/research/srltk/src/main/scala/scalamatlab/ScalalaMatlab.scala
+/home/jeshua/research/srltk/src/main/scala/scalamatlab/TestNetlib.scala -> /home/jeshua/research/srltk/src/main/scala/scalamatlab/TestNetlib.scala
+/home/jeshua/research/srltk/src/main/scala/scalamatlab/TestNetlib.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/tools/utils/Timer.scala
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/linearalgebra/MiscStats.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/tools/linearalgebra/MiscStats.scala
 /home/jeshua/research/srltk/src/main/scala/srltk/test/domains/TestPolicy.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/api/domain/Domain.scala
 /home/jeshua/research/srltk/src/main/scala/srltk/test/domains/TestPolicy.scala -> /home/jeshua/research/srltk/src/main/scala/srltk/test/domains/TestPolicy.scala
@@ -433,6 +436,10 @@
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/utils/Timer.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/tools/utils/Timer/package$.class
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/utils/Timer.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/tools/utils/Timer/package.class
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/utils/Bounds2D.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/tools/utils/Bounds2D.class
+/home/jeshua/research/srltk/src/main/scala/srltk/vis/ValueFunctionVisualizer3D.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/vis/ValueFunctionVisualizer3D.class
+/home/jeshua/research/srltk/src/main/scala/srltk/vis/ValueFunctionVisualizer3D.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/vis/ValueFunctionVisualizer3D$$anonfun$remap$1.class
+/home/jeshua/research/srltk/src/main/scala/srltk/vis/ValueFunctionVisualizer3D.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/vis/ValueFunctionVisualizer3D$$anonfun$remap$1$$anonfun$apply$1.class
+/home/jeshua/research/srltk/src/main/scala/srltk/vis/ValueFunctionVisualizer3D.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/vis/ValueFunctionVisualizer3D$$anon$1.class
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/learners/LearnerQ.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/tools/learners/LearnerQ$$anonfun$2.class
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/learners/LearnerQ.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/tools/learners/LearnerQ.class
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/learners/LearnerQ.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/tools/learners/LearnerQ$$anonfun$1.class
@@ -544,10 +551,12 @@
 /home/jeshua/research/srltk/src/main/scala/srltk/api/agent/FeatureExtractor.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/api/agent/FeatureExtractor$$anonfun$extractActionIndicator$1.class
 /home/jeshua/research/srltk/src/main/scala/srltk/vis/spacesconnect/SpacesActionInterface.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/vis/spacesconnect/SpacesActionInterface$$anonfun$1.class
 /home/jeshua/research/srltk/src/main/scala/srltk/vis/spacesconnect/SpacesActionInterface.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/vis/spacesconnect/SpacesActionInterface.class
-/home/jeshua/research/srltk/src/main/scala/srltk/vis/ValueFunctionVisualizer3D.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/vis/ValueFunctionVisualizer3D.class
-/home/jeshua/research/srltk/src/main/scala/srltk/vis/ValueFunctionVisualizer3D.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/vis/ValueFunctionVisualizer3D$$anonfun$remap$1.class
-/home/jeshua/research/srltk/src/main/scala/srltk/vis/ValueFunctionVisualizer3D.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/vis/ValueFunctionVisualizer3D$$anonfun$remap$1$$anonfun$apply$1.class
-/home/jeshua/research/srltk/src/main/scala/srltk/vis/ValueFunctionVisualizer3D.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/vis/ValueFunctionVisualizer3D$$anon$1.class
+/home/jeshua/research/srltk/src/main/scala/scalamatlab/TestNetlib.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/scalamatlab/TestNetlib$.class
+/home/jeshua/research/srltk/src/main/scala/scalamatlab/TestNetlib.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/scalamatlab/TestNetlib$$anonfun$main$1$$anonfun$apply$mcVI$sp$2.class
+/home/jeshua/research/srltk/src/main/scala/scalamatlab/TestNetlib.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/scalamatlab/TestNetlib.class
+/home/jeshua/research/srltk/src/main/scala/scalamatlab/TestNetlib.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/scalamatlab/TestNetlib$$anonfun$main$1$$anonfun$apply$mcVI$sp$1.class
+/home/jeshua/research/srltk/src/main/scala/scalamatlab/TestNetlib.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/scalamatlab/TestNetlib$$anonfun$main$1.class
+/home/jeshua/research/srltk/src/main/scala/scalamatlab/TestNetlib.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/scalamatlab/TestNetlib$$anonfun$main$1$$anonfun$apply$mcVI$sp$3.class
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/linearalgebra/MiscStats.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/tools/linearalgebra/MiscStats/package$$anonfun$rowSums$1.class
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/linearalgebra/MiscStats.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/tools/linearalgebra/MiscStats/package.class
 /home/jeshua/research/srltk/src/main/scala/srltk/tools/linearalgebra/MiscStats.scala -> /home/jeshua/research/srltk/.target/scala-2.9.1/classes/srltk/tools/linearalgebra/MiscStats/package$$anonfun$diag$1.class
