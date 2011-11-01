@@ -44,6 +44,15 @@ package object Timer {
       val end = System.nanoTime()
       (end-start)/1000000d
   }
+
+
+  def timeWallclock[V](f : () => V) : (Double,V) = {
+      val start = System.nanoTime()
+      val ret = f()
+      val end = System.nanoTime()
+      ((end-start)/1000000d,ret)
+  }
+
   def userTime() : Long = {
       val bean = ManagementFactory.getThreadMXBean( );
       return bean.getCurrentThreadUserTime()          
