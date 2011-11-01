@@ -37,8 +37,7 @@ object TestNetlib {
 				def mult2  = {
 				res2 = multBlas(a,a)
 			}
-			println("\tBLAS: "+timeWallclock(mult2 _))
-			
+			println("\tBLAS: "+timeWallclock(mult2 _))	
 			
 		}
 	}
