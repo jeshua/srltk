@@ -79,8 +79,8 @@ public class ActiveBarPlot extends JPanel{
 	final CategoryPlot plot;
 	final ChartPanel chartPanel;
 	
-	public ActiveBarPlot(){ this("","","");}
-	public ActiveBarPlot(final String title, String xlab, String ylab) {
+	public ActiveBarPlot(){ this("","","",false);}
+	public ActiveBarPlot(final String title, String xlab, String ylab, Boolean legend) {
 		dataset = new DefaultCategoryDataset();	
 		
 		// create the chart...
@@ -90,7 +90,7 @@ public class ActiveBarPlot extends JPanel{
 				ylab,                  // range axis label
 				dataset,                  // data
 				PlotOrientation.VERTICAL, // orientation
-				false,                     // include legend
+				legend,                     // include legend
 				false,                     // tooltips?
 				false                     // URLs?
 		);
@@ -143,11 +143,10 @@ public class ActiveBarPlot extends JPanel{
         
         
 		
-		/*final CategoryAxis domainAxis = plot.getDomainAxis();
-	
+		final CategoryAxis domainAxis = plot.getDomainAxis();	
 		domainAxis.setCategoryLabelPositions(
 				CategoryLabelPositions.createUpRotationLabelPositions(Math.PI / 6.0)
-		);*/
+		);
 		return chart;
 
 	}
