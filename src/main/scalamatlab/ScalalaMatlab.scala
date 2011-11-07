@@ -1,3 +1,4 @@
+//Scala Reinforcement Learning Toolkit (srltk); @author Jeshua Bratman (jeshuabratman@gmail.com)
 package scalamatlab
 import scalala.tensor._
 import scalala.tensor.dense._
