@@ -1,8 +1,3 @@
-/**
- * Scala Reinforcement Learning Toolkit (SRLTK)
- * @author Jeshua Bratman (jeshuabratman@gmail.com)
- * **/
-
 package srltk.vis
 import org.jzy3d.chart.Chart
 import org.jzy3d.colors.Color

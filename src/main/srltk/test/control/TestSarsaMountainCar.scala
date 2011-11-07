@@ -1,7 +1,3 @@
-/*******************************************************************************
- * Scala Reinforcement Learning Toolkit (SRLTK)
- * @author Jeshua Bratman (jeshuabratman@gmail.com)
- ******************************************************************************/
 package srltk.test.control
 
 import srltk.domains.rlstandard._

@@ -1,7 +1,3 @@
-/*******************************************************************************
- * Scala Reinforcement Learning Toolkit (SRLTK)
- * @author Jeshua Bratman (jeshuabratman@gmail.com)
- ******************************************************************************/
 package srltk.common
 import srltk.common._
 import scalala.tensor.dense.DenseVectorCol

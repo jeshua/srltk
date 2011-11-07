@@ -1,8 +1,3 @@
-/**
- * Scala Reinforcement Learning Toolkit (SRLTK)
- * @author Jeshua Bratman (jeshuabratman@gmail.com)
- * **/
-
 package srltk.vis
 
 import srltk.utils.Bounds2D

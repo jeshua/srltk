@@ -1,7 +1,3 @@
-/*******************************************************************************
- * Scala Reinforcement Learning Toolkit (SRLTK)
- * @author Jeshua Bratman (jeshuabratman@gmail.com)
- ******************************************************************************/
 package srltk.domains
 import srltk.common._
 import scala.collection.mutable.ArrayBuffer

@@ -1,8 +1,3 @@
-/**
- * Scala Reinforcement Learning Toolkit (SRLTK)
- * @author Jeshua Bratman (jeshuabratman@gmail.com)
- * **/
-
 package srltk.vis.spacesconnect
 
 import srltk.common._
