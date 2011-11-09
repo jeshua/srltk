@@ -4,10 +4,7 @@ import scalala.tensor.dense.DenseVectorCol
 
 package object common {
 	type Feats = VectorCol[Double]
-    implicit def toFeats(d: Double*): Feats = new DenseVectorCol(d.toArray);
-    implicit def toFeats(v: Vector[Double]): Feats = v.asCol
-	implicit def intToAction(n : Int) : IntAction = IntAction(n)
-	implicit def actionToInt(a : IntAction) : Int = a.n	
+
 	
 	//allow scalala vector cols to be traversable
 	class TraversableVectorCol[A](val v : VectorCol[Double]) extends Traversable[A] {
