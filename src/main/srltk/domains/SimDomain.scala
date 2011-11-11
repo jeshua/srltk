@@ -10,7 +10,10 @@ import scala.collection.mutable.ArrayBuffer
 class SimObservation(
 		vec : Traversable[Double],
 		reward : Double,
-		val simState : SimState = null) extends Observation(vec, reward) {}
+		val simState : SimState = null) extends Observation(vec, reward) 
+{
+  def feats = asVectorCol(vec)
+}
 
 abstract class SimDomain(
 		var state: SimState,
