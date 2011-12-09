@@ -31,6 +31,7 @@ class FilledContour(
   var func: (Double, Double) => Double,
   faceDisplayed : Boolean = true) {
   def this(b : (Double,Double,Double,Double), func : (Double,Double)=>Double) = this(new Bounds2D(b),func)
+  def this(b : (Double,Double,Double,Double), func : (Double,Double)=>Double, fd : Boolean) = this(new Bounds2D(b),func,fd)
   
   val frame = new JFrame()
   def getFrame = frame
@@ -69,7 +70,7 @@ class FilledContour(
     val cab = chart.getView().getAxe().asInstanceOf[ContourAxeBox]
     val contour = new MapperContourPictureGenerator(mapper, rangeX, rangeY)
     
-    cab.setContourImg(contour.getFilledContourImage(new DefaultContourColoringPolicy(colorMapper), 400, 400, 10), rangeX, rangeY)
+    cab.setContourImg(contour.getFilledContourImage(new DefaultContourColoringPolicy(colorMapper), 400, 400, 20), rangeX, rangeY)
     //cab.setContourImg(contour.getContourImage(new DefaultContourColoringPolicy(colorMapper), 400, 400, 10), rangeX, rangeY)
     chart.addDrawable(surface);
     chart.setViewPoint(new Coord3d(math.Pi/2,math.Pi/2,0d))
