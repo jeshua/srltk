@@ -8,4 +8,5 @@ object GlobalRNG {
 	def nextInt(n : Int) = rng.nextInt(n)
 	def nextDouble() = rng.nextDouble()
 	def nextGaussian() = rng.nextGaussian()
+        def random = rng
 }
