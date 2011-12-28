@@ -44,38 +44,7 @@ object LinearAlgebra {
   }
 
 
-  /**
-   * Find basis
-   * 
-   * input: A m x n matrix,
-   *        rank : rank or -1 to compute it with qr
-   * output: C (m x rank) where each column is linearly independent
-   */
-  def findBasis(A : DenseMatrix[Double], rank : Int = -1, tol : Double = 0.1) 
-  : (DenseMatrix[Double],Vector[Int],Vector[Int]) = {
-    
-    val k : Int = 
-      if(rank < 0){
-        val R = qrp(A)._2
-        var estr = -1
-        var l = 1
-        while(l < R.numCols && estr < 0){
-          if (math.abs(R(l, l)) < tol)
-            estr=l
-          l += 1
-        }
-        println("est. rank is "+l)
-        estr
-      } else rank
-    val ret = DenseMatrix.zeros[Double](k,k)
-    val At = transpose(A)
-    val pvtc = (new StrongRRQR(A,-1,k,4)).pvt(0 until k)
-    val pvtr = (new StrongRRQR(At,-1,k,4)).pvt(0 until k)
-    for(c <- 0 until k;
-        r <- 0 until k)
-      ret(r,c) = A(pvtr(r),pvtc(c))
-    (ret,pvtc,pvtr)
-  }
+ 
 
   //estimate rank
   def estRank(A : DenseMatrix[Double], thresh : Double = 1e-10) : Int = {

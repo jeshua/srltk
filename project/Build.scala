@@ -56,8 +56,6 @@ object Dependencies {
   val scalaio = "com.github.scala-incubator.io" % "scala-io-core_2.9.1" % "0.2.0"
   val proguard = "org.scala-tools.sbt" % "sbt-proguard-plugin" % "0.0.5"
   val xmlgraphics = "org.apache.xmlgraphics" % "xmlgraphics-commons" % "1.4"
-  val netlib = "netlib" % "netlib-java" % "0.9.3"
-  val arpack = "netlib" % "arpack-combo" % "0.1"
   val jcommon = "jfree" % "jcommon" % "1.0.16"
   val jfree = "jfree" % "jfreechart" % "1.0.13"
 }
@@ -71,7 +69,8 @@ object srltkBuild extends Build {
 
   // Sub-project specific dependencies
   val commonDeps = Seq (
-    junit,scalatest,scalaio,proguard,xmlgraphics,netlib,arpack,jcommon,jfree
+//    junit,scalatest,scalaio,proguard,xmlgraphics,netlib,arpack,jcommon,jfree
+    junit,scalatest,scalaio,proguard,xmlgraphics,jcommon,jfree
   )
 
   lazy val srltk = Project (

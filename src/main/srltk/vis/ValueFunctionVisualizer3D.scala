@@ -98,7 +98,7 @@ class ValueFunctionVisualizer3D(val bounds: Bounds2D,
     		
     		/*val contour = new MapperContourPictureGenerator(mapper, rangeX, rangeY);
     		val cab = chart.getView().getAxe().asInstanceOf[ContourAxeBox]
-    		cab.setContourImg( contour.getFilledContourImage(new DefaultContourColoringPolicy(colorMapper), 400, 400, 10), rangeX, rangeY);*/
+    		cab.setContourImg( contour.getFilledContourImage(new DefaultContourColoringPolicy(colorMapper), 400, 400, 10), rangeX, rangeY); */
     		
     		//==================================================
     		

@@ -24,7 +24,7 @@ import org.jzy3d.chart.controllers.thread.ChartThreadController
 import org.jzy3d.chart.controllers.mouse.ChartMouseController
 import org.jzy3d.maths.Coord3d
 import org.jzy3d.plot3d.primitives.Scatter
-
+import org.jzy3d.plot3d.primitives.Polygon
 
 class FilledContour(
   val bounds: Bounds2D,
@@ -66,11 +66,11 @@ class FilledContour(
     val chart = new Chart()
     //chart.getAxeLayout().setXTickLabelDisplayed(false)    
     //chart.getAxeLayout().setYTickLabelDisplayed(false)    
-    chart.getAxeLayout().setZTickLabelDisplayed(false)    
+    //chart.getAxeLayout().setZTickLabelDisplayed(false)    
     val cab = chart.getView().getAxe().asInstanceOf[ContourAxeBox]
     val contour = new MapperContourPictureGenerator(mapper, rangeX, rangeY)
     
-    cab.setContourImg(contour.getFilledContourImage(new DefaultContourColoringPolicy(colorMapper), 400, 400, 20), rangeX, rangeY)
+    cab.setContourImg(contour.getFilledContourImage(new DefaultContourColoringPolicy(colorMapper), 100, 400, 10), rangeX, rangeY)
     //cab.setContourImg(contour.getContourImage(new DefaultContourColoringPolicy(colorMapper), 400, 400, 10), rangeX, rangeY)
     chart.addDrawable(surface);
     chart.setViewPoint(new Coord3d(math.Pi/2,math.Pi/2,0d))
@@ -89,4 +89,22 @@ class FilledContour(
 
     chart
   }
+
+  def update() = remap()
+
+  private def remap() {
+    val polygons = surface.getDrawables().toArray()
+    for (d <- polygons) {
+      if (d.isInstanceOf[Polygon]) {
+        val p = d.asInstanceOf[Polygon]
+        for (i <- 0 until p.size()) {
+          val pt = p.get(i)
+          val c = pt.xyz
+          c.z = mapper.f(c.x, c.y).toFloat
+        }
+      }
+    }
+    chart.render()
+  }
+
 }
