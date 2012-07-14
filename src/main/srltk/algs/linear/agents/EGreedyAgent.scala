@@ -5,17 +5,17 @@ import srltk.algs.linear.policies._
 import srltk.features.FeatureExtractor
 
 //simple agent gluing together a learner with e-greedy
-class EGreedyAgent(
-    dd: DomainDescription,
+class EGreedyAgent[Obs <: FeatureObservation, Act <: IntAction](
+    val dd : DomainDescription,
     val learner : LearnerQ,
     val epsilon : Double,
-    val ex : FeatureExtractor) 
-    extends FeatAgent(dd,ex) with HasQFunction {
+    val ex : Option[FeatureExtractor] = None) 
+    extends FeatAgent[Obs,Act](dd,ex) with HasQFunction {
 
   def getQ(o : Feats, a : Int) = learner.getQ(o,a) 
   def getMaxA(o : Feats) = learner.getMaxA(o)
   
-  val policy = new EpsilonGreedy(dd.numActions,epsilon, learner.getQ _);
+  val policy = new EpsilonGreedy(dd.num_actions,epsilon, learner.getQ _);
   
   def enableExploration() = policy.enableExploration()
   def disableExploration() = policy.disableExploration()

@@ -1,7 +1,5 @@
 package srltk.common
 
-
-
 object GlobalRNG {
 	private var rng = new util.Random
 	def seed(n : Long) = {rng = new util.Random(n) }

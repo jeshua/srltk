@@ -3,7 +3,6 @@ import Keys._
 
 
 
-
 object BuildSettings {
   val buildScalaVersion = "2.9.1"
 
@@ -42,7 +41,6 @@ object ShellPrompt {
     }
   }
 }
-
 
 //----------------------------------------------------------------------
 object Resolvers {

@@ -4,20 +4,20 @@ import srltk.algs.linear.learners._
 import srltk.features.FeatureExtractor
 
 
-class EGreedySarsa(
+class EGreedySarsa[Obs <: FeatureObservation, Act <: IntAction](
    dd : DomainDescription,
   alpha: Double = 0.05,
   epsilon: Double = 0.1,
   lambda: Double = 0,
   gamma: Double = 0.99,
-  initialValue: Double = 0,
-  ex : FeatureExtractor = null) 
+  initial_value: Double = 0,
+  ex : Option[FeatureExtractor] = None) 
   
   extends
   
   EGreedyAgent(
       dd,
-      new Sarsa(dd.numActions,if(ex==null) dd.obsDim else ex.length,
-    		  alpha, lambda, gamma, initialValue),
+      new Sarsa(dd.num_actions,if(ex==None) dd.obs_dim else ex.get.length,
+    		  alpha, lambda, gamma, initial_value),
       epsilon,
       ex)

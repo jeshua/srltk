@@ -1,9 +1,8 @@
 package srltk.common
 
-abstract class Agent(val dd : DomainDescription){
+abstract class Agent[Obs <: Observation, Act <: Action](){
   def reset() //reset called for episodic 
-  def act(o : Observation = null) : Action
-
+  def act(o : Obs) : Act
 
   /**
    * In order to preempt common bugs when implementing agents, an Agent 
@@ -17,14 +16,14 @@ abstract class Agent(val dd : DomainDescription){
    */
   //REQUIRED:  
   //observe: observation time-1, subsequent action taken at time-1, observation at time
-  def observe(otm1 : Observation , atm1: Action, ot: Observation) : Unit 
+  def observe(otm1 : Obs , atm1: Act, ot: Obs) : Unit 
 
   //OPTIONAL:  
   //observe: observation at time t
-  def observe(ot: Observation) : Unit = ()
+  def observe(ot: Obs) : Unit = ()
   
   //OPTIONAL:  
   //observe: observation time-1, subsequent action taken at time-1, observation at time
-  def observe(otm2 : Observation, atm2: Action, otm1 : Observation , atm1: Action, ot: Observation) : Unit = ()
+  def observe(otm2 : Obs, atm2: Act, otm1 : Obs , atm1: Act, ot: Obs) : Unit = ()
 
 }

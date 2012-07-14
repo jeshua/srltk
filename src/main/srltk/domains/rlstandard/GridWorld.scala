@@ -1,7 +1,6 @@
 package srltk.domains.rlstandard
 import srltk.common._
 import srltk.domains._
-import scalala.tensor._
 import scala.util.Random
 import java.awt.Dimension
 import java.awt.Graphics2D

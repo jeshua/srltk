@@ -5,7 +5,9 @@ trait FeatureExtractor extends Serializable{
   def apply(feats: Feats): Feats 
   def length: Int
   def isSparse = false
-  def invert(feats : Feats) : Feats = null
+  def invert(feats : Feats) : Feats = {
+    throw new IllegalArgumentException("Extractor is not invertible.")
+  }
 }
 
 class IdentityExtractor(outDim : Int) extends FeatureExtractor {

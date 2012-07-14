@@ -3,7 +3,6 @@ import scalala.tensor.dense._
 import MatOps._
 import MatConversions._
 
-
 object OlshausenWhiten {
   def main(args: Array[String]) = {
     val data = DenseMatrix((.23, .384, .389), (.32, .349, .098), (.284, .892, .372), (.0348, .320, .102))
@@ -43,7 +42,4 @@ object OlshausenWhiten {
 	  val realW = ColtData.toReal(whitened)
 	  realW / std(realW)
   }
-  
-  
-
 }

@@ -1,15 +1,10 @@
 package srltk.common
-
-
 class DomainDescription(
-    val numActions : Int,
-    val obsDim : Int = -1,
-    val numObservations : Int = -1
-) 
+  val num_actions : Int,
+  val obs_dim : Int){}
 
 
-trait Domain{
-  val domainDescription : DomainDescription
-  def act(a : Action) : Observation
+trait Domain[Obs <: Observation, Act <: Action]{
+  def act(a : Act) : Obs
 }
 

@@ -1,15 +1,14 @@
 package srltk.domains.rlstandard
 import srltk.common._
 import srltk.domains._
-import scalala.tensor._
 import scala.util.Random
 import java.awt.Dimension
 import java.awt.Graphics2D
 import java.awt.Color
-import srltk.vis.spacesconnect.SpacesWorldInterface
 import srltk.utils.Bounds2D
 import srltk.utils.Colors
 import java.awt.BasicStroke
+import srltk.vis.spacesconnect.SpacesWorldInterface
 
 class BallBounceWorld() extends SimDomain(
   BallBounceWorldState(),

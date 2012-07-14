@@ -1,52 +1,41 @@
 package srltk.common
-import srltk.common._
-import scalala.tensor.dense.DenseVectorCol
 import srltk.features.FeatureExtractor
 
-abstract class FeatAgent(dd: DomainDescription, ex : FeatureExtractor = null) extends Agent(dd) {
-  val numActions = dd.numActions
-  val obsDim = if(ex == null) dd.obsDim else ex.length
 
-  def toFeats(v: Traversable[Double]): Feats ={ 
-		  val d = new DenseVectorCol[Double](v.toArray)
-		  if(ex != null) ex(d)
-		  else d
-  }
-  def toFeats(o: Observation): Feats = toFeats(o.vec)
-
-  def act(f : Feats) : Int
-
+abstract class FeatAgent[Obs <: FeatureObservation, Act <: IntAction]
+		(val dd : DomainDescription,
+		 val ex : Option[FeatureExtractor] = None) 
+		extends Agent[Obs,Act] {
+  
+  val obs_dim = if(ex==None) dd.obs_dim else ex.get.length
+  
   def observe(otm1: Feats, rm1: Double, atm1: Int, ot: Feats, rt: Double): Unit
   def observe(ot: Feats, rt: Double): Unit = ()
   def observe(otm2: Feats, rtm2: Double, atm2: Int, otm1: Feats, rtm1: Double, atm1: Int, ot: Feats, rt: Double): Unit = ()
 
   //==================================================
-  //Translate act and observe from Agent
-  
-  def act(o : Observation) : Action = IntAction(act(toFeats(o.vec)))
+  //Translate act and observe from Agent  
     
-  def observe(otm1: Observation, atm1: Action, ot: Observation): Unit = {
-    observe(toFeats(otm1.vec),
+  def observe(otm1: Obs, atm1: Act, ot: Obs): Unit = {
+    observe(otm1.features,
       otm1.reward,
-      atm1.asInstanceOf[IntAction].n,
-      toFeats(ot.vec),
+      atm1.n,
+      ot.features,
       ot.reward)
   }
-  override def observe(ot: Observation): Unit = {
-    observe(toFeats(ot.vec),
-      ot.reward)
+  override def observe(ot: Obs): Unit = {
+    observe(ot.features,ot.reward)
   }
-  override def observe(otm2: Observation, atm2: Action, otm1: Observation, atm1: Action, ot: Observation): Unit = {
+  override def observe(otm2: Obs, atm2: Act, otm1: Obs, atm1: Act, ot: Obs): Unit = {
     observe(
-      toFeats(otm2.vec),
+      otm2.features,
       otm2.reward,
-      atm2.asInstanceOf[IntAction].n,
-      toFeats(otm1.vec),
+      atm2.n,
+      otm2.features,
       otm1.reward,
-      atm1.asInstanceOf[IntAction].n,
-      toFeats(ot.vec),
+      atm1.n,
+      ot.features,
       ot.reward)
   }
-
+  
 }
-

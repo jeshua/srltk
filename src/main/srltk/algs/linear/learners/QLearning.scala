@@ -1,37 +1,28 @@
 package srltk.algs.linear.learners
 
 import srltk.common._
-import scalala.scalar._
-import scalala.tensor.::
-import scalala.tensor.mutable._
-import scalala.tensor.dense._
-import scalala.tensor.sparse._
-import scalala.library.Library._
-import scalala.library.LinearAlgebra._
-import scalala.library.Statistics._
-import scalala.library.Plotting._
-import scalala.operators.Implicits._;
 import srltk.common._
+import srltk.linalg.RealSparseVector
 
 class QLearning(
-    val numActions : Int,
-    val obsDim : Int,
+    val num_actions : Int,
+    val obs_dim : Int,
     val alpha: Double, 
     val lambda: Double, 
     val gamma: Double,
-    initialValue: Double = 0)
-  extends LearnerQ(numActions) {  
+    initial_value: Double = 0)
+  extends LearnerQ(num_actions) {  
   
-	val numFeats  : Int = obsDim * numActions
-	val theta = DenseVector.zeros[Double](numFeats)
-	val z = DenseVector.zeros[Double](numFeats)
+	val numFeats  : Int = obs_dim * num_actions
+	val theta = Array[Double](numFeats)
+	val z = Array[Double](numFeats)
 	
   //linear value function
-  def value(f : VectorCol[Double]): Double = f dot theta
+  def value(f : Array[Double]): Double = 0
 
   //create phi_sa
   private def phiSA(f : Feats, a : Int) = {
-    val phi = SparseVector.zeros[Double](f.length * numActions)
+    val phi = SparseVector.zeros[Double](f.length * num_actions)
     val start = f.length * a
     f foreachNonZeroPair { case (key: Int, value: Double) => phi(key + start) = value }
     phi

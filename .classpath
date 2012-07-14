@@ -9,16 +9,15 @@
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/vecmath.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/jtransforms.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/optimization.jar"/>
-	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/lcm.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/swt.jar"/>
+	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/commons-math3-3.0.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/parallelcolt-0.9.4.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/org.convexhull.jar"/>
-	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/scalala_2.9.1-1.0.0.RC2-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/commons-math3-3.0-sources.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/j3dcore.jar"/>
-	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/matlabcontrol-4.0.0.jar"/>
+	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/commons-math3-3.0-javadoc.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/opencsv-2.1.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/gluegen-rt.jar"/>
-	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/spaces-framework.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/idw-gpl.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/org.jzy3d-0.8.4.jar"/>
 	<classpathentry kind="lib" path="/home/jeshua/research/srltk/lib/j3dutils.jar"/>

@@ -2,10 +2,6 @@ package srltk.features
 import srltk.common._
 import scala.collection.mutable.ArraySeq
 import scala.util.Random
-import scalala.tensor.Vector
-import scalala.tensor.dense._
-import scalala.tensor.sparse._
-import scalala.tensor._
 import scala.collection.mutable.HashMap
 
 //ranges: min,max for each dimension so we can normalize input
