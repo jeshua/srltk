@@ -19,7 +19,7 @@ import java.awt.Graphics2D
 
 class DummyObservation extends spaces.framework.perception.Observation {}
 
-class DummyAgent(val w: SpacesWorldInterface) extends spaces.framework.agent.Agent {
+class DummyAgent[T <: SimState[T]](val w: SpacesWorldInterface[T]) extends spaces.framework.agent.Agent {
   def initTrial(exampleAction: Action): Unit = ()
   def initEpisode(initialObservation: Observation): Unit = ()
   def observeStep(previousAction: Action, resultingObservation: Observation): Unit = ()
@@ -30,9 +30,9 @@ class DummyAgent(val w: SpacesWorldInterface) extends spaces.framework.agent.Age
 
 //==================================================
 
-class SpacesWorldInterface(var state: SimState, val stateRenderer: SimStateRenderer,val num_actions : Int)
+class SpacesWorldInterface[T <: SimState[T]](var state: T, val stateRenderer : SimStateRenderer[T],val num_actions : Int)
   extends SingleAgentWorld with AbstractAgentWorldInterface {
-  def this(d : SimDomain) = this(d.state,d.renderer,d.numActions)
+  def this(d : SimDomain[T]) = this(d.state,d.renderer,d.numActions)
   //converts spaces action to discrete integer action and makes srltk discrete action
   // then updates state variable using successor function
   def takeAction(action: spaces.framework.util.action.Action): Unit = {

@@ -6,7 +6,7 @@ import java.awt.Graphics2D
 import srltk.common._
 import srltk.domains._
 
-class StateViewer(width: Int, height: Int, renderer: SimStateRenderer) extends JFrame {
+class StateViewer[T <: SimState[T]](width: Int, height: Int, renderer: SimStateRenderer[T]) extends JFrame {
   def updateDisplay = panel.updateDisplay _
 
   private val dimension = new Dimension(width, height)
@@ -18,9 +18,9 @@ class StateViewer(width: Int, height: Int, renderer: SimStateRenderer) extends J
   add(panel)
 }
 
-class StateViewerPanel(dimension: Dimension, renderer: SimStateRenderer) extends JPanel {
+class StateViewerPanel[T <: SimState[T]](dimension: Dimension, renderer: SimStateRenderer[T]) extends JPanel {
 
-  private var currState: SimState = null
+  private var currState : Option[T] = None
   setDoubleBuffered(true)
   setSize(dimension)
   show()
@@ -28,12 +28,12 @@ class StateViewerPanel(dimension: Dimension, renderer: SimStateRenderer) extends
     {
       super.paint(g)
       val g2d = g.asInstanceOf[Graphics2D];
-      if (currState != null)
-        renderer.render(currState, g2d, dimension);
+      if (currState != None)
+        renderer.render(currState.get, g2d, dimension);
       g.dispose()
     }
-  def updateDisplay(s: SimState) = {
-    this.currState = s
+  def updateDisplay(s: T) = {
+    this.currState = Some(s)
     repaint()
   }
 }

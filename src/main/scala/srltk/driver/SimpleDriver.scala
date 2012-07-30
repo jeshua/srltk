@@ -2,14 +2,12 @@ package srltk.driver
 import srltk.common._
 import srltk.domains._
 
-class SimpleDriver[Obs <: Observation]
-		(var d: SimDomain, 
+class SimpleDriver[St <: SimState[St], Obs <: Observation]
+		(var d: SimDomain[St], 
 				val ag: Agent[Obs,IntAction],
-				val dai : DomainAgentInterface[SimState,Obs,IntAction]) {
-  type St = SimState
-  
+				val dai : DomainAgentInterface[St,Obs,IntAction]) {
   var prev_action: IntAction = null
-  val a = new ManagedAgent(ag)
+  val a = new ManagedAgent(ag)  
   
   def step(): (St, Obs, IntAction, Obs, Boolean) =
     {

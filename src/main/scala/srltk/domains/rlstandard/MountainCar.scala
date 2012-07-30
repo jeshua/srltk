@@ -12,9 +12,9 @@ import java.awt.BasicStroke
 
 //======================================================================
 
-class MountainCar() extends SimDomain(
-    MountainCar.getInitial,    
-    MountainCarRenderer) with Domain2D {
+class MountainCar extends SimDomain[MountainCarState](
+    MountainCar.getInitial,
+    MountainCarRenderer) with Domain2D[MountainCarState] {
   
   def numActions() = 3;
   def createState(d1 : Double, d2 : Double) = new MountainCarState(d1,d2)  
@@ -42,7 +42,7 @@ object MountainCar {
   def randomXDot() = (GlobalRNG.nextDouble() * (xdot_max - xdot_min)) + xdot_min
   def getInitial() = new MountainCarState(randomX, randomXDot)
 
-  def rewardFunction(s1: SimState, a: Action, s2: SimState): Double = {
+  def rewardFunction(s1: MountainCarState, a: Action, s2: MountainCarState): Double = {
     val state2 = s2.asInstanceOf[MountainCarState];
     if (state2.x >= MountainCar.x_max) 0 else -1
   }
@@ -67,7 +67,7 @@ class MountainCarAction(val index: Int) extends IntAction(index) {
 
 //======================================================================
 
-class MountainCarState(val x: Double, val xdot: Double) extends SimState {
+class MountainCarState(val x: Double, val xdot: Double) extends SimState[MountainCarState] {
   import MountainCar._
   
   def getInitial = MountainCar.getInitial
@@ -96,7 +96,7 @@ class MountainCarState(val x: Double, val xdot: Double) extends SimState {
 
 //======================================================================
 
-object MountainCarRenderer extends SimStateRenderer {
+object MountainCarRenderer extends SimStateRenderer[MountainCarState] {
 
   import MountainCar._
 
@@ -106,11 +106,9 @@ object MountainCarRenderer extends SimStateRenderer {
   def xToXs(x: Double, size: Int, box_size: Int): Int =
     (((x - x_min) * size / (x_max - x_min)) * box_size).toInt
 
-  def render(s: SimState, g2d: Graphics2D, d: Dimension) =
-    {
-      val state = s.asInstanceOf[MountainCarState]
-
-      val size = 200
+  def render(state: MountainCarState, g2d: Graphics2D, d: Dimension) =
+    {  
+	  val size = 200
       val cellWidth = (d.width - 1) / size
       val cellHeight = (d.height - 1) / size
       val boxSize = scala.math.min(cellWidth, cellHeight);

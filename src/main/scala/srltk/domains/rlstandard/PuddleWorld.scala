@@ -9,9 +9,9 @@ import srltk.utils.Bounds2D
 import srltk.utils.Colors
 import java.awt.BasicStroke
 
-class PuddleWorld extends SimDomain(
+class PuddleWorld extends SimDomain[PuddleWorldState](
   new PuddleWorldState(),
-  PuddleWorldRenderer) with Domain2D {
+  PuddleWorldRenderer) with Domain2D[PuddleWorldState] {
   
   def numActions() = 4;
   def createState(d1 : Double, d2 : Double) = new PuddleWorldState(d1,d2)
@@ -59,7 +59,7 @@ object PuddleWorld {
 
   def atGoal(x: Double, y: Double) = x > goal_x && y < goal_y
 
-  def rewardFunction(s1: SimState, a: Action, s2: SimState): Double = {
+  def rewardFunction(s1: PuddleWorldState, a: Action, s2: PuddleWorldState): Double = {
     val state2 = s2.asInstanceOf[PuddleWorldState];
     getReward(state2.x, state2.y)
   }
@@ -95,7 +95,7 @@ object PuddleWorldAction {
 }
 //======================================================================
 
-class PuddleWorldState(val x: Double, val y: Double) extends SimState {
+class PuddleWorldState(val x: Double, val y: Double) extends SimState[PuddleWorldState] {
   def this() = this(0, 0)
   import PuddleWorld._
   def getInitial = PuddleWorld.getInitial
@@ -124,11 +124,10 @@ class PuddleWorldState(val x: Double, val y: Double) extends SimState {
 
 //======================================================================
 
-object PuddleWorldRenderer extends SimStateRenderer {
+object PuddleWorldRenderer extends SimStateRenderer[PuddleWorldState] {
   import PuddleWorld._
 
-  def render(state: SimState, g2d: Graphics2D, dimension: Dimension) = {
-    val s = state.asInstanceOf[PuddleWorldState];
+  def render(s: PuddleWorldState, g2d: Graphics2D, dimension: Dimension) = {
     val w = dimension.width
     val h = dimension.height
 

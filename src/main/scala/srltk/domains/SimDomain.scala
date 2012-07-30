@@ -6,9 +6,9 @@ import java.awt.Graphics2D
 import scala.collection.mutable.ListBuffer
 import scala.collection.mutable.ArrayBuffer
 
-abstract class SimDomain
-(var state: SimState,val renderer: SimStateRenderer = null) 
-extends Domain[SimState, IntAction]{
+abstract class SimDomain[T <: SimState[T]]
+(var state: T,val renderer: SimStateRenderer[T] = null) 
+extends Domain[T, IntAction]{
 	def numActions : Int;
 	def act(a : IntAction)  = {
 	  this.state = state.successor(a)
@@ -17,14 +17,14 @@ extends Domain[SimState, IntAction]{
 }
 
 //renders an environment state
-trait SimStateRenderer {
-  def render(state: SimState, g2d: Graphics2D, d: Dimension): Dimension
+trait SimStateRenderer[T <: SimState[T]] {
+  def render(state: T, g2d: Graphics2D, d: Dimension): Dimension
 }
 
 //a state class retains all stateful information for a domain
 //and has a successor function
-trait SimState extends State[SimState] {
-  def getInitial(): SimState
-  def successor(action: Action): SimState
+trait SimState[T <: SimState[T]] extends State[T] {
+  def getInitial(): T
+  def successor(action: Action): T
   def isAbsorbing: Boolean
 }

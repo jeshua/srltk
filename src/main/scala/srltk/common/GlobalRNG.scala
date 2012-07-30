@@ -7,4 +7,15 @@ object GlobalRNG {
 	def nextDouble() = rng.nextDouble()
 	def nextGaussian() = rng.nextGaussian()
     def random = rng
+    
+    def sampleMultinomial(p : Seq[Double]) : Int = {
+	  val dart = nextDouble();
+	  var sum = 0d;
+	  var i = 0
+	  while(sum < dart){
+	    sum+=p(i)	    
+	    i+=1;
+	  }
+	  i-1
+	}
 }
