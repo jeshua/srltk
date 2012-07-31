@@ -74,10 +74,9 @@ class MountainCarState(val x: Double, val xdot: Double) extends SimState[Mountai
   def isAbsorbing = x >= x_max
   def copy = new MountainCarState(x,xdot);
   
-  def successor(action: Action): MountainCarState =
+  def successor(action: Int): MountainCarState =
     {
-      val ac = action.asInstanceOf[IntAction];
-      val direction = (if (ac.n == 0) -1 else if (ac.n == 2) 1 else 0)
+      val direction = (if (action == 0) -1 else if (action == 2) 1 else 0)
       val new_x = x + xdot
       val new_xdot = xdot + direction * force + slope(x) * gravity
       //compute new state

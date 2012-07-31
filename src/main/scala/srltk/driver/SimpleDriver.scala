@@ -20,7 +20,7 @@ class SimpleDriver[St <: SimState[St], Obs <: Observation]
 
       d.state =
         if (!d.state.isAbsorbing)
-          d.state.successor(action); //take action from non-absorbing state, just choose successor
+          d.state.successor(action.n); //take action from non-absorbing state, just choose successor
         else {          
           a.flush(prev_action) //agent might need to observe the final action
           a.newEpisode() //reset agent's history

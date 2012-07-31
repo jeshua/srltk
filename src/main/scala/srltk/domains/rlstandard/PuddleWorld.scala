@@ -101,9 +101,9 @@ class PuddleWorldState(val x: Double, val y: Double) extends SimState[PuddleWorl
   def getInitial = PuddleWorld.getInitial
   def isAbsorbing = atGoal(x, y)
   def copy() = new PuddleWorldState(x,y);
-  def successor(action: Action): PuddleWorldState =
+  def successor(action: Int): PuddleWorldState =
     {
-      val ac = action.asInstanceOf[IntAction].n;
+      val ac = action;
 
       //add gaussian noise centered at with std 
       val rand = (GlobalRNG.nextGaussian()) * rand_std

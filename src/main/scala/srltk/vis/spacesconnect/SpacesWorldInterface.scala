@@ -37,7 +37,7 @@ class SpacesWorldInterface[T <: SimState[T]](var state: T, val stateRenderer : S
   // then updates state variable using successor function
   def takeAction(action: spaces.framework.util.action.Action): Unit = {
     val a = action.asInstanceOf[SpacesActionInterface].srltkAction
-    this.state = this.state.successor(a)
+    this.state = this.state.successor(a.n)
   }
 
   //uses state renderer, if available, to draw to canvas

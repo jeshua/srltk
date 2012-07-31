@@ -11,7 +11,7 @@ abstract class SimDomain[T <: SimState[T]]
 extends Domain[T, IntAction]{
 	def numActions : Int;
 	def act(a : IntAction)  = {
-	  this.state = state.successor(a)
+	  this.state = state.successor(a.n)
 	}
 	def getState = state
 }
@@ -25,6 +25,6 @@ trait SimStateRenderer[T <: SimState[T]] {
 //and has a successor function
 trait SimState[T <: SimState[T]] extends State[T] {
   def getInitial(): T
-  def successor(action: Action): T
+  def successor(action: Int): T
   def isAbsorbing: Boolean
 }
