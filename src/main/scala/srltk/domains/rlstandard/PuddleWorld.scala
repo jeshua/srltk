@@ -127,7 +127,7 @@ class PuddleWorldState(val x: Double, val y: Double) extends SimState[PuddleWorl
 object PuddleWorldRenderer extends SimStateRenderer[PuddleWorldState] {
   import PuddleWorld._
 
-  def render(s: PuddleWorldState, g2d: Graphics2D, dimension: Dimension) = {
+  def render(action : Int, s: PuddleWorldState, g2d: Graphics2D, dimension: Dimension) = {
     val w = dimension.width
     val h = dimension.height
 

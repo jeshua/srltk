@@ -33,17 +33,19 @@ class DummyAgent[T <: SimState[T]](val w: SpacesWorldInterface[T]) extends space
 class SpacesWorldInterface[T <: SimState[T]](var state: T, val stateRenderer : SimStateRenderer[T],val num_actions : Int)
   extends SingleAgentWorld with AbstractAgentWorldInterface {
   def this(d : SimDomain[T]) = this(d.state,d.renderer,d.numActions)
+  var last_action : Int = 0;
   //converts spaces action to discrete integer action and makes srltk discrete action
   // then updates state variable using successor function
   def takeAction(action: spaces.framework.util.action.Action): Unit = {
     val a = action.asInstanceOf[SpacesActionInterface].srltkAction
-    this.state = this.state.successor(a.n)
+    this.last_action = a.n;
+    this.state = this.state.successor(a.n)    
   }
 
   //uses state renderer, if available, to draw to canvas
   def draw(g2d: Graphics2D, size: Dimension): Dimension = {
     if (stateRenderer == null) size
-    else stateRenderer.render(state, g2d, size)
+    else stateRenderer.render(last_action, state, g2d, size)
   }
 
   def generateObservation(): Observation = {

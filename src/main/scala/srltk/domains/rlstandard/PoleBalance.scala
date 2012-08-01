@@ -118,7 +118,7 @@ object PoleBalanceRenderer extends SimStateRenderer[PoleBalanceState] {
 
   import PoleBalance._
 
-  def render(st: PoleBalanceState, g2: Graphics2D, d: Dimension) = {
+  def render(action : Int, st: PoleBalanceState, g2: Graphics2D, d: Dimension) = {
     val width = d.getWidth();
     val int_w: Int = width.toInt
     val height = d.getHeight();

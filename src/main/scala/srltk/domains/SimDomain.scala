@@ -18,7 +18,7 @@ extends Domain[T, IntAction]{
 
 //renders an environment state
 trait SimStateRenderer[T <: SimState[T]] {
-  def render(state: T, g2d: Graphics2D, d: Dimension): Dimension
+  def render(action : Int, state: T, g2d: Graphics2D, d: Dimension): Dimension
 }
 
 //a state class retains all stateful information for a domain

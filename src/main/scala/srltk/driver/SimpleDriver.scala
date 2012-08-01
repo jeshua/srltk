@@ -6,7 +6,7 @@ class SimpleDriver[St <: SimState[St], Obs <: Observation]
 		(var d: SimDomain[St], 
 				val ag: Agent[Obs,IntAction],
 				val dai : DomainAgentInterface[St,Obs,IntAction]) {
-  var prev_action: IntAction = null
+  var prev_action: IntAction = null  
   val a = new ManagedAgent(ag)  
   
   def step(): (St, Obs, IntAction, Obs, Boolean) =
