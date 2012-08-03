@@ -26,7 +26,7 @@ class StateViewerPanel[T <: SimState[T]](dimension: Dimension, renderer: SimStat
   private var action = 0
   setDoubleBuffered(true)
   setSize(dimension)
-  show()
+  setVisible(true);
   override def paint(g: Graphics): Unit =
     {
       super.paint(g)

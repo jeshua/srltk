@@ -86,7 +86,7 @@ public class ActiveBarPlot extends JPanel{
 		chartPanel.setPreferredSize(new java.awt.Dimension(w, h));
 	}
 	
-	public void setValue(double v, Comparable row){
+	public void setValue(double v, Comparable<?> row){
 		dataset.setValue(v,row,"");		
 	}
 	public void setColor(String row, Color color){		
@@ -95,7 +95,7 @@ public class ActiveBarPlot extends JPanel{
 		n = dataset.getRowIndex(row);
 		renderer.setSeriesPaint(n, color);
 	}
-	public void removeValue(Comparable row){
+	public void removeValue(Comparable<?> row){
 		dataset.removeValue(row,"");
 	}
 	

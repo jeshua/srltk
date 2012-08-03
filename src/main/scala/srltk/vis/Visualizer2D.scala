@@ -41,7 +41,7 @@ class Visualizer2DPanel(width: Int, height: Int, f: (Graphics, Dimension) => Uni
     {
       super.paint(g)
 
-      f(g, this.size)
+      f(g, this.getSize())
     }
 }
 
