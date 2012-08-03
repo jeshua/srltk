@@ -14,23 +14,33 @@ object Colors {
 
   
   def mix(cols : Seq[Color], alpha : Seq[Float]) : Color = {
-    var col = cols(0)
-    var a = alpha(0)
+    
+    
+	  var col1 = cols(0).getComponents(null)
+	  col1(3) = alpha(0)    
     for(i <- 1 until cols.length){
-      val n = mix(col,cols(i),a,alpha(i))      
-      col = n._1
-      a = n._2
+       var col2 = cols(i).getComponents(null)
+	  col2(3) = alpha(i)   
+      col1 = mix(col1,col2)
     }    
-    col
+	for(i <- 0 to 2) col1(i) = math.min(1,math.max(0,col1(i)));	
+	new Color(col1(0),col1(1),col1(2))
+	  
   }
   
-  def mix(col1 : Color, col2 : Color, a1 : Float, a2 : Float) : (Color,Float) = {
-    val rgb1 = col1.getRGBColorComponents(null)
-    val rgb2 = col2.getRGBColorComponents(null)
+  def mix(col1 : Array[Float], col2 : Array[Float]) : Array[Float] = {
+   
+    val a1 = col1(3);
+    val a2 = col2(3);
+    if(a1 > .99) col1
+    else if(a2 > .99) col2
+    else{
     val a = a1 + a2*(1f-a1)
-    val r = (1/a)*(rgb1(0)*a1 + rgb2(0)*a2 * (1f-a1))
-    val g = (1/a)*(rgb1(1)*a1 + rgb2(1)*a2 * (1f-a1))
-    val b = (1/a)*(rgb1(2)*a1 + rgb2(2)*a2 * (1f-a1))    
-    (new Color(r,g,b),a);
+    val ret = new Array[Float](4)
+    for(i <- 0 to 2)
+    	ret(i) = (1/a)*(col1(i)*a1 + col2(i)*a2 * (1f-a1))
+    ret(3) = a
+    ret
+    }
   }
 }

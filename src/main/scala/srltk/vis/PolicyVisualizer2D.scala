@@ -24,14 +24,13 @@ class PolicyVisualizer2D(
   val yMin = bounds.yMin
   val yMax = bounds.yMax
   val step: Float = 1.0f / resolution
-  val xSize = xMax - xMin
-  val ySize = yMax - yMin
+  val xSize = xMax - xMin + (if(integer) 1d else 0d)
+  val ySize = yMax - yMin + (if(integer) 1d else 0d)
   val rangeX = (if (!integer) 0.0f to 1.0f by step else 0.0f until 1.0f by (1.0 / xSize).toFloat).toArray
   val rangeY = (if (!integer) 0.0f to 1.0f by step else 0.0f until 1.0f by (1.0 / ySize).toFloat).toArray
       
   var values = Array.fill(rangeX.length * rangeY.length * num_actions){0d}
   val vis = new Visualizer2D(500, 500, f_paint)
-  
   def getFrame = vis
   def update() = {
 	  f_remake();
@@ -52,12 +51,13 @@ class PolicyVisualizer2D(
         while(y < rangeY.length){
           val mu = pi(getX(rangeX(x)), getY(rangeY(y)))
           for(a <- 0 until num_actions){
-            values(x * rangeY.length*num_actions + y*num_actions + a) = mu(a)            
+            values(x * rangeY.length*num_actions + y*num_actions + a) = mu(a)
           }          
           y+=1;
         }      
         x+=1;
       }
+      if(values.max > 1 || values.min < 0) throw new IllegalArgumentException("Policy values out of range!")
     }
   
   def f_paint(g: Graphics, dimension: Dimension){    
@@ -71,7 +71,10 @@ class PolicyVisualizer2D(
           yield values(i * rangeY.length*num_actions + j*num_actions+a).toFloat
         val cols = for(i <- 0 until num_actions) 
           yield Colors.colorProgression(i)
-        g2d.setColor(Colors.mix(cols,alphas))
+          
+          val col = Colors.mix(cols,alphas)
+          
+        g2d.setColor(col)
         
         /*var max = alphas(0)
         var maxi = 0

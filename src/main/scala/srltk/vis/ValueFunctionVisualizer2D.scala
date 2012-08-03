@@ -30,10 +30,10 @@ class ValueFunctionVisualizer2D(
   val yMin = bounds.yMin
   val yMax = bounds.yMax
   val step: Float = 1.0f / resolution
-  val xSize = xMax - xMin
-  val ySize = yMax - yMin
-  val rangeX = (if (!integer) 0.0f to 1.0f by step else 0.0f until 1.0f by (1.0 / xSize).toFloat).toArray
-  val rangeY = (if (!integer) 0.0f to 1.0f by step else 0.0f until 1.0f by (1.0 / ySize).toFloat).toArray
+  val xSize = xMax - xMin + (if(integer) 1d else 0d)
+  val ySize = yMax - yMin + (if(integer) 1d else 0d)
+  val rangeX = (if (!integer) 0.0f to 1.0f by step else 0.0f until 1.0f by (1.0 / (xSize)).toFloat).toArray
+  val rangeY = (if (!integer) 0.0f to 1.0f by step else 0.0f until 1.0f by (1.0 / (ySize)).toFloat).toArray
       
   var values = Array.fill(rangeX.length * rangeY.length){0d}
   var vMax = 0d;
@@ -75,7 +75,7 @@ class ValueFunctionVisualizer2D(
     }
   
   def f_paint(g: Graphics, dimension: Dimension){    
-    if(values != null){
+    if(values != null && (vMax-vMin) > 1e-5){
       val g2d = g.asInstanceOf[Graphics2D]
       //loop over points and draw each as a box
       for (i <- 0 until rangeX.length; j <- 0 until rangeY.length) {
@@ -88,9 +88,7 @@ class ValueFunctionVisualizer2D(
         val r = (255*normVal).toInt
         val g = (220 * normVal).toInt
         val b = (50).toInt        
-        
         g2d.setColor(new Color(r, g, b))
-
         //convert point to a pixel location on screen
         //notice we floor the start location and ceil the end so the rectangles fit snugly
         val x = scala.math.floor(dimension.width * rangeX(i)).toInt

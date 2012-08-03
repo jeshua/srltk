@@ -3,6 +3,7 @@ package srltk.vis;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.text.*;
 import javax.swing.JFrame;
 
@@ -39,8 +40,10 @@ public class ActivePlot extends JFrame {
 	
   //window average
   private int windowSize = 1;
+  private boolean rolling_window = false;
   private ArrayList<Double> currentSums = new ArrayList<Double>();
   private ArrayList<Integer> currentPointCounts = new ArrayList<Integer>();
+  private ArrayList<LinkedList<Double>> pointQueue = new ArrayList<LinkedList<Double>>();
 	
 
   public ActivePlot() {
@@ -69,6 +72,7 @@ public class ActivePlot extends JFrame {
     dataset.addSeries(dataset_series);
     currentSums.add(0d);
     currentPointCounts.add(0);
+    pointQueue.add(new LinkedList<Double>());
     this.series_index++;
 		
 		
@@ -158,13 +162,21 @@ public class ActivePlot extends JFrame {
   public void addPointToSeries(int x, double y, int series) {
     while (series > series_index)
       newDataset("");
+    pointQueue.get(series).addLast(y);
     currentSums.set(series,currentSums.get(series)+y);
     currentPointCounts.set(series,currentPointCounts.get(series)+1);
     if(currentPointCounts.get(series) >= windowSize){
       XYSeries s = dataset.getSeries(series);
       s.add(x, currentSums.get(series)/windowSize);
-      currentSums.set(series,0d);
-      currentPointCounts.set(series,0);
+      Double first = pointQueue.get(series).getFirst();
+      pointQueue.get(series).removeFirst();
+      if(rolling_window){
+    	  currentSums.set(series,currentSums.get(series) - first);
+          currentPointCounts.set(series,currentPointCounts.get(series)-1);          
+      }else{
+    	  currentSums.set(series,0d);
+    	  currentPointCounts.set(series,0);
+      }
     }
 		
   }
@@ -173,7 +185,9 @@ public class ActivePlot extends JFrame {
   public void setWindowedAverage(int windowSize){
     this.windowSize = windowSize;
   }
-	
+  public void rolling(boolean rolling){
+	  this.rolling_window = rolling;
+  }
 
   public void display() {
     this.pack();
