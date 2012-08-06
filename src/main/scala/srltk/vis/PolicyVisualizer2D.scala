@@ -46,18 +46,22 @@ class PolicyVisualizer2D(
       //calculate value for every point in the range and then find min and max value
       var x = 0;
       var y = 0;
+      var max = Double.NegativeInfinity
+      var min = Double.PositiveInfinity
       while(x < rangeX.length){
         y = 0
         while(y < rangeY.length){
           val mu = pi(getX(rangeX(x)), getY(rangeY(y)))
           for(a <- 0 until num_actions){
             values(x * rangeY.length*num_actions + y*num_actions + a) = mu(a)
+            if(mu(a) > max) max = mu(a)
+            else if(mu(a) < min) min = mu(a)
           }          
           y+=1;
         }      
         x+=1;
       }
-      if(values.max > 1 || values.min < 0) throw new IllegalArgumentException("Policy values out of range!")
+      if(max > 1 || min < 0) throw new IllegalArgumentException("Policy values out of range!")
     }
   
   def f_paint(g: Graphics, dimension: Dimension){    

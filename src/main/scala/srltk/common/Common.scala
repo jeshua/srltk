@@ -26,5 +26,5 @@ trait Domain[St <: State[St], Act <: Action]{
 //OBSERVATION TYPES
 
 abstract class Observation
-(val reward : Double = 0d)
+(var reward : Double = 0d)
 {}

@@ -30,7 +30,9 @@ class ManagedAgent[Obs <: Observation](val agent : Agent[Obs,IntAction])  {
   
   //@TODO make this more elegant
   final def flush(prev_action : IntAction) = {
-    observe(prev_action,history.o_t());
+    val h = history.o_t()
+    h.reward = 0
+    observe(prev_action,h);
   }
   
   //Called every timestep by driver;

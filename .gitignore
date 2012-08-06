@@ -6,6 +6,9 @@ project/plugins/project/
 target/**/*
 .target
 .target/**/*
+.settings
+.cache
+.settings/**/*
 project/target/**/*
 project/boot/**/*
 project/plugins/target/**/*
