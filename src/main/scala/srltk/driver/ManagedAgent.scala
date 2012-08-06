@@ -33,6 +33,7 @@ class ManagedAgent[Obs <: Observation](val agent : Agent[Obs,IntAction])  {
     val h = history.o_t()
     h.reward = 0
     observe(prev_action,h);
+    //observe(prev_action,h);
   }
   
   //Called every timestep by driver;

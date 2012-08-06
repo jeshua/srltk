@@ -18,4 +18,22 @@ object GlobalRNG {
 	  }
 	  i-1
 	}
+	
+	
+	def randIdx(min : Int, max : Int) : Array[Int] = {
+	  val idx = (min until max).toList.toArray	  
+	  val N = max-min;
+	  val ret = new Array[Int](N)
+	  var n = 0;
+	  while(n < N){
+	    val dart = nextInt(N-n);
+	    ret(n) = idx(dart);	    
+	    idx(dart) = idx(N-n-1)
+	    n+=1;	    
+	  }	  
+	  ret	  
+	}
+	
+	
+	
 }

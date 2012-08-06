@@ -25,11 +25,17 @@ object GridWorld {
   val S = Maze.S;
   val G = Maze.G;
   val maze_data: List[Array[Int]] = List(
-    Array(S,  0),
-    Array(0, S),
-    Array(0, G));
+    Array(S,S,S,S,0),
+    Array(0,S,S,S,S),
+    Array(0,S,0,S,0),
+    Array(G,0,0,0,0));
+  
+ /* val maze_data: List[Array[Int]] = List(
+    Array(S,S,S,S,0), 
+    Array(0,S,S,S,S),
+    Array(0,0,0,0,G));*/
   val default_maze = new Maze(maze_data.toArray)
-  val default_initial = new GridWorldState(0, 0, default_maze)
+  val default_initial = new GridWorldState(0, 0, default_maze).getInitial()
   def main(args: Array[String]): Unit = {
     val mc = new GridWorld()
     val spaces = new SpacesWorldInterface(mc)
@@ -47,9 +53,9 @@ class GridWorldAction(val index: Int) extends IntAction(index) {
 }
 class GridWorldState(val x: Int, val y: Int, val maze: Maze) extends SimState[GridWorldState] {
   import GridWorld._
-  def getInitial() = new GridWorldState(0, 0, maze)
+  def getInitial() = new GridWorldState(maze.width()-1,1, maze)
   def isAbsorbing = false; //maze.isGoal(x,y)
-  def getReward() : Double = if (maze.isGoal(x, y)) 1d else 0
+  def getReward() : Double = if (maze.isGoal(x, y)) 1d else -.001
   def copy = new GridWorldState(x, y, maze);
   def successor(action: Int): GridWorldState = {
     if (maze.isGoal(x, y))
@@ -107,7 +113,7 @@ class LineWorldAction(val index: Int) extends IntAction(index) {
 }
 class LineWorldState(val x: Int, val y: Int, val maze: Maze) extends SimState[LineWorldState] {
   import LineWorld._
-  def getInitial() = new LineWorldState(0, 0, maze)
+  def getInitial() = new LineWorldState(0, maze.width()-1, maze)
   def isAbsorbing = false; //maze.isGoal(x,y)
   def getReward() = if (maze.isGoal(x, y)) 1d else 0
   def copy = new LineWorldState(x, y, maze);
