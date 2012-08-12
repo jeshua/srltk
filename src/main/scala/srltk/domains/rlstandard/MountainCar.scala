@@ -27,7 +27,7 @@ class MountainCar extends SimDomain[MountainCarState](
 //Mountain car Constants
 //Parameters as in Singh and Sutton 96 (Reinforcement Learning with Replacing Eligibility Traces) Appendix B
 object MountainCar {
-  val force = 0.0008 //force of car's motor (0.001 in Singh & Sutton
+  val force = 0.001 //force of car's motor (0.001 in Singh & Sutton
   val frequency = 3.0 //frequency of hill sin function
   val gravity = -0.0025 //gravity factor (-.0025 in Singh & Sutton)
 
@@ -35,7 +35,8 @@ object MountainCar {
   def slope(x: Double) = scala.math.cos(frequency * x)
 
   val x_min = -1.2
-  val x_max = 0.5
+  val x_max = 0.6
+  val x_goal = .5
   val xdot_min = -.07 //-0.07 in Singh & Sutton
   val xdot_max = .07 // 0.07 in Singh & Sutton
 
@@ -74,7 +75,7 @@ class MountainCarState(val x: Double, val xdot: Double) extends SimState[Mountai
   import MountainCar._
   
   def getInitial = MountainCar.getInitial
-  def isAbsorbing = x >= x_max
+  def isAbsorbing = x >= x_goal
   def copy = new MountainCarState(x,xdot);
   
   def successor(action: Int): MountainCarState =
