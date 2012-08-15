@@ -114,7 +114,7 @@ class LineWorldAction(val index: Int) extends IntAction(index) {
 class LineWorldState(val x: Int, val y: Int, val maze: Maze) extends SimState[LineWorldState] {
   import LineWorld._
   def getInitial() = new LineWorldState(0, maze.width()-1, maze)
-  def isAbsorbing = false; //maze.isGoal(x,y)
+  def isAbsorbing = maze.isGoal(x,y)
   def getReward() = if (maze.isGoal(x, y)) 1d else 0
   def copy = new LineWorldState(x, y, maze);
   def successor(action: Int): LineWorldState = {
