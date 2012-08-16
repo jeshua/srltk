@@ -35,10 +35,10 @@ object MountainCar {
   def slope(x: Double) = scala.math.cos(frequency * x)
 
   val x_min = -1.2
-  val x_max = 0.6
+  val x_max = 0.5
   val x_goal = .5
-  val xdot_min = -.08 //-0.07 in Singh & Sutton
-  val xdot_max = .08 // 0.07 in Singh & Sutton
+  val xdot_min = -.07 //-0.07 in Singh & Sutton
+  val xdot_max = .07 // 0.07 in Singh & Sutton
 
   val bounds = new Bounds2D(x_min, x_max, xdot_min, xdot_max)
   

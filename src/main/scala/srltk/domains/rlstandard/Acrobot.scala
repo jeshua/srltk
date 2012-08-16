@@ -27,15 +27,15 @@ class Acrobot extends SimDomain[AcrobotState](
 
 object Acrobot {
   val num_actions = 3;
-  val g        = 9.8d;
-  val m1       = 1d;
-  val m2       = 1d;
-  val l1       = 1d;
-  val l2       = 1d;
-  val lc1      = .5;
-  val lc2      = .5;
-  val I1       = 1d;
-  val I2       = 1d;
+  val g           = 9.8d;
+  val m1          = 1d;
+  val m2          = 1d;
+  val l1          = 1d;
+  val l2          = 1d;
+  val lc1         = .5;
+  val lc2         = .5;
+  val I1          = 1d;
+  val I2          = 1d;
 
   val min_t1 = -math.Pi;
   val max_t1 = math.Pi;
@@ -59,10 +59,9 @@ object Acrobot {
 		      Bounds1D(min_t2dot,max_t2dot))
 		      
   def calcHeight(t1 : Double,  t2 : Double) : Double = {
-    -(l1 * math.cos(t1) + l2 * math.cos(t2));
-//	  val j1 = l1 * math.cos(t1);
-	  //val j2 = l2 * math.sin(math.Pi / 2 - t1 - t2);
-	  //(-j1+j2)
+    val j1 = l1 * math.cos(t1)
+    val j2 = -(l2 * math.sin(math.Pi / 2 - t1 - t2) + j1);
+    j2
   }
 
   //for testing
@@ -133,8 +132,8 @@ class AcrobotState(val t1: Double, val t1dot: Double, val t2: Double, val t2dot:
         count += 1;
       }
 
-      if (theta1 > max_t1) theta1 = max_t1
-      if (theta1 < min_t1) theta1 = min_t1
+      if (theta1 > max_t1) theta1 = min_t1
+      if (theta1 < min_t1) theta1 = max_t1
       if (theta1_dot > max_t1dot) theta1_dot = max_t1dot
       if (theta1_dot < min_t1dot) theta1_dot = min_t1dot
       if (theta2 > max_t2) theta2 = max_t2
@@ -188,10 +187,13 @@ object AcrobotRenderer extends SimStateRenderer[AcrobotState] {
     
     g.setColor(Color.CYAN);
     g.fill(new Ellipse2D.Float(j3X - sz3 / 2, j3Y - sz3 / 2, sz3, sz3));
-    val font = new Font("Arial", Font.PLAIN, 4);
+    val font = new Font("Arial", Font.PLAIN, 3);
     g.setFont(font);
     g.setColor(Color.BLACK);
-    g.drawString("H: %.3f".format(calcHeight(st.t1,st.t2)),0f,5f)
+    
+    val j1 = l1 * math.cos(st.t1)
+    val j2 = -(l2 * math.sin(math.Pi / 2 - st.t1 - st.t2) + j1);
+    g.drawString("(%.3f,%.3f,%.3f,%.3f) H: %.3f".format(st.t1,st.t1dot,st.t2,st.t2dot,calcHeight(st.t1,st.t2)),0f,90f)
     
     g.setTransform(tr);
     
