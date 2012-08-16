@@ -34,11 +34,14 @@ object PoleBalance {
   val mass_total = mass_cart + mass_pole;
   val length = 0.5d;
   val mass_len_pole = mass_pole * length;
-  val force_mag = 10.0d;
+  val force_mag = 10.0d;//10
   val tau = .03d; //0.02;
   val four_thirds = 1.333333333333333d;
-  val fail_degrees = .3d; //Math.PI/2;//0.2094384;
-
+  val fail_degrees = .5d; //Math.PI/2;//0.2094384;
+  
+  val start_x = 1
+  val start_deg = .2
+  
   val max_x = 2.4d;
   val min_x = -2.4d;
   val max_v = 2d;
@@ -48,7 +51,7 @@ object PoleBalance {
   val max_av = 2d;
   val min_av = -2d;
 
-  def getInitial() = new PoleBalanceState(0, 0, 0, 0);
+  def getInitial() = new PoleBalanceState(GlobalRNG.nextDouble()*start_x*2-start_x, 0, srltk.common.GlobalRNG.nextDouble()*start_deg*2-start_deg, 0);
   
   def bounds() : List[Bounds1D] = 
 		  List(Bounds1D(min_x,max_x),

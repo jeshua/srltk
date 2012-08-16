@@ -15,6 +15,7 @@ import java.awt.geom.Rectangle2D
 import java.awt.geom.Line2D
 import srltk.utils.Bounds1D
 import java.awt.Dimension
+import java.awt.Font
 
 //======================================================================
 
@@ -48,7 +49,8 @@ object Acrobot {
   val dt = .05
 
 
-  def getInitial() = new AcrobotState(0, 0, 0, 0);
+  def getInitial() = new AcrobotState(0,0,0,0)
+    //new AcrobotState(GlobalRNG.nextDouble()-.5, GlobalRNG.nextDouble()-.5, GlobalRNG.nextDouble()-.5, GlobalRNG.nextDouble()-.5);
   
   def bounds() : List[Bounds1D] = 
 		  List(Bounds1D(min_t1,max_t1),
@@ -56,6 +58,13 @@ object Acrobot {
 		      Bounds1D(min_t2,max_t2),
 		      Bounds1D(min_t2dot,max_t2dot))
 		      
+  def calcHeight(t1 : Double,  t2 : Double) : Double = {
+    -(l1 * math.cos(t1) + l2 * math.cos(t2));
+//	  val j1 = l1 * math.cos(t1);
+	  //val j2 = l2 * math.sin(math.Pi / 2 - t1 - t2);
+	  //(-j1+j2)
+  }
+
   //for testing
   def main(args: Array[String]): Unit = {
     val mc = new Acrobot()
@@ -84,9 +93,8 @@ class AcrobotState(val t1: Double, val t1dot: Double, val t2: Double, val t2dot:
   def isAbsorbing = success()
 
   def success(theta1 : Double, theta2 : Double): Boolean = {
-    val j1 = l1 * math.cos(theta1);
-    val j2 = l2 * math.sin(math.Pi / 2 - theta1 - theta2);
-    ((-j1+j2) > goal_pos);
+ 
+    (calcHeight(theta1,theta2) > goal_pos);
   }
   def success(): Boolean = success(t1,t2)
 
@@ -94,7 +102,7 @@ class AcrobotState(val t1: Double, val t1dot: Double, val t2: Double, val t2dot:
 
   def successor(action: Int): AcrobotState =
     {
-      val torque = action - 1d;
+      val torque = (action - 1d);
       
       var theta1 = t1;
       var theta2 = t2;
@@ -157,8 +165,7 @@ object AcrobotRenderer extends SimStateRenderer[AcrobotState] {
     g.scale(d.width, d.height);
     g.fill(new Rectangle(1, 1));
     g.scale(.01, .01);
-    println(st.t1)
-    
+        
     g.setColor(Color.red);
     val goalY = j1Y - len1;
     g.drawLine(0, goalY, 100, goalY);
@@ -181,7 +188,13 @@ object AcrobotRenderer extends SimStateRenderer[AcrobotState] {
     
     g.setColor(Color.CYAN);
     g.fill(new Ellipse2D.Float(j3X - sz3 / 2, j3Y - sz3 / 2, sz3, sz3));
+    val font = new Font("Arial", Font.PLAIN, 4);
+    g.setFont(font);
+    g.setColor(Color.BLACK);
+    g.drawString("H: %.3f".format(calcHeight(st.t1,st.t2)),0f,5f)
+    
     g.setTransform(tr);
+    
     d
   }
 }
