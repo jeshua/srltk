@@ -15,16 +15,16 @@ import srltk.utils.Bounds1D
 
 //======================================================================
 
-class PoleBalance extends SimDomain[PoleBalanceState](
-  PoleBalance.getInitial,
-  PoleBalanceRenderer) {
+class CartPoleBalance extends SimDomain[CartPoleBalanceState](
+  CartPoleBalance.getInitial,
+  CartPoleBalanceRenderer) {
 
   def numActions() = 2;
 }
 
 //Mountain car Constants
 //Parameters as in Singh and Sutton 96 (Reinforcement Learning with Replacing Eligibility Traces) Appendix B
-object PoleBalance {
+object CartPoleBalance {
 
   val num_actions = 2;
 
@@ -51,7 +51,7 @@ object PoleBalance {
   val max_av = 2d;
   val min_av = -2d;
 
-  def getInitial() = new PoleBalanceState(GlobalRNG.nextDouble()*start_x*2-start_x, 0, srltk.common.GlobalRNG.nextDouble()*start_deg*2-start_deg, 0);
+  def getInitial() = new CartPoleBalanceState(GlobalRNG.nextDouble()*start_x*2-start_x, 0, srltk.common.GlobalRNG.nextDouble()*start_deg*2-start_deg, 0);
   
   def bounds() : List[Bounds1D] = 
 		  List(Bounds1D(min_x,max_x),
@@ -61,7 +61,7 @@ object PoleBalance {
 		      
   //for testing
   def main(args: Array[String]): Unit = {
-    val mc = new PoleBalance()
+    val mc = new CartPoleBalance()
     val spaces = new SpacesWorldInterface(mc)
     spaces.display()
   }
@@ -69,7 +69,7 @@ object PoleBalance {
 
 //======================================================================
 
-class PoleBalanceAction(val index: Int) extends IntAction(index) {
+class CartPoleBalanceAction(val index: Int) extends IntAction(index) {
   override def toString() =
     index match {
       case 0 => "Left"
@@ -79,18 +79,18 @@ class PoleBalanceAction(val index: Int) extends IntAction(index) {
 
 //======================================================================
 
-class PoleBalanceState(val x: Double, val xdot: Double, val theta: Double, val thetadot: Double)
-  extends SimState[PoleBalanceState] {
-  import PoleBalance._
+class CartPoleBalanceState(val x: Double, val xdot: Double, val theta: Double, val thetadot: Double)
+  extends SimState[CartPoleBalanceState] {
+  import CartPoleBalance._
 
-  def getInitial = PoleBalance.getInitial
+  def getInitial = CartPoleBalance.getInitial
   def isAbsorbing = fail()
 
   def fail(): Boolean = theta < min_a || theta > max_a || x < min_x || x > max_x
 
-  def copy = new PoleBalanceState(x, xdot, theta, thetadot);
+  def copy = new CartPoleBalanceState(x, xdot, theta, thetadot);
 
-  def successor(action: Int): PoleBalanceState =
+  def successor(action: Int): CartPoleBalanceState =
     {
       val force = if (action > 0) force_mag else -force_mag;
       val costheta = math.cos(theta);
@@ -111,17 +111,17 @@ class PoleBalanceState(val x: Double, val xdot: Double, val theta: Double, val t
       if (new_xdot < min_v) new_xdot = min_v;
       if (new_thetadot > max_av) new_thetadot = max_av;
       if (new_thetadot < min_av) new_thetadot = min_av;
-      new PoleBalanceState(new_x, new_xdot, new_theta, new_thetadot)
+      new CartPoleBalanceState(new_x, new_xdot, new_theta, new_thetadot)
     }
 }
 
 //======================================================================
 
-object PoleBalanceRenderer extends SimStateRenderer[PoleBalanceState] {
+object CartPoleBalanceRenderer extends SimStateRenderer[CartPoleBalanceState] {
 
-  import PoleBalance._
+  import CartPoleBalance._
 
-  def render(action : Int, st: PoleBalanceState, g2: Graphics2D, d: Dimension) = {
+  def render(action : Int, st: CartPoleBalanceState, g2: Graphics2D, d: Dimension) = {
     val width = d.getWidth();
     val int_w: Int = width.toInt
     val height = d.getHeight();
