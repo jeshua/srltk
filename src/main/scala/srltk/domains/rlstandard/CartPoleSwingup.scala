@@ -26,11 +26,11 @@ object CartPoleSwingup {
   val mass_pole = .6d;//.6  
   val length = 2d;
   val mass_len_pole = mass_pole * length;
-  val force_mag = 5.0d;//10
-  val tau = .04d; //0.02;
+  val force_mag = 7.0d;//10
+  val tau = .03d; //0.02;
   
-  val target_theta_thresh    = .2d;//.05 
-  val target_thetadot_thresh = .5d;//.5 
+  val target_theta_thresh    = .3d;//.05 
+  val target_thetadot_thresh = 1d;//.5 
       
   val max_x = 4d;
   val min_x = -4d;

@@ -46,7 +46,7 @@ object Acrobot {
   val min_t2dot = -9 * math.Pi;
   val max_t2dot = 9 * math.Pi;
   val goal_pos = .9d;
-  val dt = .05
+  val dt = .04
 
 
   def getInitial() = new AcrobotState(0,0,0,0)
