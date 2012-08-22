@@ -45,7 +45,7 @@ object Acrobot {
   val max_t2 = math.Pi;
   val min_t2dot = -9 * math.Pi;
   val max_t2dot = 9 * math.Pi;
-  val goal_pos = .9d;
+  val goal_pos = 1d;
   val dt = .04
 
 

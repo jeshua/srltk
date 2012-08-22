@@ -29,8 +29,8 @@ object CartPoleSwingup {
   val force_mag = 7.0d;//10
   val tau = .03d; //0.02;
   
-  val target_theta_thresh    = .3d;//.05 
-  val target_thetadot_thresh = 1d;//.5 
+  val target_theta_thresh    = .1d;//.05 
+  val target_thetadot_thresh = .5d;//.5 
       
   val max_x = 4d;
   val min_x = -4d;
@@ -107,12 +107,10 @@ class CartPoleSwingupState(val x: Double, val xdot: Double, val theta: Double, v
       var new_thetadot = thetadot + tau * tdd;
 
       if (new_x > max_x) {
-        new_x = max_x;
-        new_xdot = 0;
+        new_x = min_x + (new_x-max_x);
       }
       if (new_x < min_x){
-        new_x = min_x;
-        new_xdot = 0;
+        new_x = max_x - (min_x-new_x);
       }
       if (new_xdot > max_v) new_xdot = max_v;
       if (new_xdot < min_v) new_xdot = min_v;

@@ -27,4 +27,6 @@ trait Domain[St <: State[St], Act <: Action]{
 
 abstract class Observation
 (var reward : Double = 0d)
-{}
+{
+def copy() : Observation;
+}
