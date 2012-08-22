@@ -82,7 +82,8 @@ class CartPoleBalanceAction(val index: Int) extends IntAction(index) {
 class CartPoleBalanceState(val x: Double, val xdot: Double, val theta: Double, val thetadot: Double)
   extends SimState[CartPoleBalanceState] {
   import CartPoleBalance._
-
+  val num_actions = CartPoleBalance.num_actions;
+  
   def getInitial = CartPoleBalance.getInitial
   def isAbsorbing = fail()
 

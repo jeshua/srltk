@@ -24,6 +24,7 @@ trait SimStateRenderer[T <: SimState[T]] {
 //a state class retains all stateful information for a domain
 //and has a successor function
 trait SimState[T <: SimState[T]] extends State[T] {
+  val num_actions : Int;
   def getInitial(): T
   def successor(action: Int): T
   def isAbsorbing: Boolean

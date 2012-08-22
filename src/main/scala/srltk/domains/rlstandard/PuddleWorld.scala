@@ -98,6 +98,7 @@ object PuddleWorldAction {
 class PuddleWorldState(val x: Double, val y: Double) extends SimState[PuddleWorldState] {
   def this() = this(0, 0)
   import PuddleWorld._
+  val num_actions = 4;
   def getInitial = PuddleWorld.getInitial
   def isAbsorbing = atGoal(x, y)
   def copy() = new PuddleWorldState(x,y);

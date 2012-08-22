@@ -73,6 +73,8 @@ class CartPoleSwingupState(val x: Double, val xdot: Double, val theta: Double, v
   extends SimState[CartPoleSwingupState] {
   import CartPoleSwingup._
 
+  val num_actions = CartPoleSwingup.num_actions;
+  
   def getInitial = CartPoleSwingup.getInitial
   def isAbsorbing = succeed()
   

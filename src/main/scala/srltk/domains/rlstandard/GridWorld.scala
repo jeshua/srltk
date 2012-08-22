@@ -53,6 +53,7 @@ class GridWorldAction(val index: Int) extends IntAction(index) {
 }
 class GridWorldState(val x: Int, val y: Int, val maze: Maze) extends SimState[GridWorldState] {
   import GridWorld._
+  val num_actions = 4;
   def getInitial() = new GridWorldState(maze.width()-1,1, maze)
   def isAbsorbing = false; //maze.isGoal(x,y)
   def getReward() : Double = if (maze.isGoal(x, y)) 1d else -.001
@@ -113,6 +114,7 @@ class LineWorldAction(val index: Int) extends IntAction(index) {
 }
 class LineWorldState(val x: Int, val y: Int, val maze: Maze) extends SimState[LineWorldState] {
   import LineWorld._
+  val num_actions = 2;
   def getInitial() = new LineWorldState(0, maze.width()-1, maze)
   def isAbsorbing = maze.isGoal(x,y)
   def getReward() = if (maze.isGoal(x, y)) 1d else 0

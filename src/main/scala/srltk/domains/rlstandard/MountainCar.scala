@@ -73,7 +73,7 @@ class MountainCarAction(val index: Int) extends IntAction(index) {
 
 class MountainCarState(val x: Double, val xdot: Double) extends SimState[MountainCarState] {
   import MountainCar._
-  
+  val num_actions = 3;
   def getInitial = MountainCar.getInitial
   def isAbsorbing = x >= x_goal
   def copy = new MountainCarState(x,xdot);
@@ -95,6 +95,21 @@ class MountainCarState(val x: Double, val xdot: Double) extends SimState[Mountai
       else
         new MountainCarState(new_x, new_xdot)
     }
+  
+  //hashcode / equals
+  private def uniqueID() : Int = {
+    val resolution = 180;
+    val new_x = (resolution * (x - x_min)/(x_max-x_min)).toInt;
+    val new_xdot = (resolution * (xdot - xdot_min)/(xdot_max-xdot_min)).toInt;
+    new_x * resolution + new_xdot;
+  }
+  
+  override def hashCode() : Int = uniqueID();
+  override def equals(other : Any) : Boolean = {
+    if(other.isInstanceOf[MountainCarState]) 
+      uniqueID() == other.asInstanceOf[MountainCarState].uniqueID();
+    else false
+  }
 }
 
 //======================================================================

@@ -87,7 +87,8 @@ class AcrobotAction(val index: Int) extends IntAction(index) {
 class AcrobotState(val t1: Double, val t1dot: Double, val t2: Double, val t2dot: Double)
   extends SimState[AcrobotState] {
   import Acrobot._
-
+  val num_actions = Acrobot.num_actions;
+  
   def getInitial = Acrobot.getInitial
   def isAbsorbing = success()
 
